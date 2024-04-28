@@ -30,7 +30,7 @@ class NavbarSection extends StatelessWidget {
             ],
           ),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 20.0),
+            padding: EdgeInsets.symmetric(vertical: 10.0),
             child: Divider(
               color: PortfolioColors.secondaryColor,
               thickness: 3,

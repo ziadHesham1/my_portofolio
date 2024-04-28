@@ -13,22 +13,16 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'ABOUT ME';
-    const subTitle = 'Who I am';
-    var width = PortfolioConstants.portfolio_screen_width / 3;
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        // horizontal: 120.0,
-        vertical: 40,
-      ),
+      padding: const EdgeInsets.symmetric(vertical: 40),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           newMethod(
-            width: width,
-            title: title,
-            subTitle: subTitle,
+            width: PortfolioConstants.portfolio_screen_width / 2.6,
+            title: 'ABOUT ME 🚀',
+            subTitle: 'Who I am',
             child: const Text(
               'As a junior front-end developer, I am skilled in HTML,'
               'CSS, JavaScript, and Bootstrap. I have a meticulous'
@@ -37,13 +31,15 @@ class AboutSection extends StatelessWidget {
               'involves utilizing Ul/UX best practices alongside'
               'clean, efficient code to deliver impeccable digital'
               'experiences.',
-              style: TextStyle(),
+              style: TextStyle(
+                fontSize: 16,
+              ),
             ),
           ),
           newMethod(
-            width: width,
+            width: PortfolioConstants.portfolio_screen_width / 2.5,
             title: 'TECH STACK',
-            subTitle: 'What I\'m good at',
+            subTitle: 'What I\'m good at 💻',
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: Column(
@@ -80,17 +76,22 @@ class AboutSection extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Row(
-                    children: [
-                      newMethod2(
-                        'SPECIALTY',
-                        'Flutter Developer',
-                      ),
-                      newMethod2(
-                        'EDUCATION',
-                        'AIET, Computer Engineering',
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        newMethod2(
+                          'SPECIALTY',
+                          'Flutter Developer',
+                        ),
+                        const SizedBox(width: 14),
+                        newMethod2(
+                          'EDUCATION',
+                          '🎓 AIET, Computer Engineering',
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -102,28 +103,25 @@ class AboutSection extends StatelessWidget {
   }
 
   Widget newMethod2(String title, String subTitle) {
-    return Padding(
-      padding: const EdgeInsets.all(14.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            title,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: PortfolioColors.accentColor,
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: PortfolioColors.accentColor,
           ),
-          Text(
-            subTitle,
-            style: const TextStyle(
-              fontSize: 18.0,
-              // fontWeight: FontWeight.w700,
-            ),
+        ),
+        Text(
+          subTitle,
+          style: const TextStyle(
+            fontSize: 18.0,
+            // fontWeight: FontWeight.w700,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

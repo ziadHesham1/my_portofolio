@@ -13,5 +13,6 @@ abstract class PortfolioAssets {
 
   static final String empty_image = addImage('empty_image.jpg');
   static final String ziad_picture = addImage('ziad_picture.jpg');
+  static final String portfolio_image = addImage('portfolio_image.png');
 //------------------------------- gif ---------------------------------------
 }

@@ -25,7 +25,7 @@ class _TextButtonWidget extends StatelessWidget {
                     Text(
                       portfolioTextButton.buttonLabel,
                       style: portfolioTextButton.buttonStyle ??
-                          PortfolioConstants.text_theme.bodyMedium!.copyWith(
+                          PortfolioConstants.text_theme.bodyLarge!.copyWith(
                             decoration: portfolioTextButton.hasUnderline
                                 ? TextDecoration.underline
                                 : TextDecoration.none,
@@ -37,7 +37,7 @@ class _TextButtonWidget extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        SizedBox(width: 3.w),
+                        // SizedBox(width: 3.w),
                         portfolioTextButton.widget!
                       ],
                     ),

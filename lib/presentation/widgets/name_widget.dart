@@ -15,7 +15,7 @@ class NameWidget extends StatelessWidget {
           TextSpan(
             text: 'Ziad',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
               color: PortfolioColors.black,
             ),
@@ -23,7 +23,7 @@ class NameWidget extends StatelessWidget {
           TextSpan(
             text: '.dev',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
               color: PortfolioColors.secondaryColor,
             ),

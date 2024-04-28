@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MaterialApp(
             navigatorKey: PortfolioNavigator.navigatorState,
+            debugShowCheckedModeBanner: false,
             onGenerateRoute: PortfolioNavigator.onCreateRoute,
             title: 'Flutter Demo',
             theme: ThemeData(

@@ -110,7 +110,7 @@ class PortfolioImageWidget extends StatelessWidget {
   CircleAvatar _circlePlaceHolderImage() {
     return CircleAvatar(
       radius: circleAvatarRadius,
-      backgroundImage: AssetImage(PortfolioAssets.blankProfileImage),
+      backgroundImage: AssetImage(PortfolioAssets.blank_profile_image),
     );
   }
 
@@ -118,7 +118,7 @@ class PortfolioImageWidget extends StatelessWidget {
     // Return a placeholder image or default behavior for invalid or empty URL
 
     return Image.asset(
-      placeHolderImage ?? PortfolioAssets.emptyImage,
+      placeHolderImage ?? PortfolioAssets.empty_image,
       width: width ?? 100,
       height: height ?? 100,
       fit: fit,

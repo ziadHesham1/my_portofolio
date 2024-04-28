@@ -6,9 +6,12 @@ abstract class PortfolioAssets {
   static addGIF(String name) => 'assets/gif/$name';
 //------------------------------- icons ---------------------------------------
 
+  static final String github_icon = addIcon('github_icon.png');
 //------------------------------- images ---------------------------------------
+  static final String blank_profile_image =
+      addImage('blank-profile-picture.png');
 
-  static final String blankProfileImage = addImage('blank-profile-picture.png');
-  static final String emptyImage = addImage('empty_image.jpg');
+  static final String empty_image = addImage('empty_image.jpg');
+  static final String ziad_picture = addImage('ziad_picture.jpg');
 //------------------------------- gif ---------------------------------------
 }

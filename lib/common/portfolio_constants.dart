@@ -10,21 +10,6 @@ abstract class PortfolioConstants {
   // Get the text theme from the current theme currentContext!.
   static final TextTheme text_theme = Theme.of(currentContext!).textTheme;
 
-  // Padding constants for screen layouts.
-  static final EdgeInsets portfolio_screen_padding =
-      EdgeInsets.symmetric(horizontal: 20.w, vertical: 30.h);
-  static final EdgeInsets accept_screen_padding =
-      EdgeInsets.symmetric(horizontal: 40.w);
-  static final EdgeInsets home_screen_padding =
-      EdgeInsets.only(left: 15.w, right: 15.w, top: 5.h);
-  static final EdgeInsets cart_screen_padding =
-      EdgeInsets.only(left: 20.w, right: 20.w, top: 10.h);
-
-  // Constants for button height and border radius.
-  static final portfolio_button_height = 40.h;
-  static final portfolio_button_radius = 29.r;
-  static final double verticalSpacing = 10.0.h;
-
   // Get the screen size, height, and width from the current currentContext!.
   static final Size portfolio_screen_size = MediaQuery.of(currentContext!).size;
 
@@ -33,7 +18,6 @@ abstract class PortfolioConstants {
 
   static final double portfolio_screen_width =
       MediaQuery.of(currentContext!).size.width;
-  static final double rectangular_button_height = 50.h;
 
   static final bool isDesktop = MediaQuery.of(currentContext!).size.width > 600;
 

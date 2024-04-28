@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/portfolio_constants.dart';
-import 'package:my_portfolio/common/style/portfolio_colors.dart';
-import 'package:my_portfolio/presentation/widgets/desktop_navigation_buttons.dart';
-import 'package:my_portfolio/presentation/widgets/name_widget.dart';
+
+import '../../common/portfolio_constants.dart';
+import '../../common/style/portfolio_colors.dart';
+import '../widgets/desktop_navigation_buttons.dart';
+import '../widgets/name_widget.dart';
 
 class NavbarSection extends StatelessWidget {
   const NavbarSection({
@@ -15,7 +16,7 @@ class NavbarSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(50.0),
+      padding: const EdgeInsets.symmetric(vertical: 40.0),
       child: Column(
         children: [
           Row(
@@ -28,9 +29,12 @@ class NavbarSection extends StatelessWidget {
                 ),
             ],
           ),
-          const Divider(
-            color: PortfolioColors.accentColor,
-            height: 3,
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.0),
+            child: Divider(
+              color: PortfolioColors.secondaryColor,
+              thickness: 3,
+            ),
           ),
         ],
       ),

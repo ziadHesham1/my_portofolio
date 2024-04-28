@@ -14,13 +14,6 @@ class _TextButtonWidget extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.r),
         ),
-        minimumSize: portfolioTextButton.width != null &&
-                portfolioTextButton.height != null
-            ? Size(
-                portfolioTextButton.width ?? 60.w,
-                portfolioTextButton.height ?? 30.h,
-              )
-            : null,
         padding: EdgeInsets.zero,
       ),
       onPressed: portfolioTextButton.onPressed,
@@ -53,7 +46,7 @@ class _TextButtonWidget extends StatelessWidget {
               : Text(
                   portfolioTextButton.buttonLabel,
                   style: portfolioTextButton.buttonStyle ??
-                      PortfolioConstants.text_theme.bodyMedium!.copyWith(
+                      PortfolioConstants.text_theme.bodyLarge!.copyWith(
                         decoration: portfolioTextButton.hasUnderline
                             ? TextDecoration.underline
                             : TextDecoration.none,

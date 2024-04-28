@@ -33,13 +33,11 @@ class _ElevatedButtonWithIconWidget extends StatelessWidget {
       backgroundColor: buttonColor,
       surfaceTintColor: buttonColor,
       minimumSize: Size(
-        portfolioElevatedButtonWithIcon.width ?? double.infinity,
-        portfolioElevatedButtonWithIcon.height ??
-            PortfolioConstants.portfolio_button_height,
+        portfolioElevatedButtonWithIcon.width ?? 60,
+        portfolioElevatedButtonWithIcon.height ?? 60,
       ),
       shape: RoundedRectangleBorder(
-        borderRadius:
-            BorderRadius.circular(PortfolioConstants.portfolio_button_radius),
+        borderRadius: BorderRadius.circular(10),
         side: BorderSide(
           color: borderColor,
         ),

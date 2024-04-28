@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/common/style/portfolio_colors.dart';
 
 import '../../common/widgets/buttons/portfolio_button_export.dart';
 
@@ -19,6 +20,7 @@ class MobileNavigationButtons extends StatelessWidget {
               children: [
                 PortfolioButton(
                   button: PortfolioTextButton(
+                    color: PortfolioColors.black,
                     onPressed: () {},
                     buttonLabel: e,
                   ),

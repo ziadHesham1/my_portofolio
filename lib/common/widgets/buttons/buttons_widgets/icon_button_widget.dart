@@ -41,10 +41,8 @@ class _IconButtonWidget extends StatelessWidget {
         minimumSize: portfolioIconButton.isContainer
             ? null
             : Size(
-                portfolioIconButton.width ??
-                    PortfolioConstants.portfolio_button_height,
-                portfolioIconButton.height ??
-                    PortfolioConstants.portfolio_button_height,
+                portfolioIconButton.width ?? 60,
+                portfolioIconButton.height ?? 60,
               ),
         shape: shape2,
       ),

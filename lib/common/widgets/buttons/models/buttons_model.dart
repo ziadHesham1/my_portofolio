@@ -5,10 +5,8 @@ import 'portfolio_button_interface.dart';
 //
 class PortfolioElevatedButton extends IPortfolioButton {
   final String text;
-  final Color? activeColor;
   final bool isLightMode;
   final bool hasBorder;
-  final bool hasRoundedCorners;
   final TextStyle? textStyle;
   final double? radius;
   final EdgeInsetsGeometry? textPadding;
@@ -20,7 +18,6 @@ class PortfolioElevatedButton extends IPortfolioButton {
     required this.text,
     this.hasBorder = false,
     this.isLightMode = false,
-    this.hasRoundedCorners = true,
     super.width,
     super.height,
     super.color,
@@ -28,7 +25,6 @@ class PortfolioElevatedButton extends IPortfolioButton {
     this.radius,
     this.textPadding,
     this.shape,
-    this.activeColor,
   });
 }
 

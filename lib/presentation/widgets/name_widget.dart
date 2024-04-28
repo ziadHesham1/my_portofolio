@@ -15,15 +15,17 @@ class NameWidget extends StatelessWidget {
           TextSpan(
             text: 'Ziad',
             style: TextStyle(
-              fontWeight: FontWeight.normal,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
               color: PortfolioColors.black,
             ),
           ),
           TextSpan(
             text: '.dev',
             style: TextStyle(
-              fontWeight: FontWeight.normal,
-              color: PortfolioColors.accentColor,
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: PortfolioColors.secondaryColor,
             ),
           ),
         ],

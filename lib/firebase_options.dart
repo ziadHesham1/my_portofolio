@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCE2RztPUIVZF_dSGjZPpUk-e4-9Zv1G_4',
-    appId: '1:715794994853:web:5a6c5107603f4dd0879f4c',
-    messagingSenderId: '715794994853',
-    projectId: 'my-portfolio-5929c',
-    authDomain: 'my-portfolio-5929c.firebaseapp.com',
-    storageBucket: 'my-portfolio-5929c.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBFhTD59x9CnpkZgKwTGErdFYmdwnJQWVQ',
-    appId: '1:715794994853:ios:86779dacb628deab879f4c',
-    messagingSenderId: '715794994853',
-    projectId: 'my-portfolio-5929c',
-    storageBucket: 'my-portfolio-5929c.appspot.com',
-    iosBundleId: 'com.example.myPortofolio',
+    apiKey: 'AIzaSyDzUQO6fx3rcL2taA2gVmN73wv1TEG9lyo',
+    appId: '1:781735671229:web:ece512945da6918a31ced4',
+    messagingSenderId: '781735671229',
+    projectId: 'ziad-dev-e015d',
+    authDomain: 'ziad-dev-e015d.firebaseapp.com',
+    storageBucket: 'ziad-dev-e015d.appspot.com',
+    measurementId: 'G-2WF7L75DD5',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD0HkCgZ3Tr5j2sQizc3ptQDx5X_iX68HE',
-    appId: '1:715794994853:android:fe4a1043f63a1776879f4c',
-    messagingSenderId: '715794994853',
-    projectId: 'my-portfolio-5929c',
-    storageBucket: 'my-portfolio-5929c.appspot.com',
+    apiKey: 'AIzaSyC3PUKlQYOI22sGwKXFUqgCL795QW2-lZA',
+    appId: '1:781735671229:android:d0e45b4a5e6e2fa331ced4',
+    messagingSenderId: '781735671229',
+    projectId: 'ziad-dev-e015d',
+    storageBucket: 'ziad-dev-e015d.appspot.com',
   );
 
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyA8QKAtnoPxdyt6esEFIFkJQ0Ml95v8NgI',
+    appId: '1:781735671229:ios:ef5b7f7cc17a6eb831ced4',
+    messagingSenderId: '781735671229',
+    projectId: 'ziad-dev-e015d',
+    storageBucket: 'ziad-dev-e015d.appspot.com',
+    iosBundleId: 'com.example.myPortofolio',
+  );
 }

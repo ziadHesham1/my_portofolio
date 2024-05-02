@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "715794994853",
-    "project_id": "my-portfolio-5929c",
-    "storage_bucket": "my-portfolio-5929c.appspot.com"
+    "project_number": "781735671229",
+    "project_id": "ziad-dev-e015d",
+    "storage_bucket": "ziad-dev-e015d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:715794994853:android:fe4a1043f63a1776879f4c",
+        "mobilesdk_app_id": "1:781735671229:android:d0e45b4a5e6e2fa331ced4",
         "android_client_info": {
           "package_name": "com.example.my_portfolio"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD0HkCgZ3Tr5j2sQizc3ptQDx5X_iX68HE"
+          "current_key": "AIzaSyC3PUKlQYOI22sGwKXFUqgCL795QW2-lZA"
         }
       ],
       "services": {

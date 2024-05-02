@@ -23,7 +23,7 @@ class NavbarSection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const NameWidget(),
-              if (PortfolioConstants.isDesktop)
+              if (PortfolioConstants.isDesktop())
                 DesktopNavigationButtons(
                   actionLabels: actionLabels,
                 ),

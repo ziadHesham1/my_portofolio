@@ -4,6 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'portfolio_colors.dart';
 
 class PortfolioTextTheme {
+  static const double fontSize16 = 16;
+  static const double fontSize18 = 18;
+  static const double fontSize28 = 28;
+  static const double fontSize40 = 40;
+
   TextTheme appTextThemes = TextTheme(
     headlineLarge: TextStyle(
       fontWeight: FontWeight.w800,

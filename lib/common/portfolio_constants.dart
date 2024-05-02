@@ -1,7 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../generated/l10n.dart';
 import 'navigation/portfolio_navigator.dart';
@@ -13,13 +12,13 @@ abstract class PortfolioConstants {
   // Get the screen size, height, and width from the current currentContext!.
   static final Size portfolio_screen_size = MediaQuery.of(currentContext!).size;
 
-  static final double portfolio_screen_height =
+  static double portfolio_screen_height() =>
       MediaQuery.of(currentContext!).size.height;
 
-  static final double portfolio_screen_width =
+  static double portfolio_screen_width() =>
       MediaQuery.of(currentContext!).size.width;
 
-  static final bool isDesktop = MediaQuery.of(currentContext!).size.width > 600;
+  static bool isDesktop() => MediaQuery.of(currentContext!).size.width > 1000;
 
   static S localization() => S.of(currentContext!);
 

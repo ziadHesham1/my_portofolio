@@ -2,7 +2,8 @@ name: my_portfolio
 description: "A new Flutter project."
 
 publish_to: 'none'
-
+# flutter build web --release
+# firebase deploy --only hosing
 version: 1.0.0+1
 
 environment:

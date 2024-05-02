@@ -62,7 +62,7 @@ class _TextButtonWidget extends StatelessWidget {
 
   SizedBox withLeadingText() {
     return SizedBox(
-      width: PortfolioConstants.portfolio_screen_width / 1.3,
+      width: PortfolioConstants.portfolio_screen_width() / 1.3,
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(

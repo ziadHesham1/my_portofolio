@@ -16,7 +16,7 @@ class DesktopNavigationButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: PortfolioConstants.portfolio_screen_height / 20,
+      height: PortfolioConstants.portfolio_screen_height() / 20,
       child: Row(
         children: actionLabels.mapIndexed(
           (i, e) {
@@ -33,8 +33,9 @@ class DesktopNavigationButtons extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: PortfolioButton(
                       button: PortfolioElevatedButton(
-                        width: PortfolioConstants.portfolio_screen_width / 30,
-                        height: PortfolioConstants.portfolio_screen_height / 20,
+                        width: PortfolioConstants.portfolio_screen_width() / 30,
+                        height:
+                            PortfolioConstants.portfolio_screen_height() / 20,
                         radius: 8,
                         onPressed: () {},
                         text: e,

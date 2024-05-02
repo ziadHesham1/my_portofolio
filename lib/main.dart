@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfolio/presentation/landing_page.dart';
 
 import 'common/navigation/portfolio_navigator.dart';
+import 'presentation/landing_page.dart';
 
 Future<void> main() async {
   await ScreenUtil.ensureScreenSize();

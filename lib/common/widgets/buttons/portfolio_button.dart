@@ -9,13 +9,10 @@ import '../../style/portfolio_colors.dart';
 import 'models/buttons_model.dart';
 import 'models/portfolio_button_interface.dart';
 
-part 'buttons_widgets/cart_quantity_button.dart';
 part 'buttons_widgets/container_button_widget.dart';
-part 'buttons_widgets/portfolio_add_remove_button_widget.dart';
 part 'buttons_widgets/elevated_button_widget.dart';
 part 'buttons_widgets/elevated_button_with_icon_widget.dart';
 part 'buttons_widgets/icon_button_widget.dart';
-part 'buttons_widgets/quantity_button_widget.dart';
 part 'buttons_widgets/text_button_widget.dart';
 
 class PortfolioButton extends StatelessWidget {
@@ -43,12 +40,6 @@ class PortfolioButton extends StatelessWidget {
         return _ElevatedButtonWithIconWidget(
             portfolioElevatedButtonWithIcon: portfolioElevatedButtonWithIcon);
 
-      // case PortfolioCartButton portfolioCartButton:
-      //   return QuantityButtonWidget(portfolioCartButton: portfolioCartButton);
-
-      case PortfolioAddRemoveButton portfolioAddRemoveButton:
-        return _PortfolioAddRemoveButtonWidget(
-            portfolioAddRemoveButton: portfolioAddRemoveButton);
       case PortfolioContainerButton portfolioContainerButton:
         return _PortfolioContainerButtonWidget(
           portfolioContainerButton: portfolioContainerButton,

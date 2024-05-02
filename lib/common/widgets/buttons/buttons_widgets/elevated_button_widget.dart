@@ -45,15 +45,20 @@ class _ElevatedButtonWidget extends StatelessWidget {
   ButtonStyle buttonStyle(
       Color textColor, Color buttonColor, Color borderColor) {
     return ElevatedButton.styleFrom(
-      padding: portfolioElevatedButton.textPadding,
+      padding: portfolioElevatedButton.textPadding ??
+          const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 8,
+          ),
       // foregroundColor: textColor,
       backgroundColor: buttonColor,
       surfaceTintColor: buttonColor,
       alignment: Alignment.center,
+
       minimumSize: portfolioElevatedButton.width != null &&
               portfolioElevatedButton.height != null
           ? Size(
-              portfolioElevatedButton.width ?? 60.w,
+              portfolioElevatedButton.width ?? 10.w,
               portfolioElevatedButton.height ?? 30.h,
             )
           : null,

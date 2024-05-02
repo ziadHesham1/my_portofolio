@@ -1,121 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/portfolio_assets.dart';
 import '../../common/portfolio_constants.dart';
-import '../../common/style/portfolio_colors.dart';
-import '../../common/widgets/buttons/portfolio_button_export.dart';
-import '../../common/widgets/buttons/portfolio_image_widget.dart';
+import '../../common/style/portfolio_text_theme.dart';
+import '../widgets/desktop_project_widget.dart';
+import '../widgets/mobile_project_widget.dart';
 
 class ProjectsSection extends StatelessWidget {
-  const ProjectsSection({
-    super.key,
-  });
+  const ProjectsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text(
-          'Projects',
-          style: TextStyle(
-            fontSize: 40.0,
-            fontWeight: FontWeight.w700,
+    var portfolioImage = PortfolioAssets.portfolio_image;
+    const title = 'Personal portfolio';
+    const subTitle = 'Landing page for a personal portfolio';
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 1200),
+      child: Column(
+        children: [
+          const Text(
+            'Projects',
+            style: TextStyle(
+              fontSize: PortfolioTextTheme.fontSize40,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        const Text(
-          'Take a look at some of my work 📍',
-          style: TextStyle(
-            fontSize: 18.0,
+          const Text(
+            'Take a look at some of my work 📍',
+            style: TextStyle(
+              fontSize: PortfolioTextTheme.fontSize18,
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40.0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Material(
-                    elevation: 4.0,
-                    shadowColor: PortfolioColors.black,
-                    borderRadius: BorderRadius.circular(20.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20.0),
-                      child: PortfolioImageWidget(
-                        width: PortfolioConstants.portfolio_screen_width / 2.5,
-                        url: PortfolioAssets.portfolio_image,
-                      ),
-                    ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 40.0.h),
+            child: Column(
+              children: [
+                if (PortfolioConstants.isDesktop()) ...{
+                  DesktopProjectWidget(
+                    portfolioImage: portfolioImage,
+                    title: title,
+                    subTitle: subTitle,
                   ),
-                  SizedBox(
-                    width: PortfolioConstants.portfolio_screen_width / 2,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Personal portfolio',
-                          style: TextStyle(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        const Text(
-                          'Landing page for a personal portfolio',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        const SizedBox(height: 30),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            PortfolioButton(
-                              button: PortfolioTextButton(
-                                buttonStyle: const TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  color: PortfolioColors.black,
-                                ),
-                                onPressed: () {},
-                                buttonLabel: 'View on Github ',
-                                widget: PortfolioImageWidget(
-                                  url: PortfolioAssets.github_icon,
-                                  height: 40,
-                                ),
-                              ),
-                            ),
-                            const SizedBox(width: 50),
-                            PortfolioButton(
-                              button: PortfolioTextButton(
-                                buttonStyle: const TextStyle(
-                                  fontWeight: FontWeight.normal,
-                                  color: PortfolioColors.black,
-                                ),
-                                onPressed: () {},
-                                buttonLabel: 'Live Preview',
-                                widget: const Padding(
-                                  padding: EdgeInsets.all(8.0),
-                                  child: FaIcon(
-                                    FontAwesomeIcons.arrowUpRightFromSquare,
-                                    color: PortfolioColors.black,
-                                    size: 20,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                } else ...{
+                  MobileProjectWidget(
+                    portfolioImage: portfolioImage,
+                    title: title,
+                    subTitle: subTitle,
                   ),
-                ],
-              ),
-              const SizedBox(height: 200)
-            ],
+                }
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

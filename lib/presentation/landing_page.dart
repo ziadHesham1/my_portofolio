@@ -13,10 +13,11 @@ import 'widgets/mobile_navigation_buttons.dart';
 import 'widgets/name_widget.dart';
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({
+  LandingPage({
     super.key,
   });
 
+  final List navbarKeys = List.generate(4, (index) => GlobalKey());
   @override
   Widget build(BuildContext context) {
     final List<({String label, IconData iconData})> actionLabels = [
@@ -26,22 +27,13 @@ class LandingPage extends StatelessWidget {
       (label: 'Contact', iconData: Icons.contact_page)
     ];
     final ScrollController scrollController = ScrollController();
-    final List navbarKeys = List.generate(4, (index) => GlobalKey());
     return Scaffold(
       backgroundColor: PortfolioColors.primaryColor,
       appBar: (PortfolioConstants.isDesktop())
           ? PreferredSize(
               preferredSize: Size(double.maxFinite, 100.h),
               child: NavbarSection(
-                actionLabels: actionLabels,
-                onNavbarItemTap: (int index) {
-                  Scrollable.ensureVisible(
-                    navbarKeys[index].currentContext!,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.easeInOut,
-                  );
-                },
-              ),
+                  actionLabels: actionLabels, onNavbarItemTap: onNavbarItemTap),
             )
           : AppBar(
               title: const NameWidget(),
@@ -91,9 +83,18 @@ class LandingPage extends StatelessWidget {
               backgroundColor: PortfolioColors.primaryColor,
               child: MobileNavigationButtons(
                 actionLabels: actionLabels,
+                onNavbarItemTap: onNavbarItemTap,
               ),
             )
           : null,
+    );
+  }
+
+  onNavbarItemTap(int index) {
+    Scrollable.ensureVisible(
+      navbarKeys[index].currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

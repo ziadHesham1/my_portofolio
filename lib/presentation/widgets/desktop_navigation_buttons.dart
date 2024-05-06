@@ -6,12 +6,13 @@ import '../../common/style/portfolio_colors.dart';
 import '../../common/widgets/buttons/portfolio_button_export.dart';
 
 class DesktopNavigationButtons extends StatelessWidget {
+  final List<({String label, IconData iconData})> actionLabels;
+  final Function(int index) onNavbarItemTap;
   const DesktopNavigationButtons({
     super.key,
     required this.actionLabels,
+    required this.onNavbarItemTap,
   });
-
-  final List<String> actionLabels;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class DesktopNavigationButtons extends StatelessWidget {
       height: PortfolioConstants.portfolio_screen_height() / 20,
       child: Row(
         children: actionLabels.mapIndexed(
-          (i, e) {
+          (i, ({String label, IconData iconData}) e) {
             if (i == actionLabels.length - 1) {
               return Row(
                 children: [
@@ -37,8 +38,10 @@ class DesktopNavigationButtons extends StatelessWidget {
                         height:
                             PortfolioConstants.portfolio_screen_height() / 20,
                         radius: 8,
-                        onPressed: () {},
-                        text: e,
+                        onPressed: () {
+                          onNavbarItemTap(i);
+                        },
+                        text: e.label,
                       ),
                     ),
                   ),
@@ -53,8 +56,10 @@ class DesktopNavigationButtons extends StatelessWidget {
                       fontWeight: FontWeight.normal,
                       color: PortfolioColors.black,
                     ),
-                    onPressed: () {},
-                    buttonLabel: e,
+                    onPressed: () {
+                      onNavbarItemTap(i);
+                    },
+                    buttonLabel: e.label,
                   ),
                 ),
               );

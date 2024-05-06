@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/presentation/widgets/name_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common/portfolio_constants.dart';
 import '../common/style/portfolio_colors.dart';
 import 'sections/about_section.dart';
-import 'sections/contact_me_section.dart';
 import 'sections/footer_section.dart';
 import 'sections/home_section.dart';
 import 'sections/navbar_section.dart';
 import 'sections/projects_section.dart';
+import 'sections/send_email_section.dart';
 import 'widgets/mobile_navigation_buttons.dart';
+import 'widgets/name_widget.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({
@@ -18,12 +19,31 @@ class LandingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> actionLabels = ['Home', 'About', 'Projects', 'Contact'];
-
+    final List<({String label, IconData iconData})> actionLabels = [
+      (label: 'Home', iconData: Icons.home_outlined),
+      (label: 'About', iconData: Icons.info_outline_rounded),
+      (label: 'Projects', iconData: Icons.work_outlined),
+      (label: 'Contact', iconData: Icons.contact_page)
+    ];
+    final ScrollController scrollController = ScrollController();
+    final List navbarKeys = List.generate(4, (index) => GlobalKey());
     return Scaffold(
       backgroundColor: PortfolioColors.primaryColor,
-      appBar: (!(PortfolioConstants.isDesktop()))
-          ? AppBar(
+      appBar: (PortfolioConstants.isDesktop())
+          ? PreferredSize(
+              preferredSize: Size(double.maxFinite, 100.h),
+              child: NavbarSection(
+                actionLabels: actionLabels,
+                onNavbarItemTap: (int index) {
+                  Scrollable.ensureVisible(
+                    navbarKeys[index].currentContext!,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
+            )
+          : AppBar(
               title: const NameWidget(),
               surfaceTintColor: Colors.transparent,
               backgroundColor: Colors.transparent,
@@ -34,8 +54,7 @@ class LandingPage extends StatelessWidget {
                   thickness: 3,
                 ),
               ),
-            )
-          : null,
+            ),
       body: Center(
         child: Container(
           alignment: Alignment.center,
@@ -44,28 +63,23 @@ class LandingPage extends StatelessWidget {
               ? const EdgeInsets.symmetric(horizontal: 50.0)
               : const EdgeInsets.symmetric(horizontal: 20.0),
           child: SingleChildScrollView(
+            controller: scrollController,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                if (PortfolioConstants.isDesktop())
-                  NavbarSection(actionLabels: actionLabels),
+                SizedBox(key: navbarKeys.first),
                 const HomeSection(),
-                const SizedBox(height: 60),
-                const AboutSection(),
-                const SizedBox(height: 60),
-                const ProjectsSection(),
-                const SizedBox(height: 60),
-                const ContactMeSection(),
-                const SizedBox(height: 60),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10.0),
-                  child: Divider(
-                    color: PortfolioColors.secondaryColor,
-                    thickness: 3,
-                  ),
+                SizedBox(height: 40.h),
+                AboutSection(key: navbarKeys[1]),
+                SizedBox(height: 40.h),
+                ProjectsSection(key: navbarKeys[2]),
+                SizedBox(height: 40.h),
+                SendEmailSection(
+                  key: navbarKeys[3],
                 ),
+                SizedBox(height: 40.h),
                 const FooterSection(),
-                const SizedBox(height: 60),
+                SizedBox(height: 40.h),
               ],
             ),
           ),
@@ -73,6 +87,8 @@ class LandingPage extends StatelessWidget {
       ),
       endDrawer: (!(PortfolioConstants.isDesktop()))
           ? Drawer(
+              shape: const BeveledRectangleBorder(),
+              backgroundColor: PortfolioColors.primaryColor,
               child: MobileNavigationButtons(
                 actionLabels: actionLabels,
               ),

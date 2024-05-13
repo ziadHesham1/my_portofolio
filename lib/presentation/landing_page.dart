@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common/portfolio_constants.dart';
 import '../common/style/portfolio_colors.dart';
+import '../logic/cubit/projects_cubit.dart';
 import 'sections/about_section.dart';
 import 'sections/footer_section.dart';
 import 'sections/home_section.dart';
@@ -12,12 +14,24 @@ import 'sections/send_email_section.dart';
 import 'widgets/mobile_navigation_buttons.dart';
 import 'widgets/name_widget.dart';
 
-class LandingPage extends StatelessWidget {
-  LandingPage({
+class LandingPage extends StatefulWidget {
+  const LandingPage({
     super.key,
   });
 
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<ProjectsCubit>().getProjects();
+  }
+
   final List navbarKeys = List.generate(4, (index) => GlobalKey());
+
   @override
   Widget build(BuildContext context) {
     final List<({String label, IconData iconData})> actionLabels = [

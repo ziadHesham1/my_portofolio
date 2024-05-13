@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../common/portfolio_constants.dart';
+import '../portfolio_constants.dart';
 
 class ResponsiveRow extends StatelessWidget {
   final List<Widget> children;

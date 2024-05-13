@@ -4,7 +4,7 @@ import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
 import '../../common/style/portfolio_text_theme.dart';
 import '../widgets/about_skills_widget.dart';
-import 'responsive_row.dart';
+import '../../common/widgets/responsive_row.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfolio/presentation/sections/responsive_row.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';

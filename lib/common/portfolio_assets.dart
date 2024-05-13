@@ -11,7 +11,8 @@ abstract class PortfolioAssets {
   static final String blank_profile_image =
       addImage('blank-profile-picture.png');
 
-  static final String empty_image = addImage('empty_image.jpg');
+  // static final String empty_image = addImage('empty_image.jpg');
+  static final String empty_image = addImage('placeholder_image.png');
   // static final String ziad_picture = addImage('ziad_picture.jpg');
   static final String portfolio_image = addImage('portfolio_image.png');
   static final String the_flutter_image = addImage('the_flutter_image.png');

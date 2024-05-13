@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:my_portfolio/presentation/sections/responsive_row.dart';
+import 'package:my_portfolio/common/widgets/responsive_row.dart';
 
 import '../../common/portfolio_assets.dart';
 import '../../common/portfolio_constants.dart';

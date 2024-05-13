@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/data/models/projects_model.dart';
 
-import '../../common/portfolio_assets.dart';
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_text_theme.dart';
+import '../../logic/cubit/projects_cubit.dart';
 import '../widgets/desktop_project_widget.dart';
 import '../widgets/mobile_project_widget.dart';
 
@@ -12,9 +14,6 @@ class ProjectsSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var portfolioImage = PortfolioAssets.portfolio_image;
-    const title = 'Personal portfolio';
-    const subTitle = 'Landing page for a personal portfolio';
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 1200),
       child: Column(
@@ -34,23 +33,28 @@ class ProjectsSection extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 40.0.h),
-            child: Column(
-              children: [
-                if (PortfolioConstants.isDesktop()) ...{
-                  DesktopProjectWidget(
-                    portfolioImage: portfolioImage,
-                    title: title,
-                    subTitle: subTitle,
-                  ),
-                } else ...{
-                  MobileProjectWidget(
-                    portfolioImage: portfolioImage,
-                    title: title,
-                    subTitle: subTitle,
-                  ),
-                }
-              ],
-            ),
+            child: BlocBuilder<ProjectsCubit, ProjectsState>(
+                builder: (context, state) {
+              ProjectsModel projects = ProjectsModel.empty();
+              if (state.status == ProjectsStatus.loaded) {
+                projects = state.projects;
+              } else {
+                return const Center(child: CircularProgressIndicator());
+              }
+              if (projects.items.isEmpty) {
+                return Container();
+              }
+              // return Container();
+              return Column(
+                children: projects.items.map((project) {
+                  if (PortfolioConstants.isDesktop()) {
+                    return DesktopProjectWidget(project: project);
+                  } else {
+                    return MobileProjectWidget(project: project);
+                  }
+                }).toList(),
+              );
+            }),
           ),
         ],
       ),

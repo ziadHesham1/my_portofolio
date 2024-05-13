@@ -12,13 +12,13 @@ class _IconButtonWidget extends StatelessWidget {
         ? PortfolioColors.white // Background color in light mode
         : PortfolioColors.secondaryColor; // Background color in dark mode
 
-    final Color textColor = portfolioIconButton.isLightMode
-        ? PortfolioColors.secondaryColor
-        : PortfolioColors.white; // Text color
+    // final Color textColor = portfolioIconButton.isLightMode
+    //     ? PortfolioColors.secondaryColor
+    //     : PortfolioColors.white; // Text color
 
-    final Color borderColor = portfolioIconButton.isLightMode
-        ? textColor
-        : PortfolioColors.transparent; // Border color
+    // final Color borderColor = portfolioIconButton.isLightMode
+    //     ? textColor
+    //     : PortfolioColors.transparent; // Border color
 
     CircleBorder? shape2;
     if (portfolioIconButton.hasBorder) {

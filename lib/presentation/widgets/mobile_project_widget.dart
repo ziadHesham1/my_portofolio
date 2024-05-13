@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -7,18 +6,14 @@ import '../../common/portfolio_assets.dart';
 import '../../common/style/portfolio_colors.dart';
 import '../../common/widgets/buttons/portfolio_button_export.dart';
 import '../../common/widgets/buttons/portfolio_image_widget.dart';
+import '../../data/models/project_model.dart';
 
 class MobileProjectWidget extends StatelessWidget {
+  final ProjectModel project;
   const MobileProjectWidget({
+    required this.project,
     super.key,
-    required this.portfolioImage,
-    required this.title,
-    required this.subTitle,
   });
-
-  final String portfolioImage;
-  final String title;
-  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +22,14 @@ class MobileProjectWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          title,
+          project.title,
           style: const TextStyle(
             fontSize: 25.0,
             fontWeight: FontWeight.w700,
           ),
         ),
         Text(
-          subTitle,
+          project.subTitle,
           style: const TextStyle(
             fontSize: 18.0,
           ),
@@ -50,7 +45,7 @@ class MobileProjectWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0.r),
               child: PortfolioImageWidget(
                 // width: PortfolioConstants.portfolio_screen_width() / 2.5,
-                url: portfolioImage,
+                url: project.images.first,
               ),
             ),
           ),

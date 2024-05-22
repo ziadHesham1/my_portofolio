@@ -20,7 +20,7 @@ class ContactInfoWidget extends StatelessWidget {
         vertical: 20.h,
       ),
       child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           ListTile(

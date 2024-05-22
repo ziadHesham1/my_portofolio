@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               navigatorKey: PortfolioNavigator.navigatorState,
               debugShowCheckedModeBanner: false,
               onGenerateRoute: PortfolioNavigator.onCreateRoute,
-              title: 'Flutter Demo',
+              title: 'Ziad Dev',
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,

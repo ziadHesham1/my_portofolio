@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/presentation/sections/contact_me_section.dart';
 
 import '../common/portfolio_constants.dart';
 import '../common/style/portfolio_colors.dart';
@@ -30,16 +31,8 @@ class _LandingPageState extends State<LandingPage> {
     context.read<ProjectsCubit>().getProjects();
   }
 
-  final List navbarKeys = List.generate(4, (index) => GlobalKey());
-
   @override
   Widget build(BuildContext context) {
-    final List<({String label, IconData iconData})> actionLabels = [
-      (label: 'Home', iconData: Icons.home_outlined),
-      (label: 'About', iconData: Icons.info_outline_rounded),
-      (label: 'Projects', iconData: Icons.work_outlined),
-      (label: 'Contact', iconData: Icons.contact_page)
-    ];
     final ScrollController scrollController = ScrollController();
     return Scaffold(
       backgroundColor: PortfolioColors.primaryColor,
@@ -47,7 +40,8 @@ class _LandingPageState extends State<LandingPage> {
           ? PreferredSize(
               preferredSize: Size(double.maxFinite, 100.h),
               child: NavbarSection(
-                  actionLabels: actionLabels, onNavbarItemTap: onNavbarItemTap),
+                  actionLabels: PortfolioConstants.actionLabels,
+                  onNavbarItemTap: onNavbarItemTap),
             )
           : AppBar(
               title: const NameWidget(),
@@ -73,16 +67,19 @@ class _LandingPageState extends State<LandingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(key: navbarKeys.first),
+                SizedBox(key: PortfolioConstants.navbarKeys.first),
                 const HomeSection(),
                 SizedBox(height: 40.h),
-                AboutSection(key: navbarKeys[1]),
+                AboutSection(key: PortfolioConstants.navbarKeys[1]),
                 SizedBox(height: 40.h),
-                ProjectsSection(key: navbarKeys[2]),
+                ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
                 SizedBox(height: 40.h),
-                SendEmailSection(
-                  key: navbarKeys[3],
+                ContactMeSection(
+                  key: PortfolioConstants.navbarKeys[3],
                 ),
+                // SendEmailSection(
+                //   key: PortfolioConstants.navbarKeys[3],
+                // ),
                 SizedBox(height: 40.h),
                 const FooterSection(),
                 SizedBox(height: 40.h),
@@ -96,7 +93,7 @@ class _LandingPageState extends State<LandingPage> {
               shape: const BeveledRectangleBorder(),
               backgroundColor: PortfolioColors.primaryColor,
               child: MobileNavigationButtons(
-                actionLabels: actionLabels,
+                actionLabels: PortfolioConstants.actionLabels,
                 onNavbarItemTap: onNavbarItemTap,
               ),
             )
@@ -106,7 +103,7 @@ class _LandingPageState extends State<LandingPage> {
 
   onNavbarItemTap(int index) {
     Scrollable.ensureVisible(
-      navbarKeys[index].currentContext!,
+      PortfolioConstants.navbarKeys[index].currentContext!,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );

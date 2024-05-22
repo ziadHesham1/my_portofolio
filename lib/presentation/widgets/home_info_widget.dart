@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
 import '../../common/style/portfolio_text_theme.dart';
 import '../../common/widgets/buttons/portfolio_button_export.dart';
@@ -81,7 +82,9 @@ class HomeInfoWidget extends StatelessWidget {
                   child: PortfolioButton(
                     button: PortfolioElevatedButton(
                       radius: 8.r,
-                      onPressed: () {},
+                      onPressed: () {
+                        onNavbarItemTap(3);
+                      },
                       text: 'Contact me',
                     ),
                   ),
@@ -93,7 +96,9 @@ class HomeInfoWidget extends StatelessWidget {
                     button: PortfolioElevatedButton(
                       radius: 8,
                       color: PortfolioColors.secondaryColor,
-                      onPressed: () {},
+                      onPressed: () {
+                        onNavbarItemTap(2);
+                      },
                       text: 'View my work',
                     ),
                   ),
@@ -114,6 +119,14 @@ class HomeInfoWidget extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  onNavbarItemTap(int index) {
+    Scrollable.ensureVisible(
+      PortfolioConstants.navbarKeys[index].currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

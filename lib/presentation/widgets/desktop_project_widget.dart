@@ -39,64 +39,67 @@ class DesktopProjectWidget extends StatelessWidget {
             height: PortfolioConstants.portfolio_screen_height() / 3,
             url: project.images.first,
           ),
-          SizedBox(
-            // width: PortfolioConstants.portfolio_screen_width() / 2,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  project.title,
-                  style: const TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                Text(
-                  project.subTitle,
-                  style: const TextStyle(
-                    fontSize: 18.0,
-                  ),
-                ),
-                const SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    PortfolioButton(
-                      button: PortfolioTextButton(
-                        buttonStyle: const TextStyle(
-                          fontWeight: FontWeight.normal,
-                          color: PortfolioColors.black,
-                        ),
-                        onPressed: () {},
-                        buttonLabel: 'View on Github ',
-                        widget: PortfolioImageWidget(
-                          url: PortfolioAssets.github_icon,
-                          height: 40,
-                        ),
-                      ),
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 450),
+            child: SizedBox(
+              // width: PortfolioConstants.portfolio_screen_width() / 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    project.title,
+                    style: const TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.w700,
                     ),
-                    const SizedBox(width: 50),
-                    PortfolioButton(
-                      button: PortfolioTextButton(
-                        buttonStyle: const TextStyle(
-                          fontWeight: FontWeight.normal,
-                          color: PortfolioColors.black,
-                        ),
-                        onPressed: () {},
-                        buttonLabel: 'Live Preview',
-                        widget: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: FaIcon(
-                            FontAwesomeIcons.arrowUpRightFromSquare,
+                  ),
+                  Text(
+                    project.subTitle,
+                    style: const TextStyle(
+                      fontSize: 18.0,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      PortfolioButton(
+                        button: PortfolioTextButton(
+                          buttonStyle: const TextStyle(
+                            fontWeight: FontWeight.normal,
                             color: PortfolioColors.black,
-                            size: 20,
+                          ),
+                          onPressed: () {},
+                          buttonLabel: 'View on Github ',
+                          widget: PortfolioImageWidget(
+                            url: PortfolioAssets.github_icon,
+                            height: 40,
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                      const SizedBox(width: 50),
+                      PortfolioButton(
+                        button: PortfolioTextButton(
+                          buttonStyle: const TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: PortfolioColors.black,
+                          ),
+                          onPressed: () {},
+                          buttonLabel: 'Live Preview',
+                          widget: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: FaIcon(
+                              FontAwesomeIcons.arrowUpRightFromSquare,
+                              color: PortfolioColors.black,
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

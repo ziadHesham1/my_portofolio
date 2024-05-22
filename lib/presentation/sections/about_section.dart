@@ -13,17 +13,15 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     var children = [
       aboutItemWidget(
-        maxWidth: 400,
+        maxWidth: 500,
         title: 'ABOUT ME 🚀',
         subTitle: 'Who I am',
         child: const Text(
-          'As a junior front-end developer, I am skilled in HTML,'
-          'CSS, JavaScript, and Bootstrap. I have a meticulous'
-          'eye for design which allows me to create beautiful,'
-          'responsive websites from the ground up. My specialty'
-          'involves utilizing Ul/UX best practices alongside'
-          'clean, efficient code to deliver impeccable digital'
-          'experiences.',
+          "As a Flutter developer, I’m dedicated to building high-performance, cross-platform mobile applications."
+          " My journey in software development has equipped me with strong problem-solving skills and a keen eye for detail."
+          " I enjoy creating user-centric apps that are both functional and visually appealing."
+          " Always eager to learn, I stay updated with the latest trends in technology. "
+          " Let’s collaborate and turn your ideas into reality!",
           style: TextStyle(
             fontSize: PortfolioTextTheme.fontSize16,
           ),
@@ -31,7 +29,7 @@ class AboutSection extends StatelessWidget {
       ),
       const SizedBox(height: 60),
       aboutItemWidget(
-        maxWidth: 450,
+        maxWidth: 500,
 
         // width: PortfolioConstants.portfolio_screen_width() / 2.5,
         title: 'TECH STACK',

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/data/models/project_action_links.dart';
 
 import '../../common/portfolio_assets.dart';
 import '../../common/portfolio_constants.dart';
@@ -16,7 +17,7 @@ class ProjectsSection extends StatelessWidget {
     final projects = [
       ProjectModel(
         id: '1',
-        actionLinks: const ActionLinks(
+        actionLinks: const ProjectActionLinks(
           demoVideo: 'https://ziad-dev-e015d.web.app/',
           github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
@@ -45,21 +46,9 @@ class ProjectsSection extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 40.0.h),
-            child: /* BlocBuilder<ProjectsCubit, ProjectsState>(
-                builder: (context, state) {
-              ProjectsModel projects = ProjectsModel.empty();
-              if (state.status == ProjectsStatus.loaded) {
-                projects = state.projects;
-              } else {
-                return const Center(child: CircularProgressIndicator());
-              }
-              if (projects.items.isEmpty) {
-                return Container();
-              }
-              // return Container(); 
-              return */
-                Column(
+            child: Column(
               children: projects.map((project) {
+                // refactor this code to be one widget
                 if (PortfolioConstants.isDesktop()) {
                   return DesktopProjectWidget(project: project);
                 } else {

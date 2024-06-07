@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfolio/presentation/sections/contact_me_section.dart';
 
 import '../common/portfolio_constants.dart';
 import '../common/style/portfolio_colors.dart';
 import '../logic/cubit/projects_cubit.dart';
 import 'sections/about_section.dart';
+import 'sections/contact_me_section.dart';
 import 'sections/footer_section.dart';
 import 'sections/home_section.dart';
 import 'sections/navbar_section.dart';
 import 'sections/projects_section.dart';
-import 'sections/send_email_section.dart';
 import 'widgets/mobile_navigation_buttons.dart';
 import 'widgets/name_widget.dart';
 

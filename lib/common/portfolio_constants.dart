@@ -7,6 +7,11 @@ import 'navigation/portfolio_navigator.dart';
 
 abstract class PortfolioConstants {
   static final List navbarKeys = List.generate(4, (index) => GlobalKey());
+  // Constants for social links
+  static const String githubUrl = 'https://github.com/ziadHesham1';
+  static const String linkedinUrl = 'https://www.linkedin.com/in/ziad-hesham';
+  static const String whatsappUrl = 'https://wa.me/201116791408';
+  static const String telegramUrl = 'https://t.me/ZiadHesham12';
 
   static final List<({String label, IconData iconData})> actionLabels = [
     (label: 'Home', iconData: Icons.home_outlined),

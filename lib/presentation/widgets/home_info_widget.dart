@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../common/network/url_helper.dart';
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
 import '../../common/style/portfolio_text_theme.dart';
@@ -110,7 +111,9 @@ class HomeInfoWidget extends StatelessWidget {
                     button: PortfolioIconButton(
                         hasBorder: false,
                         color: Colors.transparent,
-                        onPressed: () {},
+                        onPressed: () {
+                          UrlHelper.launchURL(PortfolioConstants.githubUrl);
+                        },
                         icon: const FaIcon(FontAwesomeIcons.github)),
                   ),
                 ),

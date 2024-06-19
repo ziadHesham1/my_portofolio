@@ -11,6 +11,7 @@ class AboutSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('width = ${MediaQuery.of(context).size.width}');
     var children = [
       aboutItemWidget(
         maxWidth: 500,
@@ -30,8 +31,6 @@ class AboutSection extends StatelessWidget {
       const SizedBox(height: 60),
       aboutItemWidget(
         maxWidth: 500,
-
-        // width: PortfolioConstants.portfolio_screen_width() / 2.5,
         title: 'TECH STACK',
         subTitle: 'What I\'m good at 💻',
         child: Padding(
@@ -45,13 +44,15 @@ class AboutSection extends StatelessWidget {
                 child: ResponsiveRow(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  enable: PortfolioConstants.portfolio_screen_width() <= 600,
+                  // if width greater that 600 make it a row
+                  // else make it a colum
+                  minRowWidth: 600,
                   children: [
                     aboutItemWidget(
                       title: 'SPECIALTY',
                       subTitle: 'Flutter Developer',
                     ),
-                    // const SizedBox(width: 14),
+                    const SizedBox(width: 14),
                     aboutItemWidget(
                       title: 'EDUCATION',
                       subTitle: '🎓 AIET, Computer Engineering',
@@ -64,22 +65,27 @@ class AboutSection extends StatelessWidget {
         ),
       ),
     ];
-    if (PortfolioConstants.isDesktop()) {
-      return ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 1300),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: children,
-        ),
-      );
-    } else {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: children,
-      );
-    }
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 1000) {
+          return ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1300),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children,
+            ),
+          );
+        } else {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: children,
+          );
+        }
+      },
+    );
   }
 
   Widget aboutItemWidget({
@@ -91,7 +97,6 @@ class AboutSection extends StatelessWidget {
     return Container(
       constraints: maxWidth == null ? null : BoxConstraints(maxWidth: maxWidth),
       padding: const EdgeInsets.all(8),
-      // width: maxWidth,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

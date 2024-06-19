@@ -12,6 +12,7 @@ environment:
 dependencies:
   bloc: ^8.1.4
   cached_network_image: ^3.3.1
+  carousel_slider: ^4.2.1
   collection: ^1.18.0
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
@@ -20,6 +21,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.5
+  flutter_bootstrap: ^2.0.0
+  flutter_bootstrap5: ^1.1.1+1
   flutter_localizations:
     sdk: flutter
   flutter_screenutil: ^5.9.0

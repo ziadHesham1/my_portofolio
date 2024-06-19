@@ -22,6 +22,28 @@ abstract class PortfolioAssets {
   static final String portfolio_image = addImage('portfolio_image.png');
   static final String the_flutter_image = addImage('the_flutter_image.png');
 
+  static final List<String> eduz_images = [
+    addImage('eduz_1.jpeg'),
+    addImage('eduz_2.jpeg')
+  ];
+
+  static final List<String> ischooler_images = [
+    addImage('ischooler_1.jpeg'),
+    addImage('ischooler_2.jpeg')
+  ];
+  static final List<String> spaceteens_images = [
+    addImage('ischooler_1.jpeg'),
+    addImage('ischooler_2.jpeg')
+  ];
+
+  static final List<String> mawjood_images = [
+    addImage('mawjood_1.jpeg'),
+    addImage('mawjood_2.jpeg'),
+    addImage('mawjood_3.jpeg')
+  ];
+
+  static final String ziad_picture = addImage('ziad_picture.jpg');
+
   //------------------------------- gif ---------------------------------------
   // Add GIF assets here if you have any
 }

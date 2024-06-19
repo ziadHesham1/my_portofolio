@@ -2,11 +2,11 @@ import 'package:equatable/equatable.dart';
 
 class ProjectActionLinks extends Equatable {
   final String demoVideo;
-  final String github;
+  final String? github;
 
   const ProjectActionLinks({
     required this.demoVideo,
-    required this.github,
+    this.github,
   });
 
   @override

@@ -31,8 +31,10 @@ class AboutSkillsWidget extends StatelessWidget {
       shadowColor: PortfolioColors.secondaryColor.withOpacity(0.5),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          spacing: 8.0,
+          runSpacing: 8.0,
           children: [
             ...List.generate(
               skillIcons.length,

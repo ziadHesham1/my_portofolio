@@ -21,22 +21,23 @@ class ProjectActionButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        PortfolioButton(
-          button: PortfolioTextButton(
-            buttonLabel: 'View on Github ',
-            buttonStyle: const TextStyle(
-              fontWeight: FontWeight.normal,
-              color: PortfolioColors.black,
-            ),
-            onPressed: () {
-              UrlHelper.launchURL(project.actionLinks.github);
-            },
-            widget: PortfolioImageWidget(
-              url: PortfolioAssets.github_icon,
-              height: 40,
+        if (project.actionLinks.github != null)
+          PortfolioButton(
+            button: PortfolioTextButton(
+              buttonLabel: 'View on Github ',
+              buttonStyle: const TextStyle(
+                fontWeight: FontWeight.normal,
+                color: PortfolioColors.black,
+              ),
+              onPressed: () {
+                UrlHelper.launchURL(project.actionLinks.github!);
+              },
+              widget: PortfolioImageWidget(
+                url: PortfolioAssets.github_icon,
+                height: 40,
+              ),
             ),
           ),
-        ),
         const SizedBox(width: 50),
         PortfolioButton(
           button: PortfolioTextButton(

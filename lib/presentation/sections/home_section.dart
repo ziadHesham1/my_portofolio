@@ -29,6 +29,7 @@ class HomeSection extends StatelessWidget {
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 1200),
       child: ResponsiveRow(
+        minRowWidth: 900,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: children,
       ),

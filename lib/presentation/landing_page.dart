@@ -1,10 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/common/portfolio_assets.dart';
+import '../common/widgets/buttons/portfolio_image_widget.dart';
 
 import '../common/portfolio_constants.dart';
 import '../common/style/portfolio_colors.dart';
-import '../logic/cubit/projects_cubit.dart';
 import 'sections/about_section.dart';
 import 'sections/contact_me_section.dart';
 import 'sections/footer_section.dart';
@@ -25,11 +26,11 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<ProjectsCubit>().getProjects();
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   context.read<ProjectsCubit>().getProjects();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -55,39 +56,8 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
             ),
-      body: Center(
-        child: Container(
-          alignment: Alignment.center,
-          // constraints: const BoxConstraints(maxWidth: 1600),
-          padding: (PortfolioConstants.isDesktop())
-              ? const EdgeInsets.symmetric(horizontal: 50.0)
-              : const EdgeInsets.symmetric(horizontal: 20.0),
-          child: SingleChildScrollView(
-            controller: scrollController,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SizedBox(key: PortfolioConstants.navbarKeys.first),
-                const HomeSection(),
-                SizedBox(height: 40.h),
-                AboutSection(key: PortfolioConstants.navbarKeys[1]),
-                SizedBox(height: 40.h),
-                ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
-                SizedBox(height: 40.h),
-                ContactMeSection(
-                  key: PortfolioConstants.navbarKeys[3],
-                ),
-                // SendEmailSection(
-                //   key: PortfolioConstants.navbarKeys[3],
-                // ),
-                SizedBox(height: 40.h),
-                const FooterSection(),
-                SizedBox(height: 40.h),
-              ],
-            ),
-          ),
-        ),
-      ),
+      // body: NewWidget(),
+      body: newMethod(scrollController),
       endDrawer: (!(PortfolioConstants.isDesktop()))
           ? Drawer(
               shape: const BeveledRectangleBorder(),
@@ -98,6 +68,42 @@ class _LandingPageState extends State<LandingPage> {
               ),
             )
           : null,
+    );
+  }
+
+  Center newMethod(ScrollController scrollController) {
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        // constraints: const BoxConstraints(maxWidth: 1600),
+        padding: (PortfolioConstants.isDesktop())
+            ? const EdgeInsets.symmetric(horizontal: 50.0)
+            : const EdgeInsets.symmetric(horizontal: 20.0),
+        child: SingleChildScrollView(
+          controller: scrollController,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(key: PortfolioConstants.navbarKeys.first),
+              const HomeSection(),
+              SizedBox(height: 40.h),
+              AboutSection(key: PortfolioConstants.navbarKeys[1]),
+              SizedBox(height: 40.h),
+              ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
+              SizedBox(height: 40.h),
+              ContactMeSection(
+                key: PortfolioConstants.navbarKeys[3],
+              ),
+              // SendEmailSection(
+              //   key: PortfolioConstants.navbarKeys[3],
+              // ),
+              SizedBox(height: 40.h),
+              const FooterSection(),
+              SizedBox(height: 40.h),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

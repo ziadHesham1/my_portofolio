@@ -37,28 +37,30 @@ class ProjectsModel extends Equatable {
         title: 'Portfolio Website',
       ),
       ProjectModel(
+        // projectType: ProjectType.website,
         id: '2',
         actionLinks: const ProjectActionLinks(
           demoVideo:
               'https://drive.google.com/file/d/1rvDBa2mDqJi2VCV39nNnmpkflEKflcCy/view?usp=sharing',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: PortfolioAssets.ischooler_images,
+        images: [PortfolioAssets.ischooler_thumbnail],
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'Ischooler Mobile App',
       ),
       ProjectModel(
+        // projectType: ProjectType.website,
         id: '3',
         actionLinks: const ProjectActionLinks(
           demoVideo:
-              'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',
+              'https://drive.google.com/file/d/1rvDBa2mDqJi2VCV39nNnmpkflEKflcCy/view?usp=sharing',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: PortfolioAssets.eduz_images,
+        images: [PortfolioAssets.mawjood_thumbnail],
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
-        title: 'eduz Mobile App',
+        title: 'Mawjood Mobile App',
       ),
       ProjectModel(
         id: '4',
@@ -67,7 +69,19 @@ class ProjectsModel extends Equatable {
               'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: PortfolioAssets.spaceteens_images,
+        images: [PortfolioAssets.eduz_thumbnail],
+        subTitle:
+            'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
+        title: 'Eduz Mobile App',
+      ),
+      ProjectModel(
+        id: '5',
+        actionLinks: const ProjectActionLinks(
+          demoVideo:
+              'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',
+          // github: 'https://github.com/ziadHesham1/my_portofolio',
+        ),
+        images: [PortfolioAssets.mawjood_thumbnail],
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'SpaceTeens Mobile App',

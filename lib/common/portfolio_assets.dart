@@ -19,8 +19,11 @@ abstract class PortfolioAssets {
   static final String blank_profile_image =
       addImage('blank-profile-picture.png');
   static final String empty_image = addImage('placeholder_image.png');
-  static final String portfolio_image = addImage('portfolio_image.png');
+  static final String portfolio_image = addImage('0-portfolio_image.png');
   static final String the_flutter_image = addImage('the_flutter_image.png');
+  static final String ischooler_thumbnail = addImage('ischooler_thumbnail.png');
+  static final String mawjood_thumbnail = addImage('mawjood_thumbnail.png');
+  static final String eduz_thumbnail = addImage('eduz_thumbnail.png');
 
   static final List<String> eduz_images = [
     addImage('eduz_1.jpeg'),
@@ -31,6 +34,7 @@ abstract class PortfolioAssets {
     addImage('ischooler_1.jpeg'),
     addImage('ischooler_2.jpeg')
   ];
+
   static final List<String> spaceteens_images = [
     addImage('ischooler_1.jpeg'),
     addImage('ischooler_2.jpeg')

@@ -19,23 +19,21 @@ class ProjectImagesWidget extends StatefulWidget {
 class _ProjectImagesWidgetState extends State<ProjectImagesWidget> {
   @override
   Widget build(BuildContext context) {
-    if (widget.project.projectType == ProjectType.website) {
-      return Material(
-          elevation: 4.0,
-          shadowColor: PortfolioColors.black,
-          borderRadius: BorderRadius.circular(10.0.r),
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(10.0.r),
-              child: PortfolioImageWidget(
-                // width: PortfolioConstants.portfolio_screen_width() / 2.2,
-                height: PortfolioConstants.portfolio_screen_height() / 3,
-                url: widget.project.images.isNotEmpty
-                    ? widget.project.images.first
-                    : '',
-              )));
-    } else {
-      return NewWidget(imagesList: widget.project.images);
-    }
+    // if (widget.project.projectType == ProjectType.website) {
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(10.0.r),
+        child: PortfolioImageWidget(
+          width: (widget.project.projectType == ProjectType.website)
+              ? PortfolioConstants.portfolio_screen_width() / 3
+              : PortfolioConstants.portfolio_screen_width() / 2,
+          // height: Por  tfolioConstants.portfolio_screen_height() / 3,
+          url: widget.project.images.isNotEmpty
+              ? widget.project.images.first
+              : '',
+        ));
+    // } else {
+    //   return NewWidget(imagesList: widget.project.images);
+    // }
   }
 }
 

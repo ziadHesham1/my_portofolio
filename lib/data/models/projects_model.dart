@@ -32,6 +32,7 @@ class ProjectsModel extends Equatable {
           github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
         images: [PortfolioAssets.portfolio_image],
+        thumbnail: PortfolioAssets.portfolio_image,
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'Portfolio Website',
@@ -44,7 +45,8 @@ class ProjectsModel extends Equatable {
               'https://drive.google.com/file/d/1rvDBa2mDqJi2VCV39nNnmpkflEKflcCy/view?usp=sharing',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: [PortfolioAssets.ischooler_thumbnail],
+        images: PortfolioAssets.ischooler_images,
+        thumbnail: PortfolioAssets.ischooler_thumbnail,
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'Ischooler Mobile App',
@@ -57,7 +59,8 @@ class ProjectsModel extends Equatable {
               'https://drive.google.com/file/d/1rvDBa2mDqJi2VCV39nNnmpkflEKflcCy/view?usp=sharing',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: [PortfolioAssets.mawjood_thumbnail],
+        images: PortfolioAssets.mawjood_images,
+        thumbnail: PortfolioAssets.mawjood_thumbnail,
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'Mawjood Mobile App',
@@ -69,7 +72,8 @@ class ProjectsModel extends Equatable {
               'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: [PortfolioAssets.eduz_thumbnail],
+        images: PortfolioAssets.eduz_images,
+        thumbnail: PortfolioAssets.eduz_thumbnail,
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'Eduz Mobile App',
@@ -81,7 +85,8 @@ class ProjectsModel extends Equatable {
               'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',
           // github: 'https://github.com/ziadHesham1/my_portofolio',
         ),
-        images: [PortfolioAssets.mawjood_thumbnail],
+        images: PortfolioAssets.spaceteens_images,
+        thumbnail: PortfolioAssets.spaceteens_thumbnail,
         subTitle:
             'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
         title: 'SpaceTeens Mobile App',

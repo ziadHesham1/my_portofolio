@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../common/style/portfolio_colors.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/widgets/buttons/portfolio_image_widget.dart';
@@ -19,21 +18,29 @@ class ProjectImagesWidget extends StatefulWidget {
 class _ProjectImagesWidgetState extends State<ProjectImagesWidget> {
   @override
   Widget build(BuildContext context) {
-    // if (widget.project.projectType == ProjectType.website) {
-    return ClipRRect(
-        borderRadius: BorderRadius.circular(10.0.r),
-        child: PortfolioImageWidget(
-          width: (widget.project.projectType == ProjectType.website)
-              ? PortfolioConstants.portfolio_screen_width() / 3
-              : PortfolioConstants.portfolio_screen_width() / 2,
-          // height: Por  tfolioConstants.portfolio_screen_height() / 3,
-          url: widget.project.images.isNotEmpty
-              ? widget.project.images.first
-              : '',
-        ));
-    // } else {
-    //   return NewWidget(imagesList: widget.project.images);
-    // }
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth > 1000) {
+          return ClipRRect(
+              borderRadius: BorderRadius.circular(10.0.r),
+              child: PortfolioImageWidget(
+                width: (widget.project.projectType == ProjectType.website)
+                    ? PortfolioConstants.portfolio_screen_width() / 3
+                    : PortfolioConstants.portfolio_screen_width() / 2,
+                url: widget.project.thumbnail,
+              ));
+        } else if (constraints.maxWidth <= 1000 &&
+            widget.project.projectType == ProjectType.website) {
+          return ClipRRect(
+              borderRadius: BorderRadius.circular(10.0.r),
+              child: PortfolioImageWidget(
+                url: widget.project.thumbnail,
+              ));
+        } else {
+          return NewWidget(imagesList: widget.project.images);
+        }
+      },
+    );
   }
 }
 
@@ -47,12 +54,10 @@ class NewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width / 3,
       child: CarouselSlider(
         options: CarouselOptions(
-          height: PortfolioConstants.portfolio_screen_height() / 2.5,
-          aspectRatio: 16 / 9,
-          viewportFraction: 0.8,
+          height: PortfolioConstants.portfolio_screen_height() / 2.6,
+          viewportFraction: 0.6,
           initialPage: 0,
           enableInfiniteScroll: true,
           reverse: false,
@@ -61,8 +66,7 @@ class NewWidget extends StatelessWidget {
           autoPlayAnimationDuration: const Duration(milliseconds: 800),
           autoPlayCurve: Curves.fastOutSlowIn,
           enlargeCenterPage: true,
-          enlargeFactor: 0.3,
-          // onPageChanged: callbackFunction,
+          enlargeFactor: 0.2,
           scrollDirection: Axis.horizontal,
         ),
         items: imagesList.map((i) {

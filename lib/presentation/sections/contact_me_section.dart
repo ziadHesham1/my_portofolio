@@ -5,9 +5,7 @@ import '../widgets/contact_info_widget.dart';
 import '../widgets/social_icons_widget.dart';
 
 class ContactMeSection extends StatelessWidget {
-  const ContactMeSection({
-    super.key,
-  });
+  const ContactMeSection({super.key});
 
   @override
   Widget build(BuildContext context) {

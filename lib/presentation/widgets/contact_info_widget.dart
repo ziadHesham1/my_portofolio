@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter/services.dart'; // Add this import for clipboard functionality
+import 'package:flutter/services.dart';
 
 class ContactInfoWidget extends StatelessWidget {
   const ContactInfoWidget({
@@ -34,10 +34,11 @@ class ContactInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // color: Colors.red,
       constraints: const BoxConstraints(maxWidth: 320, maxHeight: 250),
       padding: EdgeInsets.symmetric(
         horizontal: 10.w,
-        vertical: 20.h,
+        // vertical: 20.h,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,8 +48,11 @@ class ContactInfoWidget extends StatelessWidget {
             contentPadding: const EdgeInsets.symmetric(horizontal: 4),
             leading: const Icon(Icons.email),
             title: const Text('E-mail'),
-            subtitle: const Text('ziadhesham280@gmail.com'),
-            onTap: () => _composeEmail('ziadhesham280@gmail.com'), // Add onTap
+            subtitle: const Text(
+              'ziadhesham280@gmail.com',
+              overflow: TextOverflow.ellipsis,
+            ),
+            onTap: () => _composeEmail('ziadhesham280@gmail.com'),
           ),
           ListTile(
             leading: const Icon(Icons.phone),
@@ -58,7 +62,7 @@ class ContactInfoWidget extends StatelessWidget {
             onTap: () {
               _copyToClipboard('+201116791408');
               SmartDialog.showToast('Phone number copied to clipboard');
-            }, // Add onTap
+            },
           ),
           ListTile(
             leading: const Icon(Icons.description),

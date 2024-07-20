@@ -17,9 +17,8 @@ class DesktopProjectWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final children = [
-      ProjectImagesWidget(project: project),
-      ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 400),
+      Expanded(child: ProjectImagesWidget(project: project)),
+      Expanded(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

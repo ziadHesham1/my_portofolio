@@ -41,7 +41,7 @@ class ProjectsModel extends Equatable {
         // projectType: ProjectType.website,
         title: 'Ischooler Mobile App',
         subTitle:
-            'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
+            'A side project designed to provide a comprehensive platform for schools. Manages student data, weekly timetables, and homework assignments, and includes features for school updates and news. Aims to streamline school administration and enhance communication between the school and its community.',
         id: '2',
         actionLinks: const ProjectActionLinks(
           demoVideo:
@@ -68,7 +68,7 @@ class ProjectsModel extends Equatable {
         id: '4',
         title: 'Eduz Mobile App',
         subTitle:
-            'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
+            'An educational e-commerce app offering a range of school and education-related products and services. Features include user authentication, real-time updates, comprehensive product listings, and efficient order management. Designed to streamline access to educational resources. Developed as a freelance project.',
         actionLinks: const ProjectActionLinks(
             // demoVideo:
             // 'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',
@@ -81,7 +81,7 @@ class ProjectsModel extends Equatable {
         id: '5',
         title: 'SpaceTeens Mobile App',
         subTitle:
-            'A personal portfolio website designed to showcase my skills, projects, and experiences as a Flutter developer.',
+            'A mobile application designed as a platform for Spaceteens Robotics Academy designed for kids, offering features such as academy news, student data and progress tracking, and communication tools for students, teachers, and parents. Facilitates engagement and keeps all stakeholders informed and connected. Developed as a freelance project.',
         actionLinks: const ProjectActionLinks(
           demoVideo:
               'https://drive.google.com/file/d/1PwdIMuYNk75z5dsb68wQf7Y8ak_DHyaQ/view?usp=drive_link',

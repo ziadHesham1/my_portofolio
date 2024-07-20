@@ -1,9 +1,9 @@
 {
-    "name": "my_portfolio",
-    "short_name": "my_portfolio",
+    "name": "my_portofolio",
+    "short_name": "my_portofolio",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#0175C2",
     "theme_color": "#0175C2",
     "description": "A new Flutter project.",
     "orientation": "portrait-primary",

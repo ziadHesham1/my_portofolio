@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../common/style/portfolio_text_theme.dart';
 import '../../data/models/project_model.dart';
 
@@ -11,45 +12,30 @@ class ProjectInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          project.title,
-          style: const TextStyle(
-            fontSize: PortfolioTextTheme.fontSize28,
-            fontWeight: FontWeight.w700,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 400),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            project.title,
+            style: const TextStyle(
+              fontSize: PortfolioTextTheme.fontSize28,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        Text(
-          project.subTitle,
-          style: const TextStyle(
-            fontSize: PortfolioTextTheme.fontSize18,
+          SizedBox(height: 20.h),
+          Text(
+            project.subTitle,
+            style: const TextStyle(
+              fontSize: PortfolioTextTheme.fontSize16,
+              color: Colors.black87,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
-        ),
-        const SizedBox(height: 30),
-      ],
+          const SizedBox(height: 30),
+        ],
+      ),
     );
   }
-}
-
-class AppColors {
-  // Primary Colors
-  static const Color deepPurple = Color(0xFF5A2D82);
-  static const Color lavenderBlue = Color(0xFF7C83DB);
-
-  // Secondary Colors
-  static const Color softWhite = Color(0xFFF9F9FB);
-  static const Color lightGray = Color(0xFFE0E0E0);
-  static const Color lilac = Color(0xFFD6B1E6);
-
-  // Accent Colors
-  static const Color brightCoral = Color(0xFFE74C3C);
-  static const Color softGreen = Color(0xFF2ECC71);
-
-  // Text Colors
-  static const Color buttonText = Color(0xFFFFFFFF);
-  static const Color primaryText = deepPurple;
-  static const Color secondaryText = lightGray;
 }

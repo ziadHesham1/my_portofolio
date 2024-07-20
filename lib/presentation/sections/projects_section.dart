@@ -43,7 +43,7 @@ class ProjectsSection extends StatelessWidget {
                     } else ...{
                       MobileProjectWidget(project: project)
                     },
-                    Container(height: 60),
+                    Container(height: 100.h),
                   ],
                 );
               }).toList(),

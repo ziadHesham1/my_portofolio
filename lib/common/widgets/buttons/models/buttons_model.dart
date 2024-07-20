@@ -29,7 +29,7 @@ class PortfolioElevatedButton extends IPortfolioButton {
 }
 
 class PortfolioTextButton extends IPortfolioButton {
-  final String? leadingText;
+  // final String? leadingText;
   final String buttonLabel;
   final bool hasUnderline;
   final TextStyle? buttonStyle;
@@ -37,7 +37,7 @@ class PortfolioTextButton extends IPortfolioButton {
   //final BuildContext context;
 
   const PortfolioTextButton({
-    this.leadingText,
+    // this.leadingText,
     required super.onPressed,
     required this.buttonLabel,
     super.color,

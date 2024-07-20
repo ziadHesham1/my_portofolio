@@ -30,7 +30,6 @@ class HomeInfoWidget extends StatelessWidget {
           const Text(
             'Ziad Adam 👋',
             style: TextStyle(
-              // fontSize: 40.0,
               fontSize: PortfolioTextTheme.fontSize40,
               fontWeight: FontWeight.w700,
             ),
@@ -56,7 +55,7 @@ class HomeInfoWidget extends StatelessWidget {
                     style: TextStyle(
                       fontSize: PortfolioTextTheme.fontSize16,
                       fontWeight: FontWeight.bold,
-                      color: PortfolioColors.secondaryColor,
+                      color: PortfolioColors.accentColor,
                     ),
                   ),
                   TextSpan(

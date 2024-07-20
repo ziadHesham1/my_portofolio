@@ -9,7 +9,7 @@ abstract class PortfolioColors {
   // When designing for a brand, this color tends to be the secondary color for the brand.
   static const Color secondaryColor = Color(0xff8EE1B5);
   // The accent is used for 10% of the design. This helps ‘accessorize’ the site by giving pops of colors that keep the viewer’s attention.
-  static const Color accentColor = Color(0xff41C37C);
+  static const Color accentColor = Color.fromARGB(255, 2, 195, 89);
 
   static const Color white = Color(0xffFFFFFF);
   static const Color red = Colors.red;

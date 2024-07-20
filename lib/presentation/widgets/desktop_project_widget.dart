@@ -19,16 +19,13 @@ class DesktopProjectWidget extends StatelessWidget {
     final children = [
       ProjectImagesWidget(project: project),
       ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 450),
-        child: SizedBox(
-          // width: PortfolioConstants.portfolio_screen_width() / 2,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ProjectInfoWidget(project: project),
-              ProjectActionButtons(project: project),
-            ],
-          ),
+        constraints: const BoxConstraints(maxWidth: 400),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ProjectInfoWidget(project: project),
+            ProjectActionButtons(project: project),
+          ],
         ),
       ),
     ];

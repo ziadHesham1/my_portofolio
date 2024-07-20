@@ -14,24 +14,24 @@ class HomeSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var children = [
-      const HomeInfoWidget(),
-      ConstrainedBox(
-        constraints: const BoxConstraints(minWidth: 250),
-        child: PortfolioImageWidget(
-          url: PortfolioAssets.the_flutter_image,
-          height: PortfolioConstants.portfolio_screen_height() / 2,
-          width: PortfolioConstants.portfolio_screen_width() / 3,
-          // circleAvatarRadius: 140,
-        ),
-      ),
-    ];
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 1200),
       child: ResponsiveRow(
         minRowWidth: 900,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: children,
+        rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+        childrenBuilder: (isRow) => [
+          if (!isRow) const SizedBox(height: 80),
+          const HomeInfoWidget(),
+          ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: 250),
+            child: PortfolioImageWidget(
+              url: PortfolioAssets.the_flutter_image,
+              height: PortfolioConstants.portfolio_screen_height() / 2,
+              width: PortfolioConstants.portfolio_screen_width() / 3,
+              // circleAvatarRadius: 140,
+            ),
+          ),
+        ],
       ),
     );
   }

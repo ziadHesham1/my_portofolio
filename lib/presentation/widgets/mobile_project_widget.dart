@@ -18,23 +18,14 @@ class MobileProjectWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        ProjectInfoWidget(project: project),
-        ProjectImagesWidget(project: project),
-        // ConstrainedBox(
-        //   constraints: const BoxConstraints(maxWidth: 600),
-        //   child: Material(
-        //     elevation: 4.0,
-        //     shadowColor: PortfolioColors.black,
-        //     borderRadius: BorderRadius.circular(10.0.r),
-        //     child: ClipRRect(
-        //       borderRadius: BorderRadius.circular(10.0.r),
-        //       child: PortfolioImageWidget(
-        //         // width: PortfolioConstants.portfolio_screen_width() / 2.5,
-        //         url: project.images.first,
-        //       ),
-        //     ),
-        //   ),
-        // ),
+        ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 400),
+          child: ProjectInfoWidget(project: project),
+        ),
+        ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 500),
+          child: ProjectImagesWidget(project: project),
+        ),
         const SizedBox(height: 30),
         ProjectActionButtons(project: project),
       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../common/style/portfolio_text_theme.dart';
 import '../../data/models/project_model.dart';
 
 class ProjectInfoWidget extends StatelessWidget {
@@ -16,14 +17,14 @@ class ProjectInfoWidget extends StatelessWidget {
         Text(
           project.title,
           style: const TextStyle(
-            fontSize: 25.0,
+            fontSize: PortfolioTextTheme.fontSize28,
             fontWeight: FontWeight.w700,
           ),
         ),
         Text(
           project.subTitle,
           style: const TextStyle(
-            fontSize: 18.0,
+            fontSize: PortfolioTextTheme.fontSize18,
           ),
           textAlign: TextAlign.center,
         ),

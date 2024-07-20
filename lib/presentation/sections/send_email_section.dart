@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
+import '../../common/style/portfolio_text_theme.dart';
 import '../widgets/contact_info_widget.dart';
 import '../widgets/contact_me_form_widget.dart';
 
@@ -28,14 +29,14 @@ class SendEmailSection extends StatelessWidget {
           const Text(
             'CONTACT ME',
             style: TextStyle(
-              fontSize: 14,
+              fontSize: PortfolioTextTheme.fontSize14,
             ),
           ),
           SizedBox(height: 10.h),
           const Text(
             'Let\'s talk! ✉️',
             style: TextStyle(
-              fontSize: 20.0,
+              fontSize: PortfolioTextTheme.fontSize22,
               color: PortfolioColors.accentColor,
               fontWeight: FontWeight.w700,
             ),

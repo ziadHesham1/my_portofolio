@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../common/style/portfolio_colors.dart';
+import '../../common/style/portfolio_text_theme.dart';
 import '../widgets/contact_info_widget.dart';
 import '../widgets/social_icons_widget.dart';
 
@@ -24,7 +25,7 @@ class ContactMeSection extends StatelessWidget {
           Text(
             'CONTACT ME',
             style: TextStyle(
-              fontSize: 14,
+              fontSize: PortfolioTextTheme.fontSize14,
               fontWeight: FontWeight.bold,
               color: PortfolioColors.accentColor,
             ),
@@ -32,7 +33,7 @@ class ContactMeSection extends StatelessWidget {
           Text(
             'Let\'s talk!',
             style: TextStyle(
-              fontSize: 18.0,
+              fontSize: PortfolioTextTheme.fontSize18,
             ),
           ),
           ContactInfoWidget(),

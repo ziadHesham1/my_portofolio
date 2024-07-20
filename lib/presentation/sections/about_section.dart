@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
 import '../../common/style/portfolio_text_theme.dart';
-import '../widgets/about_skills_widget.dart';
 import '../../common/widgets/responsive_row.dart';
+import '../widgets/about_skills_widget.dart';
 
 class AboutSection extends StatelessWidget {
   const AboutSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    print('width = ${MediaQuery.of(context).size.width}');
     var children = [
       aboutItemWidget(
         maxWidth: 500,
@@ -42,12 +40,12 @@ class AboutSection extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: ResponsiveRow(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  columnCrossAxisAlignment: CrossAxisAlignment.start,
                   // if width greater that 600 make it a row
                   // else make it a colum
-                  minRowWidth: 600,
-                  children: [
+                  minRowWidth: 480,
+                  childrenBuilder: (isRow) => [
                     aboutItemWidget(
                       title: 'SPECIALTY',
                       subTitle: 'Flutter Developer',
@@ -93,17 +91,19 @@ class AboutSection extends StatelessWidget {
     required String subTitle,
     Widget? child,
     double? maxWidth,
+    Color? color,
   }) {
     return Container(
       constraints: maxWidth == null ? null : BoxConstraints(maxWidth: maxWidth),
       padding: const EdgeInsets.all(8),
+      color: color,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
             style: const TextStyle(
-              fontSize: 14,
+              fontSize: PortfolioTextTheme.fontSize14,
               fontWeight: FontWeight.bold,
               color: PortfolioColors.accentColor,
             ),

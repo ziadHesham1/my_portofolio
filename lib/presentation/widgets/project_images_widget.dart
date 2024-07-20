@@ -53,34 +53,31 @@ class NewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      child: CarouselSlider(
-        options: CarouselOptions(
-          height: PortfolioConstants.portfolio_screen_height() / 2.6,
-          viewportFraction: 0.6,
-          initialPage: 0,
-          enableInfiniteScroll: true,
-          reverse: false,
-          autoPlay: true,
-          autoPlayInterval: const Duration(seconds: 3),
-          autoPlayAnimationDuration: const Duration(milliseconds: 800),
-          autoPlayCurve: Curves.fastOutSlowIn,
-          enlargeCenterPage: true,
-          enlargeFactor: 0.2,
-          scrollDirection: Axis.horizontal,
-        ),
-        items: imagesList.map((i) {
-          return Builder(
-            builder: (BuildContext context) {
-              return PortfolioImageWidget(
-                width: PortfolioConstants.portfolio_screen_width() / 2.5,
-                height: 220,
-                url: i,
-              );
-            },
-          );
-        }).toList(),
+    return CarouselSlider(
+      options: CarouselOptions(
+        height: PortfolioConstants.portfolio_screen_height() / 2.2,
+        viewportFraction: 0.6,
+        initialPage: 0,
+        enableInfiniteScroll: true,
+        reverse: false,
+        autoPlay: true,
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+        enlargeCenterPage: true,
+        enlargeFactor: 0.2,
+        scrollDirection: Axis.horizontal,
       ),
+      items: imagesList.map((i) {
+        return Builder(
+          builder: (BuildContext context) {
+            return PortfolioImageWidget(
+              width: PortfolioConstants.portfolio_screen_width() / 2.5,
+              url: i,
+            );
+          },
+        );
+      }).toList(),
     );
   }
 }

@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../portfolio_constants.dart';
 import '../../style/portfolio_colors.dart';
+import '../../style/portfolio_text_theme.dart';
 import 'models/buttons_model.dart';
 import 'models/portfolio_button_interface.dart';
 

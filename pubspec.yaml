@@ -23,8 +23,10 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_bootstrap: ^2.0.0
   flutter_bootstrap5: ^1.1.1+1
+  flutter_launcher_icons: ^0.13.1
   flutter_localizations:
     sdk: flutter
+  flutter_native_splash: ^2.4.1
   flutter_screenutil: ^5.9.0
   flutter_smart_dialog: ^4.9.6+1
   font_awesome_flutter: ^10.7.0
@@ -38,6 +40,19 @@ dev_dependencies:
     sdk: flutter
 flutter_intl:
   enabled: true
+# -------------------------------
+#flutter pub get
+#flutter pub run flutter_launcher_icons
+flutter_icons:
+  # android: true
+  # ios: true
+  # image_path: "assets/images/the_flutter_image.png"
+  # adaptive_icon_background: "#ffffff"
+  # adaptive_icon_foreground: "assets/images/the_flutter_image.png"
+  # web:
+  #   generate: true
+  #   image_path:  "assets/images/the_flutter_image.png"
+  #   background_color: "#ffffff"
   # -------------------------------
 flutter:
 

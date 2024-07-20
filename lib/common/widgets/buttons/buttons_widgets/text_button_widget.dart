@@ -10,84 +10,31 @@ class _TextButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: TextButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.r),
+        style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          padding: EdgeInsets.zero,
         ),
-        padding: EdgeInsets.zero,
-      ),
-      onPressed: portfolioTextButton.onPressed,
-      child: (portfolioTextButton.leadingText != null)
-          ? withLeadingText()
-          : portfolioTextButton.widget != null
-              ? Row(
-                  children: [
-                    Text(
-                      portfolioTextButton.buttonLabel,
-                      style: portfolioTextButton.buttonStyle ??
-                          PortfolioConstants.text_theme.bodyLarge!.copyWith(
-                            decoration: portfolioTextButton.hasUnderline
-                                ? TextDecoration.underline
-                                : TextDecoration.none,
-                            decorationColor: portfolioTextButton.color ??
-                                PortfolioColors.accentColor,
-                            color: portfolioTextButton.color ??
-                                PortfolioColors.accentColor,
-                          ),
-                    ),
-                    Row(
-                      children: [
-                        // SizedBox(width: 3.w),
-                        portfolioTextButton.widget!
-                      ],
-                    ),
-                  ],
-                )
-              : Text(
-                  portfolioTextButton.buttonLabel,
-                  style: portfolioTextButton.buttonStyle ??
-                      PortfolioConstants.text_theme.bodyLarge!.copyWith(
-                        decoration: portfolioTextButton.hasUnderline
-                            ? TextDecoration.underline
-                            : TextDecoration.none,
-                        decorationColor: portfolioTextButton.color ??
-                            PortfolioColors.accentColor,
-                        color: portfolioTextButton.color ??
-                            PortfolioColors.accentColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                ),
-    );
-  }
-
-  SizedBox withLeadingText() {
-    return SizedBox(
-      width: PortfolioConstants.portfolio_screen_width() / 1.3,
-      child: RichText(
-        textAlign: TextAlign.center,
-        text: TextSpan(
-          text: "${portfolioTextButton.leadingText!} ",
-          style: portfolioTextButton.buttonStyle ??
-              PortfolioConstants.text_theme.bodyMedium!
-                  .copyWith(color: PortfolioColors.dark_blue),
+        onPressed: portfolioTextButton.onPressed,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            TextSpan(
-              text: portfolioTextButton.buttonLabel,
+            Text(
+              portfolioTextButton.buttonLabel,
               style: portfolioTextButton.buttonStyle ??
-                  PortfolioConstants.text_theme.bodyMedium!.copyWith(
-                    color: PortfolioColors.accentColor,
-                    fontWeight: FontWeight.bold,
-                    decoration: portfolioTextButton.hasUnderline
-                        ? TextDecoration.underline
-                        : TextDecoration.none,
-                    decorationColor: PortfolioColors.accentColor,
-                  ),
+                  PortfolioConstants.text_theme.bodyLarge!.copyWith(
+                      fontSize: PortfolioTextTheme.fontSize18,
+                      decoration: portfolioTextButton.hasUnderline
+                          ? TextDecoration.underline
+                          : TextDecoration.none,
+                      color: portfolioTextButton.color ?? PortfolioColors.black,
+                      overflow: TextOverflow.clip),
+              overflow: TextOverflow.clip,
+              maxLines: 2,
             ),
+            if (portfolioTextButton.widget != null) portfolioTextButton.widget!,
           ],
-        ),
-        maxLines: 2, // Set the maximum number of lines
-        overflow: TextOverflow.visible, // Set the overflow behavior
-      ),
-    );
+        ));
   }
 }

@@ -2,7 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/portfolio_constants.dart';
-import '../../common/widgets/buttons/portfolio_image_widget.dart';
+import '../../common/widgets/image_widgets/portfolio_image_widget.dart';
+import '../../common/widgets/shimmers_widget.dart';
 
 class ProjectImagesCarouselSlider extends StatelessWidget {
   final List<String> imagesList;
@@ -34,6 +35,7 @@ class ProjectImagesCarouselSlider extends StatelessWidget {
             return PortfolioImageWidget(
               width: PortfolioConstants.portfolio_screen_width() / 2.5,
               url: i,
+              shimmerWidget: const PortfolioShimmerWidget(),
             );
           },
         );

@@ -9,8 +9,8 @@ class ProjectsNetwork {
   final String baseURL = 'https://ziad-dev-e015d-default-rtdb.firebaseio.com/';
 
   ProjectsNetwork(Dio dio) : _dio = dio;
-  Future<Map<String, dynamic>?> getProjects() async {
-    Map<String, dynamic>? responseMap;
+  Future<List<dynamic>?> getProjects() async {
+    List<dynamic>? responseMap;
     try {
       Response response = await _dio.request(
         '$baseURL/projects.json',
@@ -20,8 +20,11 @@ class ProjectsNetwork {
       );
 
       if (response.statusCode == 200) {
-        responseMap = response.data;
-        debugPrint(responseMap.toString());
+        var data = response.data;
+        debugPrint('type = ${data.runtimeType}');
+        if (data is List<dynamic>) {
+          responseMap = data;
+        }
       } else {
         debugPrint(response.statusMessage);
       }

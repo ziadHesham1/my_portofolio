@@ -15,7 +15,7 @@ class PortfolioTextTheme {
     headlineLarge: TextStyle(
       fontWeight: FontWeight.w800,
       fontSize: 36.sp,
-      color: PortfolioColors.accentColor,
+      color: PortfolioColors.accent,
     ),
     headlineMedium: TextStyle(
       fontSize: PortfolioTextTheme.fontSize22.sp,

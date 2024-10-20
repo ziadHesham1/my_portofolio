@@ -9,19 +9,18 @@ class ProjectsRepository {
   const ProjectsRepository(ProjectsNetwork projectsNetwork)
       : _projectsNetwork = projectsNetwork;
   Future<ProjectsModel> getProjects() async {
-    Map<String, dynamic>? response = await _projectsNetwork.getProjects();
+    List<dynamic>? response = await _projectsNetwork.getProjects();
     ProjectsModel projectsList = ProjectsModel.empty();
 
     if (response != null) {
       try {
         projectsList = ProjectsModel.fromJson(response);
-        debugPrint('projectsList = $projectsList');
         return projectsList;
       } catch (e) {
         debugPrint('Failed to get projects, Error : $e');
       }
     } else {
-      debugPrint('Failed to get projects, response is null');
+      debugPrint('Failed to get projects,  is null');
     }
     return projectsList;
   }

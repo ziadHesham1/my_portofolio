@@ -18,7 +18,7 @@ class SendEmailSection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       decoration: BoxDecoration(
         border: Border.all(
-          color: PortfolioColors.secondaryColor,
+          color: PortfolioColors.secondary,
           width: 2,
         ),
         borderRadius: BorderRadius.circular(20),
@@ -37,7 +37,7 @@ class SendEmailSection extends StatelessWidget {
             'Let\'s talk! ✉️',
             style: TextStyle(
               fontSize: PortfolioTextTheme.fontSize22,
-              color: PortfolioColors.accentColor,
+              color: PortfolioColors.accent,
               fontWeight: FontWeight.w700,
             ),
           ),

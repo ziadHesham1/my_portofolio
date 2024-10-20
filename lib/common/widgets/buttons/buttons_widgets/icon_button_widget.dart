@@ -10,7 +10,7 @@ class _IconButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final Color buttonColor = portfolioIconButton.isLightMode
         ? PortfolioColors.white // Background color in light mode
-        : PortfolioColors.secondaryColor; // Background color in dark mode
+        : PortfolioColors.secondary; // Background color in dark mode
 
     // final Color textColor = portfolioIconButton.isLightMode
     //     ? PortfolioColors.secondaryColor

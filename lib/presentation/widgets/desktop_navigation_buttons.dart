@@ -25,7 +25,7 @@ class DesktopNavigationButtons extends StatelessWidget {
               return Row(
                 children: [
                   const VerticalDivider(
-                    color: PortfolioColors.secondaryColor,
+                    color: PortfolioColors.secondary,
                     thickness: 3,
                     indent: 3,
                     endIndent: 3,

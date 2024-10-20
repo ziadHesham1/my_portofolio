@@ -35,7 +35,7 @@ class HomeInfoWidget extends StatelessWidget {
             ),
           ),
           const Divider(
-            color: PortfolioColors.accentColor,
+            color: PortfolioColors.accent,
             thickness: 5,
           ),
           Padding(
@@ -55,7 +55,7 @@ class HomeInfoWidget extends StatelessWidget {
                     style: TextStyle(
                       fontSize: PortfolioTextTheme.fontSize16,
                       fontWeight: FontWeight.bold,
-                      color: PortfolioColors.accentColor,
+                      color: PortfolioColors.accent,
                     ),
                   ),
                   TextSpan(
@@ -95,7 +95,7 @@ class HomeInfoWidget extends StatelessWidget {
                   child: PortfolioButton(
                     button: PortfolioElevatedButton(
                       radius: 8,
-                      color: PortfolioColors.secondaryColor,
+                      color: PortfolioColors.secondary,
                       onPressed: () {
                         onNavbarItemTap(2);
                       },

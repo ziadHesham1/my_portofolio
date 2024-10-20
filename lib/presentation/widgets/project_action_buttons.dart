@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/common/widgets/shimmers_widget.dart';
 
 import '../../common/network/url_helper.dart';
 import '../../common/portfolio_assets.dart';
 import '../../common/style/portfolio_colors.dart';
 import '../../common/widgets/buttons/portfolio_button_export.dart';
-import '../../common/widgets/buttons/portfolio_image_widget.dart';
+import '../../common/widgets/image_widgets/portfolio_image_widget.dart';
 import '../../common/widgets/responsive_row.dart';
 import '../../data/models/project_model.dart';
 
@@ -36,6 +37,10 @@ class ProjectActionButtons extends StatelessWidget {
                 widget: PortfolioImageWidget(
                   url: PortfolioAssets.github_icon,
                   height: 40,
+                  shimmerWidget: const PortfolioShimmerWidget(
+                    height: 40,
+                    width: 40,
+                  ),
                 ),
               ),
             ),

@@ -33,7 +33,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
     return Scaffold(
-      backgroundColor: PortfolioColors.primaryColor,
+      backgroundColor: PortfolioColors.primary,
       appBar: (PortfolioConstants.isDesktop())
           ? PreferredSize(
               preferredSize: Size(double.maxFinite, 100.h),
@@ -49,12 +49,11 @@ class _LandingPageState extends State<LandingPage> {
               bottom: const PreferredSize(
                 preferredSize: Size(50, 10),
                 child: Divider(
-                  color: PortfolioColors.secondaryColor,
+                  color: PortfolioColors.secondary,
                   thickness: 3,
                 ),
               ),
             ),
-      // body: NewWidget(),
       body: Center(
         child: Container(
           alignment: Alignment.center,
@@ -68,10 +67,10 @@ class _LandingPageState extends State<LandingPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(key: PortfolioConstants.navbarKeys.first),
-                const HomeSection(),
-                SizedBox(height: 40.h),
-                AboutSection(key: PortfolioConstants.navbarKeys[1]),
-                SizedBox(height: 40.h),
+                // const HomeSection(),
+                // SizedBox(height: 40.h),
+                // AboutSection(key: PortfolioConstants.navbarKeys[1]),
+                // SizedBox(height: 40.h),
                 ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
                 SizedBox(height: 40.h),
                 ContactMeSection(
@@ -91,13 +90,49 @@ class _LandingPageState extends State<LandingPage> {
       endDrawer: (!(PortfolioConstants.isDesktop()))
           ? Drawer(
               shape: const BeveledRectangleBorder(),
-              backgroundColor: PortfolioColors.primaryColor,
+              backgroundColor: PortfolioColors.primary,
               child: MobileNavigationButtons(
                 actionLabels: PortfolioConstants.actionLabels,
                 onNavbarItemTap: onNavbarItemTap,
               ),
             )
           : null,
+    );
+  }
+
+  Center newMethod(ScrollController scrollController) {
+    return Center(
+      child: Container(
+        alignment: Alignment.center,
+        // constraints: const BoxConstraints(maxWidth: 1600),
+        padding: (PortfolioConstants.isDesktop())
+            ? const EdgeInsets.symmetric(horizontal: 50.0)
+            : const EdgeInsets.symmetric(horizontal: 20.0),
+        child: SingleChildScrollView(
+          controller: scrollController,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(key: PortfolioConstants.navbarKeys.first),
+              const HomeSection(),
+              SizedBox(height: 40.h),
+              AboutSection(key: PortfolioConstants.navbarKeys[1]),
+              SizedBox(height: 40.h),
+              ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
+              SizedBox(height: 40.h),
+              ContactMeSection(
+                key: PortfolioConstants.navbarKeys[3],
+              ),
+              // SendEmailSection(
+              //   key: PortfolioConstants.navbarKeys[3],
+              // ),
+              SizedBox(height: 40.h),
+              const FooterSection(),
+              SizedBox(height: 40.h),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

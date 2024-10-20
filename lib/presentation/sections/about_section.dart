@@ -105,7 +105,7 @@ class AboutSection extends StatelessWidget {
             style: const TextStyle(
               fontSize: PortfolioTextTheme.fontSize14,
               fontWeight: FontWeight.bold,
-              color: PortfolioColors.accentColor,
+              color: PortfolioColors.accent,
             ),
           ),
           Text(

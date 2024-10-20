@@ -10,11 +10,10 @@ class _ElevatedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // active Color is the color that is not white
-    final Color color =
-        portfolioElevatedButton.color ?? PortfolioColors.accentColor;
+    final Color color = portfolioElevatedButton.color ?? PortfolioColors.accent;
     //switch colors for the button
     final Color buttonColor = portfolioElevatedButton.isLightMode
-        ? PortfolioColors.primaryColor // Background color in light mode
+        ? PortfolioColors.primary // Background color in light mode
         : color; // Background color in dark mode
 
     const Color textColor = PortfolioColors.black;

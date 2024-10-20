@@ -26,7 +26,7 @@ class NameWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: PortfolioTextTheme.fontSize22,
               fontWeight: FontWeight.bold,
-              color: PortfolioColors.accentColor,
+              color: PortfolioColors.accent,
             ),
           ),
         ],

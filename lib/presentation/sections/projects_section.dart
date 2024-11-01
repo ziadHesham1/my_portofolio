@@ -18,13 +18,6 @@ class ProjectsSection extends StatefulWidget {
 
 class _ProjectsSectionState extends State<ProjectsSection> {
   @override
-  void initState() {
-    super.initState();
-    // Call getProjects when the widget is initialized
-    context.read<ProjectsCubit>().getProjects();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProjectsCubit, ProjectsState>(builder: (context, state) {
       var list = state.projects;

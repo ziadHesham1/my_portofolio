@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/logic/cubit/projects_cubit.dart';
 
-import '../common/portfolio_constants.dart';
-import '../common/style/portfolio_colors.dart';
-import 'sections/about_section.dart';
-import 'sections/contact_me_section.dart';
-import 'sections/footer_section.dart';
-import 'sections/home_section.dart';
-import 'sections/navbar_section.dart';
-import 'sections/projects_section.dart';
-import 'widgets/mobile_navigation_buttons.dart';
-import 'widgets/name_widget.dart';
+import '../../common/portfolio_constants.dart';
+import '../../common/style/portfolio_colors.dart';
+import '../about/sections/about_section.dart';
+import '../sections/contact_me_section.dart';
+import '../sections/footer_section.dart';
+import '../home/sections/home_section.dart';
+import '../sections/navbar_section.dart';
+import '../sections/projects_section.dart';
+import '../widgets/mobile_navigation_buttons.dart';
+import '../widgets/name_widget.dart';
 
 // test
 class LandingPage extends StatefulWidget {
@@ -23,11 +25,11 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   context.read<ProjectsCubit>().getProjects();
-  // }
+  @override
+  void initState() {
+    super.initState();
+    context.read<ProjectsCubit>().getProjects();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,10 +69,10 @@ class _LandingPageState extends State<LandingPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(key: PortfolioConstants.navbarKeys.first),
-                // const HomeSection(),
-                // SizedBox(height: 40.h),
-                // AboutSection(key: PortfolioConstants.navbarKeys[1]),
-                // SizedBox(height: 40.h),
+                const HomeSection(),
+                SizedBox(height: 40.h),
+                AboutSection(key: PortfolioConstants.navbarKeys[1]),
+                SizedBox(height: 40.h),
                 ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
                 SizedBox(height: 40.h),
                 ContactMeSection(

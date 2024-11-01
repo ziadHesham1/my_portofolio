@@ -1,4 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as carousel_slider;
 import 'package:flutter/material.dart';
 
 import '../../common/portfolio_constants.dart';
@@ -14,8 +14,8 @@ class ProjectImagesCarouselSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      options: CarouselOptions(
+    return carousel_slider.CarouselSlider(
+      options: carousel_slider.CarouselOptions(
         height: PortfolioConstants.portfolio_screen_height() / 2.2,
         viewportFraction: 0.6,
         initialPage: 0,

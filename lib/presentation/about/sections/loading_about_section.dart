@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/common/widgets/shimmer_widgets.dart';
 
-import '../../common/style/portfolio_colors.dart';
-import '../../common/style/portfolio_text_theme.dart';
-import '../../common/widgets/responsive_row.dart';
-import '../widgets/about_skills_widget.dart';
+import '../../../common/style/portfolio_colors.dart';
+import '../../../common/style/portfolio_text_theme.dart';
+import '../../../common/widgets/responsive_row.dart';
+import '../../widgets/about_skills_widget.dart';
 
-class AboutSection extends StatelessWidget {
-  const AboutSection({super.key});
+class LoadingAboutSection extends StatelessWidget {
+  const LoadingAboutSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +16,9 @@ class AboutSection extends StatelessWidget {
         maxWidth: 500,
         title: 'ABOUT ME 🚀',
         subTitle: 'Who I am',
-        child: const Text(
-          "As a Flutter developer, I’m dedicated to building high-performance, cross-platform mobile applications."
-          " My journey in software development has equipped me with strong problem-solving skills and a keen eye for detail."
-          " I enjoy creating user-centric apps that are both functional and visually appealing."
-          " Always eager to learn, I stay updated with the latest trends in technology. "
-          " Let’s collaborate and turn your ideas into reality!",
-          style: TextStyle(
-            fontSize: PortfolioTextTheme.fontSize16,
-          ),
+        child: ShimmerWidgets.shimmerText(
+          lines: 5,
+          lineHeight: PortfolioTextTheme.fontSize16.toDouble(),
         ),
       ),
       const SizedBox(height: 60),

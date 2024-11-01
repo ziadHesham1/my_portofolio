@@ -13,6 +13,14 @@ class ProjectsModel extends Equatable {
   factory ProjectsModel.empty() {
     return const ProjectsModel(items: []);
   }
+  factory ProjectsModel.dummy() {
+    return ProjectsModel(items: [
+      ProjectModel.empty(),
+      ProjectModel.empty(),
+      ProjectModel.empty(),
+      ProjectModel.empty(),
+    ]);
+  }
 
   factory ProjectsModel.fromJson(List<dynamic> json) {
     List<ProjectModel> items = [];

@@ -68,11 +68,11 @@ class _LandingPageState extends State<LandingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(key: PortfolioConstants.navbarKeys.first),
-                const HomeSection(),
-                SizedBox(height: 40.h),
-                AboutSection(key: PortfolioConstants.navbarKeys[1]),
-                SizedBox(height: 40.h),
+                // SizedBox(key: PortfolioConstants.navbarKeys.first),
+                // const HomeSection(),
+                // SizedBox(height: 40.h),
+                // AboutSection(key: PortfolioConstants.navbarKeys[1]),
+                // SizedBox(height: 40.h),
                 ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
                 SizedBox(height: 40.h),
                 ContactMeSection(

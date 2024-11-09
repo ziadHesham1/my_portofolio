@@ -15,20 +15,23 @@ class HomeImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: const BoxConstraints(minWidth: 250),
-      child: PortfolioLoadingWidget(
-        loadingChild: ShimmerWidgets.shimmerContainer(
-          height: PortfolioConstants.portfolio_screen_height() / 2.5,
-          width: PortfolioConstants.portfolio_screen_width() / 3,
-        ),
-        child: PortfolioImageWidget(
-          url: PortfolioNetworkAssets.the_flutter_image,
-          height: PortfolioConstants.portfolio_screen_height() / 2,
-          width: PortfolioConstants.portfolio_screen_width() / 3,
-          shimmerWidget: PortfolioShimmerWidget(
+      child: Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: PortfolioLoadingWidget(
+          loadingChild: ShimmerWidgets.shimmerContainer(
             height: PortfolioConstants.portfolio_screen_height() / 2,
             width: PortfolioConstants.portfolio_screen_width() / 3,
           ),
-          // circleAvatarRadius: 140,
+          child: PortfolioImageWidget(
+            url: PortfolioNetworkAssets.the_flutter_image,
+            height: PortfolioConstants.portfolio_screen_height() / 2,
+            width: PortfolioConstants.portfolio_screen_width() / 3,
+            shimmerWidget: PortfolioShimmerWidget(
+              height: PortfolioConstants.portfolio_screen_height() / 2,
+              width: PortfolioConstants.portfolio_screen_width() / 3,
+            ),
+            // circleAvatarRadius: 140,
+          ),
         ),
       ),
     );

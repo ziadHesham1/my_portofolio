@@ -20,33 +20,57 @@ class ProjectImagesWidget extends StatefulWidget {
 class _ProjectImagesWidgetState extends State<ProjectImagesWidget> {
   @override
   Widget build(BuildContext context) {
+    // project is mobile and the screen is desktop
     if (PortfolioConstants.portfolio_screen_width() > 1000) {
-      return PortfolioLoadingWidget(
-        loadingChild: ShimmerWidgets.shimmerContainer(
-          height: PortfolioConstants.portfolio_screen_height() / 2,
-          width: PortfolioConstants.portfolio_screen_width() / 3,
-        ),
-        child: PortfolioImageWidget(
-          url: widget.project.thumbnail,
-          shimmerWidget: PortfolioShimmerWidget(
+      return Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: PortfolioLoadingWidget(
+          loadingChild: ShimmerWidgets.shimmerContainer(
             height: PortfolioConstants.portfolio_screen_height() / 2,
             width: PortfolioConstants.portfolio_screen_width() / 3,
           ),
+          child: PortfolioImageWidget(
+            url: widget.project.thumbnail,
+            shimmerWidget: PortfolioShimmerWidget(
+              height: PortfolioConstants.portfolio_screen_height() / 2,
+              width: PortfolioConstants.portfolio_screen_width() / 3,
+            ),
+          ),
         ),
       );
+      // project is website and the screen is mobile
     } else if (PortfolioConstants.portfolio_screen_width() <= 1000 &&
         widget.project.projectType == ProjectType.website) {
-      return PortfolioImageWidget(
-        url: widget.project.thumbnail,
-        height: PortfolioConstants.portfolio_screen_height() / 2,
-        width: PortfolioConstants.portfolio_screen_width() / 3,
-        shimmerWidget: PortfolioShimmerWidget(
-          height: PortfolioConstants.portfolio_screen_height() / 2,
-          width: PortfolioConstants.portfolio_screen_width() / 3,
+      return Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: PortfolioLoadingWidget(
+          loadingChild: ShimmerWidgets.shimmerContainer(
+            height: PortfolioConstants.portfolio_screen_height() / 2,
+            // width: PortfolioConstants.portfolio_screen_width() / 3,
+          ),
+          child: PortfolioImageWidget(
+            url: widget.project.thumbnail,
+            height: PortfolioConstants.portfolio_screen_height() / 2,
+            // width: PortfolioConstants.portfolio_screen_width() / 3,
+            shimmerWidget: PortfolioShimmerWidget(
+              height: PortfolioConstants.portfolio_screen_height() / 2,
+              // width: PortfolioConstants.portfolio_screen_width() / 3,
+            ),
+          ),
         ),
       );
+      // project is mobile and the screen is mobile
     } else {
-      return ProjectImagesCarouselSlider(imagesList: widget.project.images);
+      return Padding(
+        padding: const EdgeInsets.only(top: 16.0),
+        child: PortfolioLoadingWidget(
+            loadingChild: ShimmerWidgets.shimmerContainer(
+              height: PortfolioConstants.portfolio_screen_height() / 2,
+              width: PortfolioConstants.portfolio_screen_width() / 3,
+            ),
+            child:
+                ProjectImagesCarouselSlider(imagesList: widget.project.images)),
+      );
     }
   }
 }

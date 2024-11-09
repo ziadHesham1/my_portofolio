@@ -15,8 +15,7 @@ class ProjectsModel extends Equatable {
   }
   factory ProjectsModel.dummy() {
     return ProjectsModel(items: [
-      ProjectModel.empty(),
-      ProjectModel.empty(),
+      ProjectModel.empty().copyWith(projectType: ProjectType.website),
       ProjectModel.empty(),
       ProjectModel.empty(),
     ]);

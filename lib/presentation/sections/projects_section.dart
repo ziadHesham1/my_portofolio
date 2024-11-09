@@ -39,7 +39,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 40.0.h),
+              padding: const EdgeInsets.symmetric(vertical: 40.0),
               child: Column(
                 children: list.items.mapIndexed((i, project) {
                   // refactor this code to be one widget
@@ -51,7 +51,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                       } else ...{
                         MobileProjectWidget(project: project)
                       },
-                      Container(height: 100.h),
+                      Container(height: 60.h),
                     ],
                   );
                 }).toList(),

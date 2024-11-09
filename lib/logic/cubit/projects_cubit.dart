@@ -21,7 +21,7 @@ class ProjectsCubit extends Cubit<ProjectsState> {
     _loadingRepository.loadingStarted();
     emit(ProjectsState.init());
     ProjectsModel projects = await _projectsRepository.getProjects();
-    // await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 1));
 
     emit(state.updateData(projects));
     _loadingRepository.loadingFinished();

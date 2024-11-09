@@ -10,11 +10,11 @@ class LoadingCubit extends Cubit<LoadingState> {
   LoadingRepository loadingRepository;
   LoadingCubit(
     this.loadingRepository,
-  ) : super(LoadingState.loading()) {
+  ) : super(LoadingState.finished()) {
     // testLoading();
     loadingRepository.loadingStatusStream.listen((status) {
       print('loading_cubit > status: $status');
-      loadingStatus(status);
+      // loadingStatus(status);
     });
   }
   testLoading() async {

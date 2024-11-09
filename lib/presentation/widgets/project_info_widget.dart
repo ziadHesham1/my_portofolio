@@ -30,7 +30,7 @@ class ProjectInfoWidget extends StatelessWidget {
               project.title,
               style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize28,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w500,
               ),
             ),
             SizedBox(height: 20.h),

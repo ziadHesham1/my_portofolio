@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'portfolio_placeholder_image_widget.dart';
 
@@ -39,7 +38,7 @@ class PortfolioImageWidget extends StatelessWidget {
           },
         );
       } else if (url!.startsWith('http') || url!.startsWith('https')) {
-        return _cachedNetworkImage();
+        return _buildPlaceholderImage();
       } else {
         // Handle invalid URL
         return _buildPlaceholderImage();
@@ -63,14 +62,11 @@ class PortfolioImageWidget extends StatelessWidget {
       },
       imageBuilder: (context, imageProvider) {
         // return shimmerWidget;
-        return ClipRRect(
-          borderRadius: BorderRadius.circular(20.r),
-          child: Image(
-            image: imageProvider,
-            width: width,
-            height: height,
-            fit: fit,
-          ),
+        return Image(
+          image: imageProvider,
+          width: width,
+          height: height,
+          fit: fit,
         );
       },
     );

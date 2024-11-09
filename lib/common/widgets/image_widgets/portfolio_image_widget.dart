@@ -38,7 +38,7 @@ class PortfolioImageWidget extends StatelessWidget {
           },
         );
       } else if (url!.startsWith('http') || url!.startsWith('https')) {
-        return _buildPlaceholderImage();
+        return _cachedNetworkImage();
       } else {
         // Handle invalid URL
         return _buildPlaceholderImage();

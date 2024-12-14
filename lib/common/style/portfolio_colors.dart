@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 abstract class PortfolioColors {
   // Primary/main is used for 60% of the design. This neutral color gives room for the secondary and accent colors to stand out.
-  static const Color primaryColor = Color.fromARGB(255, 228, 255, 241);
+  static const Color primary = Color.fromARGB(255, 228, 255, 241);
   // The secondary is used for 30% of the design. This is a middle ground that compliments the primary and accent colors.
   // When designing for a brand, this color tends to be the secondary color for the brand.
-  static const Color secondaryColor = Color(0xff8EE1B5);
+  static const Color secondary = Color(0xff8EE1B5);
   // The accent is used for 10% of the design. This helps ‘accessorize’ the site by giving pops of colors that keep the viewer’s attention.
-  static const Color accentColor = Color.fromARGB(255, 2, 195, 89);
+  static const Color accent = Color.fromARGB(255, 2, 195, 89);
 
   static const Color white = Color(0xffFFFFFF);
   static const Color red = Colors.red;

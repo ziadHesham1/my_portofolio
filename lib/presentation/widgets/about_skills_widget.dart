@@ -22,32 +22,36 @@ class AboutSkillsWidget extends StatelessWidget {
       PortfolioAssets.figma_icon,
     ];
 
-    return Material(
-      elevation: 3,
-      borderRadius: const BorderRadius.all(
-        Radius.circular(20),
-      ),
-      color: PortfolioColors.secondaryColor,
-      shadowColor: PortfolioColors.secondaryColor.withOpacity(0.5),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
-        child: Wrap(
-          alignment: WrapAlignment.center,
-          spacing: 8.0,
-          runSpacing: 8.0,
-          children: [
-            ...List.generate(
-              skillIcons.length,
-              (index) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
-                  skillIcons[index],
-                  height: 30.h,
-                  width: 35.h,
-                ),
-              ),
-            )
-          ],
+    return Center(
+      child: Material(
+        elevation: 3,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(20),
+        ),
+        color: PortfolioColors.secondary,
+        shadowColor: PortfolioColors.secondary.withOpacity(0.5),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
+          child: Center(
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8.0,
+              runSpacing: 8.0,
+              children: [
+                ...List.generate(
+                  skillIcons.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      skillIcons[index],
+                      height: 30.h,
+                      width: 35.h,
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
         ),
       ),
     );

@@ -14,7 +14,8 @@ class ProjectsState extends Equatable {
 
   factory ProjectsState.init() {
     return ProjectsState(
-      projects: ProjectsModel.empty(),
+      // to show loading items until data loads
+      projects: ProjectsModel.dummy(),
       status: ProjectsStatus.init,
     );
   }

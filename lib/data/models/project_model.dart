@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 import 'project_action_links.dart';
 
 enum ProjectType { mobile, website }
@@ -24,26 +23,36 @@ class ProjectModel extends Equatable {
   });
 
   @override
-  List<Object?> get props => [id, actionLinks, images, subTitle, title];
+  List<Object?> get props =>
+      [id, actionLinks, images, subTitle, title, projectType];
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) {
     return ProjectModel(
       id: json['id'],
-      thumbnail: json['thumbnail'],
-      actionLinks: ProjectActionLinks.fromJson(json['action_links']),
-      images: List<String>.from(json['images'] ?? []),
-      subTitle: json['sub_title'],
       title: json['title'],
+      subTitle: json['sub_title'],
+      thumbnail: json['thumbnail'],
+      images: List<String>.from(json['images'] ?? []),
+      actionLinks: ProjectActionLinks.fromJson(
+        json['action_links'] ?? {},
+      ), // Convert to Map<String, dynamic>
+      projectType: json['project_type'] != null
+          ? ProjectType.values.firstWhere(
+              (e) => e.toString() == 'ProjectType.${json['project_type']}')
+          : ProjectType.mobile,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'action_links': actionLinks.toJson(),
-      'images': images,
-      'sub_title': subTitle,
       'title': title,
+      'sub_title': subTitle,
+      'thumbnail': thumbnail,
+      'images': images,
+      'action_links': actionLinks.toJson(),
+      'project_type':
+          projectType.toString().split('.').last, // Convert enum to string
     };
   }
 
@@ -54,6 +63,7 @@ class ProjectModel extends Equatable {
     String? thumbnail,
     String? subTitle,
     String? title,
+    ProjectType? projectType,
   }) {
     return ProjectModel(
       id: id ?? this.id,
@@ -62,6 +72,7 @@ class ProjectModel extends Equatable {
       thumbnail: thumbnail ?? this.thumbnail,
       subTitle: subTitle ?? this.subTitle,
       title: title ?? this.title,
+      projectType: projectType ?? this.projectType,
     );
   }
 

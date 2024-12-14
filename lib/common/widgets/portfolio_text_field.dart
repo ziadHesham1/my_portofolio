@@ -69,7 +69,7 @@ class PortfolioTextField extends StatelessWidget {
   OutlineInputBorder buildBorder({Color? color}) {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: color ?? PortfolioColors.secondaryColor,
+        color: color ?? PortfolioColors.secondary,
         width: 1,
       ),
       borderRadius: BorderRadius.circular(6.r),
@@ -100,12 +100,12 @@ class PortfolioTextField extends StatelessWidget {
       focusColor: PortfolioColors.white,
       alignLabelWithHint: true,
       prefixIcon: prefixIcon,
-      prefixIconColor: PortfolioColors.primaryColor,
+      prefixIconColor: PortfolioColors.primary,
       errorMaxLines: 5,
       contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 6.w),
 
       suffixIcon: suffixIcon,
-      suffixIconColor: PortfolioColors.primaryColor,
+      suffixIconColor: PortfolioColors.primary,
       border: hasBorder ? buildBorder() : null,
       enabledBorder: hasBorder ? buildBorder() : null,
       focusedBorder: hasBorder ? buildBorder() : null,
@@ -134,7 +134,7 @@ class PortfolioTextField extends StatelessWidget {
                   text: ' *',
                   style: PortfolioConstants.text_theme.bodyMedium!.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: PortfolioColors.accentColor,
+                    color: PortfolioColors.accent,
                   ),
                 ),
               ],

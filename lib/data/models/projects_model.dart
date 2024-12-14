@@ -1,42 +1,73 @@
 import 'package:equatable/equatable.dart';
-
+import 'package:my_portfolio/data/models/projects_json.dart';
 import 'project_model.dart';
 
 class ProjectsModel extends Equatable {
-  final List<ProjectModel> items;
+  final List<ProjectModel> sideProjects;
+  final List<ProjectModel> workProjects;
+  final List<ProjectModel> freelanceProjects;
 
-  const ProjectsModel({required this.items});
+  const ProjectsModel({
+    required this.sideProjects,
+    required this.workProjects,
+    required this.freelanceProjects,
+  });
 
   @override
-  List<Object?> get props => [items];
+  List<Object?> get props => [sideProjects, workProjects, freelanceProjects];
 
+  // Factory to create an empty ProjectsModel
   factory ProjectsModel.empty() {
-    return const ProjectsModel(items: []);
+    return const ProjectsModel(
+      sideProjects: [],
+      workProjects: [],
+      freelanceProjects: [],
+    );
   }
+
+  // Factory to create a dummy ProjectsModel
   factory ProjectsModel.dummy() {
-    return ProjectsModel(items: [
-      ProjectModel.empty().copyWith(projectType: ProjectType.website),
-      ProjectModel.empty(),
-      ProjectModel.empty(),
-    ]);
+    return ProjectsModel(
+      sideProjects: [
+        ProjectModel.empty().copyWith(projectType: ProjectType.website),
+      ],
+      workProjects: [
+        ProjectModel.empty().copyWith(projectType: ProjectType.mobile),
+        ProjectModel.empty(),
+      ],
+      freelanceProjects: [
+        ProjectModel.empty().copyWith(projectType: ProjectType.mobile),
+      ],
+    );
   }
 
-  factory ProjectsModel.fromJson(List<dynamic> json) {
-    List<ProjectModel> items = [];
-
-    for (var item in json) {
-      if (item is Map<String, dynamic>) {
-        items.add(ProjectModel.fromJson(item));
-      }
-    }
-    return ProjectsModel(items: items);
+  // Factory to create a ProjectsModel from JSON
+  factory ProjectsModel.fromJson(Map<String, dynamic> json) {
+    return ProjectsModel(
+      sideProjects: _parseProjectList(json['side_projects']),
+      workProjects: _parseProjectList(json['work_projects']),
+      freelanceProjects: _parseProjectList(json['freelance_projects']),
+    );
   }
 
+  // Convert the ProjectsModel back to JSON
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> json = {};
-    for (var project in items) {
-      json[project.id] = project.toJson();
+    return {
+      'side_projects': sideProjects.map((project) => project.toJson()).toList(),
+      'work_projects': workProjects.map((project) => project.toJson()).toList(),
+      'freelance_projects':
+          freelanceProjects.map((project) => project.toJson()).toList(),
+    };
+  }
+
+  // Helper to parse a list of ProjectModel from JSON
+  static List<ProjectModel> _parseProjectList(dynamic jsonList) {
+    if (jsonList is List) {
+      return jsonList
+          .whereType<Map<String, dynamic>>()
+          .map(ProjectModel.fromJson)
+          .toList();
     }
-    return json;
+    return [];
   }
 }

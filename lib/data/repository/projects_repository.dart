@@ -9,12 +9,12 @@ class ProjectsRepository {
   const ProjectsRepository(ProjectsNetwork projectsNetwork)
       : _projectsNetwork = projectsNetwork;
   Future<ProjectsModel> getProjects() async {
-    List<dynamic>? response = await _projectsNetwork.getProjects();
+    Map<String, dynamic> response = await _projectsNetwork.getProjects();
     ProjectsModel projectsList = ProjectsModel.empty();
 
-    if (response != null) {
+    if (response.isNotEmpty) {
       try {
-        projectsList = ProjectsModel.fromJson(response);
+        projectsList = ProjectsModel.fromJson(response['projects']);
         return projectsList;
       } catch (e) {
         debugPrint('Failed to get projects, Error : $e');

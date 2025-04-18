@@ -3,10 +3,16 @@ import 'package:equatable/equatable.dart';
 class ProjectActionLinks extends Equatable {
   final String? demoVideo;
   final String? github;
+  final String? appStore;
+  final String? googlePlay;
+  final String? website;
 
   const ProjectActionLinks({
     this.demoVideo,
     this.github,
+    this.appStore,
+    this.googlePlay,
+    this.website,
   });
 
   @override
@@ -16,6 +22,9 @@ class ProjectActionLinks extends Equatable {
     return ProjectActionLinks(
       demoVideo: json['demo_video'] ?? '',
       github: json['github'] ?? '',
+      appStore: json['appstore'] ?? '',
+      googlePlay: json['playstore'] ?? '',
+      website: json['website'] ?? '',
     );
   }
 

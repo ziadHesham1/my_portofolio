@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/common/extensions/string_extension.dart';
+import 'package:my_portfolio/common/widget_children_helpers.dart';
 import 'package:my_portfolio/common/widgets/portfolio_loading_widget.dart';
 import 'package:my_portfolio/common/widgets/shimmers_widget.dart';
 
@@ -20,53 +22,78 @@ class ProjectActionButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var list = addSpacingBetween(space: 25, direction: Axis.horizontal, [
+      if (project.actionLinks.appStore.isNotEmptyOrNull)
+        _button(
+          title: 'App Store',
+          url: project.actionLinks.appStore!,
+          icon: FontAwesomeIcons.apple,
+        ),
+      if (project.actionLinks.googlePlay.isNotEmptyOrNull)
+        _button(
+          title: 'Google Play',
+          url: project.actionLinks.googlePlay!,
+          icon: FontAwesomeIcons.googlePlay,
+        ),
+      if (project.actionLinks.website.isNotEmptyOrNull)
+        _button(
+          title: 'Website',
+          url: project.actionLinks.website!,
+          icon: FontAwesomeIcons.globe,
+        ),
+      if (project.actionLinks.github.isNotEmptyOrNull)
+        _button(
+          title: 'View on Github',
+          url: project.actionLinks.github!,
+          icon: FontAwesomeIcons.github,
+        ),
+      if (project.actionLinks.demoVideo.isNotEmptyOrNull)
+        _button(
+          title: 'Live Preview',
+          url: project.actionLinks.demoVideo!,
+          icon: FontAwesomeIcons.arrowUpRightFromSquare,
+        ),
+    ]);
+    // return Row(
+    //   mainAxisAlignment: MainAxisAlignment.center,
+    //   children: list,
+    // );
+
     return PortfolioLoadingWidget(
-      loadingChild: const SizedBox.shrink(),
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 450),
-        child: ResponsiveRow(
-          minRowWidth: 400,
-          rowMainAxisAlignment: MainAxisAlignment.center,
-          columnMainAxisAlignment: MainAxisAlignment.center,
-          childrenBuilder: (isRow) {
-            return [
-              if (project.actionLinks.github != null)
-                PortfolioButton(
-                  button: PortfolioTextButton(
-                    buttonLabel: 'View on Github ',
-                    onPressed: () {
-                      UrlHelper.launchURL(project.actionLinks.github!);
-                    },
-                    widget: PortfolioImageWidget(
-                      url: PortfolioAssets.github_icon,
-                      height: 40,
-                      shimmerWidget: const PortfolioShimmerWidget(
-                        height: 40,
-                        width: 40,
-                      ),
-                    ),
-                  ),
-                ),
-              const SizedBox(width: 25, height: 15),
-              if (project.actionLinks.demoVideo != null)
-                PortfolioButton(
-                  button: PortfolioTextButton(
-                    onPressed: () {
-                      UrlHelper.launchURL(project.actionLinks.demoVideo!);
-                    },
-                    buttonLabel: 'Live Preview',
-                    widget: const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: FaIcon(
-                        FontAwesomeIcons.arrowUpRightFromSquare,
-                        color: PortfolioColors.black,
-                        size: 20,
-                      ),
-                    ),
-                  ),
-                ),
-            ];
-          },
+        loadingChild: const SizedBox.shrink(),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 450),
+          child: ResponsiveRow(
+            minRowWidth: 400,
+            rowMainAxisAlignment: MainAxisAlignment.center,
+            columnMainAxisAlignment: MainAxisAlignment.center,
+            childrenBuilder: (isRow) {
+              return list;
+            },
+          ),
+        ));
+  }
+
+  PortfolioButton _button({
+    required String title,
+    required String url,
+    // String? icon,
+    IconData? icon,
+    // Widget? widget,
+  }) {
+    return PortfolioButton(
+      button: PortfolioTextButton(
+        buttonLabel: title,
+        onPressed: () {
+          UrlHelper.launchURL(url);
+        },
+        widget: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: FaIcon(
+            icon,
+            color: PortfolioColors.black,
+            size: 20,
+          ),
         ),
       ),
     );

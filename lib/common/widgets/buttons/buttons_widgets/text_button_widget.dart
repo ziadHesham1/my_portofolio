@@ -20,6 +20,7 @@ class _TextButtonWidget extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
+            if (portfolioTextButton.widget != null) portfolioTextButton.widget!,
             Text(
               portfolioTextButton.buttonLabel,
               style: portfolioTextButton.buttonStyle ??
@@ -33,7 +34,6 @@ class _TextButtonWidget extends StatelessWidget {
               overflow: TextOverflow.clip,
               maxLines: 2,
             ),
-            if (portfolioTextButton.widget != null) portfolioTextButton.widget!,
           ],
         ));
   }

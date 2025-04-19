@@ -6,7 +6,7 @@ import 'package:my_portfolio/common/style/portfolio_colors.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_text_theme.dart';
-import '../../logic/cubit/projects_cubit.dart';
+import '../../logic/projects_cubit/projects_cubit.dart';
 import '../widgets/desktop_project_widget.dart';
 import '../widgets/mobile_project_widget.dart';
 import 'package:my_portfolio/data/models/project_model.dart';

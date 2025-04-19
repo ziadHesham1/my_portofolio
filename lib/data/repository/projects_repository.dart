@@ -14,7 +14,7 @@ class ProjectsRepository {
 
     if (response.isNotEmpty) {
       try {
-        projectsList = ProjectsModel.fromJson(response['projects']);
+        projectsList = ProjectsModel.fromJson(response);
         return projectsList;
       } catch (e) {
         debugPrint('Failed to get projects, Error : $e');

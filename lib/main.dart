@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/common/style/portfolio_colors.dart';
+import 'package:my_portfolio/logic/contact_info_cubit/contact_info_cubit.dart';
 
 import 'common/features/loading/cubit/loading_cubit.dart';
 import 'common/navigation/portfolio_navigator.dart';
 import 'di.dart';
-import 'logic/cubit/projects_cubit.dart';
+import 'logic/projects_cubit/projects_cubit.dart';
 import 'presentation/pages/landing_page.dart';
 
 Future<void> main() async {
@@ -59,7 +60,12 @@ class PortfolioBlocProviders extends StatelessWidget {
             create: (context) => ProjectsCubit(
                   getIt(),
                   getIt(),
-                )),
+                )..getProjects()),
+        BlocProvider(
+            create: (context) => ContactInfoCubit(
+                  getIt(),
+                  getIt(),
+                )..getContactInfo()),
       ],
       child: child,
     );

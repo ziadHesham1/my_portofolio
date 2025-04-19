@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/common/navigation/sections_navigator.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
@@ -7,12 +8,8 @@ import '../widgets/desktop_navigation_buttons.dart';
 import '../widgets/name_widget.dart';
 
 class NavbarSection extends StatelessWidget {
-  final List<({String label, IconData iconData})> actionLabels;
-  final Function(int index) onNavbarItemTap;
   const NavbarSection({
     super.key,
-    required this.actionLabels,
-    required this.onNavbarItemTap,
   });
 
   @override
@@ -26,10 +23,7 @@ class NavbarSection extends StatelessWidget {
             children: [
               const NameWidget(),
               if (PortfolioConstants.isDesktop())
-                DesktopNavigationButtons(
-                  actionLabels: actionLabels,
-                  onNavbarItemTap: onNavbarItemTap,
-                ),
+                const DesktopNavigationButtons(),
             ],
           ),
           SizedBox(height: 6.h),

@@ -68,15 +68,4 @@ class LoadingHomeInfoWidget extends StatelessWidget {
       ),
     );
   }
-
-  void onNavbarItemTap(int index) {
-    final context = PortfolioConstants.navbarKeys[index].currentContext;
-    if (context != null) {
-      Scrollable.ensureVisible(
-        context,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
 }

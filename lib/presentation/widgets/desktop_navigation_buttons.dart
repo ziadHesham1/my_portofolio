@@ -1,17 +1,14 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/common/navigation/sections_navigator.dart';
 import 'package:my_portfolio/common/portfolio_constants.dart';
 
 import '../../common/style/portfolio_colors.dart';
 import '../../common/widgets/buttons/portfolio_button_export.dart';
 
 class DesktopNavigationButtons extends StatelessWidget {
-  final List<({String label, IconData iconData})> actionLabels;
-  final Function(int index) onNavbarItemTap;
   const DesktopNavigationButtons({
     super.key,
-    required this.actionLabels,
-    required this.onNavbarItemTap,
   });
 
   @override
@@ -19,9 +16,9 @@ class DesktopNavigationButtons extends StatelessWidget {
     return SizedBox(
       height: PortfolioConstants.portfolio_screen_height() / 20,
       child: Row(
-        children: actionLabels.mapIndexed(
-          (i, ({String label, IconData iconData}) e) {
-            if (i == actionLabels.length - 1) {
+        children: SectionsNavigator.actionLabels.mapIndexed(
+          (i, e) {
+            if (i == SectionsNavigator.actionLabels.length - 1) {
               return Row(
                 children: [
                   const VerticalDivider(
@@ -39,7 +36,7 @@ class DesktopNavigationButtons extends StatelessWidget {
                             PortfolioConstants.portfolio_screen_height() / 20,
                         radius: 8,
                         onPressed: () {
-                          onNavbarItemTap(i);
+                          SectionsNavigator.navigateTo(e.navKey);
                         },
                         text: e.label,
                       ),
@@ -57,7 +54,7 @@ class DesktopNavigationButtons extends StatelessWidget {
                       color: PortfolioColors.black,
                     ),
                     onPressed: () {
-                      onNavbarItemTap(i);
+                      SectionsNavigator.navigateTo(e.navKey);
                     },
                     buttonLabel: e.label,
                   ),

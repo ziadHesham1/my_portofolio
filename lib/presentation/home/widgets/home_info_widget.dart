@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:my_portfolio/common/navigation/sections_navigator.dart';
 import 'package:my_portfolio/logic/contact_info_cubit/contact_info_cubit.dart';
 
 import '../../../common/network/url_helper.dart';
@@ -43,13 +44,15 @@ class HomeInfoWidget extends StatelessWidget {
                     flex: 7,
                     text: 'Contact Me',
                     onPressed: () {
-                      onNavbarItemTap(3);
+                      SectionsNavigator.navigateTo(
+                          SectionsNavigator.contactNavigatorKey);
                     }),
                 SizedBox(width: 6.w),
                 _actionButton(
                   flex: 7,
                   onPressed: () {
-                    onNavbarItemTap(2);
+                    SectionsNavigator.navigateTo(
+                        SectionsNavigator.projectsNavigatorKey);
                   },
                   text: 'View my work',
                 ),
@@ -104,14 +107,6 @@ class HomeInfoWidget extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-
-  onNavbarItemTap(int index) {
-    Scrollable.ensureVisible(
-      PortfolioConstants.navbarKeys[index].currentContext!,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
     );
   }
 }

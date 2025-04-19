@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/common/navigation/sections_navigator.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
@@ -39,16 +40,14 @@ class _LoadingWebViewState extends State<LoadingWebView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(key: PortfolioConstants.navbarKeys.first),
+                SizedBox(key: SectionsNavigator.homeNavigatorKey),
                 const LoadingHomeSection(),
                 SizedBox(height: 40.h),
-                LoadingAboutSection(key: PortfolioConstants.navbarKeys[1]),
+                LoadingAboutSection(key: SectionsNavigator.aboutNavigatorKey),
                 SizedBox(height: 40.h),
-                ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
+                ProjectsSection(key: SectionsNavigator.projectsNavigatorKey),
                 SizedBox(height: 40.h),
-                ContactMeSection(
-                  key: PortfolioConstants.navbarKeys[3],
-                ),
+                ContactMeSection(key: SectionsNavigator.contactNavigatorKey),
                 SizedBox(height: 40.h),
                 const FooterSection(),
                 SizedBox(height: 40.h),
@@ -58,13 +57,10 @@ class _LoadingWebViewState extends State<LoadingWebView> {
         ),
       ),
       endDrawer: (!(PortfolioConstants.isDesktop()))
-          ? Drawer(
-              shape: const BeveledRectangleBorder(),
+          ? const Drawer(
+              shape: BeveledRectangleBorder(),
               backgroundColor: PortfolioColors.primary,
-              child: MobileNavigationButtons(
-                actionLabels: PortfolioConstants.actionLabels,
-                onNavbarItemTap: onNavbarItemTap,
-              ),
+              child: MobileNavigationButtons(),
             )
           : null,
     );
@@ -74,10 +70,7 @@ class _LoadingWebViewState extends State<LoadingWebView> {
     return (PortfolioConstants.isDesktop())
         ? PreferredSize(
             preferredSize: Size(double.maxFinite, 100.h),
-            child: NavbarSection(
-              actionLabels: PortfolioConstants.actionLabels,
-              onNavbarItemTap: onNavbarItemTap,
-            ),
+            child: const NavbarSection(),
           )
         : AppBar(
             title: const NameWidget(),
@@ -91,13 +84,5 @@ class _LoadingWebViewState extends State<LoadingWebView> {
               ),
             ),
           );
-  }
-
-  onNavbarItemTap(int index) {
-    Scrollable.ensureVisible(
-      PortfolioConstants.navbarKeys[index].currentContext!,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
-    );
   }
 }

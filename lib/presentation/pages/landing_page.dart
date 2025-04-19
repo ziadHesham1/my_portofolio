@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/common/navigation/sections_navigator.dart';
 
 import '../../common/portfolio_constants.dart';
 import '../../common/style/portfolio_colors.dart';
@@ -31,10 +32,7 @@ class _LandingPageState extends State<LandingPage> {
       appBar: (PortfolioConstants.isDesktop())
           ? PreferredSize(
               preferredSize: Size(double.maxFinite, 100.h),
-              child: NavbarSection(
-                actionLabels: PortfolioConstants.actionLabels,
-                onNavbarItemTap: onNavbarItemTap,
-              ),
+              child: const NavbarSection(),
             )
           : AppBar(
               title: const NameWidget(),
@@ -60,18 +58,18 @@ class _LandingPageState extends State<LandingPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(key: PortfolioConstants.navbarKeys.first),
+                SizedBox(key: SectionsNavigator.homeNavigatorKey),
                 const HomeSection(),
                 SizedBox(height: 40.h),
-                AboutSection(key: PortfolioConstants.navbarKeys[1]),
+                AboutSection(key: SectionsNavigator.aboutNavigatorKey),
                 SizedBox(height: 40.h),
-                ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
+                ProjectsSection(key: SectionsNavigator.projectsNavigatorKey),
                 SizedBox(height: 40.h),
                 ContactMeSection(
-                  key: PortfolioConstants.navbarKeys[3],
+                  key: SectionsNavigator.contactNavigatorKey,
                 ),
                 // SendEmailSection(
-                //   key: PortfolioConstants.navbarKeys[3],
+                // SectionsNavigator.homeNavigatorKey
                 // ),
                 SizedBox(height: 40.h),
                 const FooterSection(),
@@ -82,13 +80,10 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
       endDrawer: (!(PortfolioConstants.isDesktop()))
-          ? Drawer(
-              shape: const BeveledRectangleBorder(),
+          ? const Drawer(
+              shape: BeveledRectangleBorder(),
               backgroundColor: PortfolioColors.primary,
-              child: MobileNavigationButtons(
-                actionLabels: PortfolioConstants.actionLabels,
-                onNavbarItemTap: onNavbarItemTap,
-              ),
+              child: MobileNavigationButtons(),
             )
           : null,
     );
@@ -107,18 +102,16 @@ class _LandingPageState extends State<LandingPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(key: PortfolioConstants.navbarKeys.first),
+              SizedBox(key: SectionsNavigator.homeNavigatorKey),
               const HomeSection(),
               SizedBox(height: 40.h),
-              AboutSection(key: PortfolioConstants.navbarKeys[1]),
+              AboutSection(key: SectionsNavigator.aboutNavigatorKey),
               SizedBox(height: 40.h),
-              ProjectsSection(key: PortfolioConstants.navbarKeys[2]),
+              ProjectsSection(key: SectionsNavigator.projectsNavigatorKey),
               SizedBox(height: 40.h),
-              ContactMeSection(
-                key: PortfolioConstants.navbarKeys[3],
-              ),
+              ContactMeSection(key: SectionsNavigator.contactNavigatorKey),
               // SendEmailSection(
-              //   key: PortfolioConstants.navbarKeys[3],
+              // SectionsNavigator.homeNavigatorKey
               // ),
               SizedBox(height: 40.h),
               const FooterSection(),
@@ -127,14 +120,6 @@ class _LandingPageState extends State<LandingPage> {
           ),
         ),
       ),
-    );
-  }
-
-  onNavbarItemTap(int index) {
-    Scrollable.ensureVisible(
-      PortfolioConstants.navbarKeys[index].currentContext!,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
     );
   }
 }

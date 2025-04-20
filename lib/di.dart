@@ -2,12 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_portfolio/common/features/loading/data/repo/loading_repo.dart';
 import 'package:my_portfolio/common/network/app_network_helper.dart';
-import 'package:my_portfolio/data/network/contact_info_network.dart';
-import 'package:my_portfolio/data/repository/contact_info_repository.dart';
+import 'package:my_portfolio/features/contact_me/data/network/contact_info_network.dart';
+import 'package:my_portfolio/features/contact_me/data/repository/contact_info_repository.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
-import 'data/network/projects_network.dart';
-import 'data/repository/projects_repository.dart';
+import 'features/projects/data/network/projects_network.dart';
+import 'features/projects/data/repo/projects_repository.dart';
 
 final GetIt getIt = GetIt.instance;
 

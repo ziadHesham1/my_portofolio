@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/common/style/portfolio_colors.dart';
-import 'package:my_portfolio/logic/contact_info_cubit/contact_info_cubit.dart';
+import 'package:my_portfolio/features/contact_me/logic/contact_info_cubit/contact_info_cubit.dart';
 
 import 'common/features/loading/cubit/loading_cubit.dart';
 import 'common/navigation/portfolio_navigator.dart';
 import 'di.dart';
-import 'logic/projects_cubit/projects_cubit.dart';
-import 'presentation/pages/landing_page.dart';
+import 'features/projects/logic/projects_cubit/projects_cubit.dart';
+import 'features/landing_page/landing_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -14,8 +14,8 @@ class PortfolioShimmerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: PortfolioColors.secondary.withOpacity(0.4),
-      highlightColor: PortfolioColors.primary,
+      baseColor: AppColors.secondary.withOpacity(0.4),
+      highlightColor: AppColors.primary,
       child: Container(
         height: height,
         width: width,

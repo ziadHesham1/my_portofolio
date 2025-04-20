@@ -69,7 +69,7 @@ class PortfolioTextField extends StatelessWidget {
   OutlineInputBorder buildBorder({Color? color}) {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: color ?? PortfolioColors.secondary,
+        color: color ?? AppColors.secondary,
         width: 1,
       ),
       borderRadius: BorderRadius.circular(6.r),
@@ -79,7 +79,7 @@ class PortfolioTextField extends StatelessWidget {
   OutlineInputBorder buildErrorBorder({Color? color}) {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: color ?? PortfolioColors.red,
+        color: color ?? AppColors.red,
         width: 0.5,
       ),
       gapPadding: 14,
@@ -91,21 +91,21 @@ class PortfolioTextField extends StatelessWidget {
     return InputDecoration(
       labelText: hintText,
       labelStyle: PortfolioConstants.text_theme.labelLarge!
-          .copyWith(color: PortfolioColors.black.withOpacity(0.5)),
+          .copyWith(color: AppColors.black.withOpacity(0.5)),
       // hintText: hintText,
       // hintStyle: PortfolioConstants.text_theme.labelLarge!
       //     .copyWith(color: PortfolioColors.grey),
       filled: true,
-      fillColor: PortfolioColors.white,
-      focusColor: PortfolioColors.white,
+      fillColor: AppColors.white,
+      focusColor: AppColors.white,
       alignLabelWithHint: true,
       prefixIcon: prefixIcon,
-      prefixIconColor: PortfolioColors.primary,
+      prefixIconColor: AppColors.primary,
       errorMaxLines: 5,
       contentPadding: contentPadding ?? EdgeInsets.symmetric(horizontal: 6.w),
 
       suffixIcon: suffixIcon,
-      suffixIconColor: PortfolioColors.primary,
+      suffixIconColor: AppColors.primary,
       border: hasBorder ? buildBorder() : null,
       enabledBorder: hasBorder ? buildBorder() : null,
       focusedBorder: hasBorder ? buildBorder() : null,
@@ -127,14 +127,14 @@ class PortfolioTextField extends StatelessWidget {
                   text: labelText,
                   style: PortfolioConstants.text_theme.bodyMedium!.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: PortfolioColors.dark_blue,
+                    color: AppColors.dark_blue,
                   ),
                 ),
                 TextSpan(
                   text: ' *',
                   style: PortfolioConstants.text_theme.bodyMedium!.copyWith(
                     fontWeight: FontWeight.w500,
-                    color: PortfolioColors.accent,
+                    color: AppColors.accent,
                   ),
                 ),
               ],

@@ -3,8 +3,8 @@ import 'package:ziad_dev/common/style/portfolio_colors.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerWidgets {
-  static Color baseColor = PortfolioColors.secondary.withOpacity(0.4);
-  static Color highlightColor = PortfolioColors.primary;
+  static Color baseColor = AppColors.secondary.withOpacity(0.4);
+  static Color highlightColor = AppColors.primary;
 
   static Shimmer shimmerWrapper({required Widget child}) {
     return Shimmer.fromColors(

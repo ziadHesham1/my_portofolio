@@ -100,7 +100,7 @@ class LoadingAboutSection extends StatelessWidget {
             style: const TextStyle(
               fontSize: PortfolioTextTheme.fontSize14,
               fontWeight: FontWeight.bold,
-              color: PortfolioColors.accent,
+              color: AppColors.accent,
             ),
           ),
           Text(

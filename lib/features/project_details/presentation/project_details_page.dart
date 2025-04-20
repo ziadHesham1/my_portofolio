@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ziad_dev/common/style/portfolio_colors.dart';
 
 class ProjectDetailsPage extends StatelessWidget {
   const ProjectDetailsPage({super.key});
@@ -6,6 +7,7 @@ class ProjectDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.primary,
       appBar: AppBar(
         title: const Text('Project Details'),
       ),

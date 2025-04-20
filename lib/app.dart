@@ -10,8 +10,8 @@ import 'common/style/portfolio_colors.dart';
 import 'features/landing_page/landing_page.dart';
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  final AppNavigator appNavigator;
+  const MyApp({super.key, required this.appNavigator});
   @override
   Widget build(BuildContext context) {
     return AppBlocProviders(
@@ -25,14 +25,13 @@ class MyApp extends StatelessWidget {
               key: ValueKey(context.locale),
               navigatorKey: AppNavigator.navigatorState,
               debugShowCheckedModeBanner: false,
-              onGenerateRoute: AppNavigator.onCreateRoute,
+              onGenerateRoute: appNavigator.generateRoute,
               locale: context.locale,
               supportedLocales: AppLanguage.supportedLocales,
               localizationsDelegates: context.localizationDelegates,
               title: 'Ziad Dev',
               theme: ThemeData(
-                colorScheme:
-                    ColorScheme.fromSeed(seedColor: PortfolioColors.primary),
+                colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
                 useMaterial3: true,
               ),
               home: const LandingPage(),

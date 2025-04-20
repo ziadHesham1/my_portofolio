@@ -28,7 +28,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
     return Scaffold(
-      backgroundColor: PortfolioColors.primary,
+      backgroundColor: AppColors.primary,
       appBar: (PortfolioConstants.isDesktop())
           ? PreferredSize(
               preferredSize: Size(double.maxFinite, 100.h),
@@ -41,7 +41,7 @@ class _LandingPageState extends State<LandingPage> {
               bottom: const PreferredSize(
                 preferredSize: Size(50, 10),
                 child: Divider(
-                  color: PortfolioColors.secondary,
+                  color: AppColors.secondary,
                   thickness: 3,
                 ),
               ),
@@ -82,7 +82,7 @@ class _LandingPageState extends State<LandingPage> {
       endDrawer: (!(PortfolioConstants.isDesktop()))
           ? const Drawer(
               shape: BeveledRectangleBorder(),
-              backgroundColor: PortfolioColors.primary,
+              backgroundColor: AppColors.primary,
               child: MobileNavigationButtons(),
             )
           : null,

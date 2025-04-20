@@ -28,8 +28,8 @@ class AboutSkillsWidget extends StatelessWidget {
         borderRadius: const BorderRadius.all(
           Radius.circular(20),
         ),
-        color: PortfolioColors.secondary,
-        shadowColor: PortfolioColors.secondary.withOpacity(0.5),
+        color: AppColors.secondary,
+        shadowColor: AppColors.secondary.withOpacity(0.5),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4),
           child: Center(

@@ -29,7 +29,7 @@ class HomeInfoWidget extends StatelessWidget {
         children: [
           const HomeNameWidget(),
           const Divider(
-            color: PortfolioColors.accent,
+            color: AppColors.accent,
             thickness: 5,
           ),
           const HomeSummeryWidget(),

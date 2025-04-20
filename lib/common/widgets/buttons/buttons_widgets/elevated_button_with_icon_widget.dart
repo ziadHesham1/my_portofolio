@@ -13,19 +13,19 @@ class _ElevatedButtonWithIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // active Color is the color that is not white
     final Color activeColor =
-        portfolioElevatedButtonWithIcon.color ?? PortfolioColors.accent;
+        portfolioElevatedButtonWithIcon.color ?? AppColors.accent;
     //switch colors for the button
     final Color buttonColor = portfolioElevatedButtonWithIcon.isLightMode
-        ? PortfolioColors.primary // Background color in light mode
+        ? AppColors.primary // Background color in light mode
         : activeColor; // Background color in dark mode
 
     final Color textColor = portfolioElevatedButtonWithIcon.isLightMode
-        ? PortfolioColors.black
-        : PortfolioColors.primary; // Text color
+        ? AppColors.black
+        : AppColors.primary; // Text color
 
     final Color borderColor = portfolioElevatedButtonWithIcon.isLightMode
         ? textColor
-        : PortfolioColors.transparent; // Border color
+        : AppColors.transparent; // Border color
 
     final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
       // padding: EdgeInsets.all(3.h),

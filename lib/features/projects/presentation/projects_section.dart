@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ziad_dev/common/style/portfolio_colors.dart';
 
+import '../../../common/navigation/navigation.dart';
 import '../../../common/portfolio_constants.dart';
 import '../../../common/style/portfolio_text_theme.dart';
 import '../logic/projects_cubit/projects_cubit.dart';
@@ -44,8 +45,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
               ),
               SizedBox(
                   width: 0.3.sw,
-                  child: const Divider(
-                      color: PortfolioColors.secondary, thickness: 3)),
+                  child:
+                      const Divider(color: AppColors.secondary, thickness: 3)),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 40.0),
                 child: Column(
@@ -96,16 +97,21 @@ class _ProjectsSectionState extends State<ProjectsSection> {
     );
   }
 
-  Column projectWidget(ProjectModel project, int i) {
-    return Column(
-      children: [
-        if (PortfolioConstants.isDesktop()) ...{
-          DesktopProjectWidget(project: project, isReversed: i.isEven)
-        } else ...{
-          MobileProjectWidget(project: project)
-        },
-        Container(height: 60.h),
-      ],
+  Widget projectWidget(ProjectModel project, int i) {
+    return GestureDetector(
+      onTap: () {
+        context.pushNamed(AppRoutes.projectDetails);
+      },
+      child: Column(
+        children: [
+          if (PortfolioConstants.isDesktop()) ...{
+            DesktopProjectWidget(project: project, isReversed: i.isEven)
+          } else ...{
+            MobileProjectWidget(project: project)
+          },
+          Container(height: 60.h),
+        ],
+      ),
     );
   }
 }

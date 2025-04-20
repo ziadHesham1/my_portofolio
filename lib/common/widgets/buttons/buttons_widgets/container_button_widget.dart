@@ -15,7 +15,7 @@ class _PortfolioContainerButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(
             portfolioContainerButton.borderRadius ?? 10.r),
         border: portfolioContainerButton.hasBorder
-            ? Border.all(color: PortfolioColors.light_grey, width: 2)
+            ? Border.all(color: AppColors.light_grey, width: 2)
             : null,
       ),
       alignment: Alignment.center,

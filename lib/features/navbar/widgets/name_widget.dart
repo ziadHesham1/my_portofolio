@@ -23,7 +23,7 @@ class NameWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: PortfolioTextTheme.fontSize22,
                 fontWeight: FontWeight.bold,
-                color: PortfolioColors.black,
+                color: AppColors.black,
               ),
             ),
             TextSpan(
@@ -31,7 +31,7 @@ class NameWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: PortfolioTextTheme.fontSize22,
                 fontWeight: FontWeight.bold,
-                color: PortfolioColors.accent,
+                color: AppColors.accent,
               ),
             ),
           ],

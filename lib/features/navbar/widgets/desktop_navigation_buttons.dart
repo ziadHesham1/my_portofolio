@@ -22,7 +22,7 @@ class DesktopNavigationButtons extends StatelessWidget {
               return Row(
                 children: [
                   const VerticalDivider(
-                    color: PortfolioColors.secondary,
+                    color: AppColors.secondary,
                     thickness: 3,
                     indent: 3,
                     endIndent: 3,
@@ -51,7 +51,7 @@ class DesktopNavigationButtons extends StatelessWidget {
                   button: PortfolioTextButton(
                     buttonStyle: const TextStyle(
                       fontWeight: FontWeight.normal,
-                      color: PortfolioColors.black,
+                      color: AppColors.black,
                     ),
                     onPressed: () {
                       SectionsNavigator.navigateTo(e.navKey);

@@ -52,7 +52,7 @@ class SocialIconsWidget extends StatelessWidget {
                         UrlHelper.launchURL(e['url']), // Add onPressed function
                     child: FaIcon(
                       e['icon'],
-                      color: PortfolioColors.white,
+                      color: AppColors.white,
                       size: 20,
                     ),
                   ),

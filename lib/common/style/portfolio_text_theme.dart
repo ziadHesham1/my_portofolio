@@ -15,11 +15,11 @@ class PortfolioTextTheme {
     headlineLarge: TextStyle(
       fontWeight: FontWeight.w800,
       fontSize: 36.sp,
-      color: PortfolioColors.accent,
+      color: AppColors.accent,
     ),
     headlineMedium: TextStyle(
       fontSize: PortfolioTextTheme.fontSize22.sp,
-      color: PortfolioColors.dark_blue,
+      color: AppColors.dark_blue,
       fontWeight: FontWeight.w700,
     ),
     displayMedium: TextStyle(fontSize: 26.sp),

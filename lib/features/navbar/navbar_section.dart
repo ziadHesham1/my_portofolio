@@ -27,7 +27,7 @@ class NavbarSection extends StatelessWidget {
           ),
           SizedBox(height: 6.h),
           const Divider(
-            color: PortfolioColors.secondary,
+            color: AppColors.secondary,
             thickness: 3,
           ),
         ],

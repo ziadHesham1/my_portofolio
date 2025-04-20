@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ziad_dev/common/navigation/app_navigator.dart';
 
 import 'app.dart';
 import 'di.dart';
@@ -20,5 +21,7 @@ Future<void> main() async {
       path: 'assets/translations',
       fallbackLocale: defaultLocale,
       startLocale: defaultLocale,
-      child: const MyApp()));
+      child: MyApp(
+        appNavigator: AppNavigator(),
+      )));
 }

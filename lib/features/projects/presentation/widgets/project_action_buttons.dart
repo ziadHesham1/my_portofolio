@@ -89,7 +89,7 @@ class ProjectActionButtons extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: FaIcon(
             icon,
-            color: PortfolioColors.black,
+            color: AppColors.black,
             size: 20,
           ),
         ),

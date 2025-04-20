@@ -28,7 +28,7 @@ class FooterSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 10.0.h),
           child: const Divider(
-            color: PortfolioColors.secondary,
+            color: AppColors.secondary,
             thickness: 3,
           ),
         ),

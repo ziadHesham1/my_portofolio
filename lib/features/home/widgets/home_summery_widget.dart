@@ -32,7 +32,7 @@ class HomeSummeryWidget extends StatelessWidget {
               text: 'a_text'.tr(), // "A "
               style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize16,
-                color: PortfolioColors.black,
+                color: AppColors.black,
               ),
             ),
             TextSpan(
@@ -40,7 +40,7 @@ class HomeSummeryWidget extends StatelessWidget {
               style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize16,
                 fontWeight: FontWeight.bold,
-                color: PortfolioColors.accent,
+                color: AppColors.accent,
               ),
             ),
             TextSpan(
@@ -49,7 +49,7 @@ class HomeSummeryWidget extends StatelessWidget {
               style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize16,
                 // fontWeight: FontWeight.bold,
-                color: PortfolioColors.black,
+                color: AppColors.black,
               ),
             ),
           ],

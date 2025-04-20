@@ -27,7 +27,7 @@ class _LoadingWebViewState extends State<LoadingWebView> {
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
     return Scaffold(
-      backgroundColor: PortfolioColors.primary,
+      backgroundColor: AppColors.primary,
       appBar: appBar(),
       body: Center(
         child: Container(
@@ -59,7 +59,7 @@ class _LoadingWebViewState extends State<LoadingWebView> {
       endDrawer: (!(PortfolioConstants.isDesktop()))
           ? const Drawer(
               shape: BeveledRectangleBorder(),
-              backgroundColor: PortfolioColors.primary,
+              backgroundColor: AppColors.primary,
               child: MobileNavigationButtons(),
             )
           : null,
@@ -79,7 +79,7 @@ class _LoadingWebViewState extends State<LoadingWebView> {
             bottom: const PreferredSize(
               preferredSize: Size(50, 10),
               child: Divider(
-                color: PortfolioColors.secondary,
+                color: AppColors.secondary,
                 thickness: 3,
               ),
             ),

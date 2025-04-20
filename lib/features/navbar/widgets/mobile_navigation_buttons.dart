@@ -20,7 +20,7 @@ class MobileNavigationButtons extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            color: PortfolioColors.transparent,
+            color: AppColors.transparent,
             hasBorder: false,
             icon: const Icon(Icons.close),
           ),

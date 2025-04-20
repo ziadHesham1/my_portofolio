@@ -29,7 +29,7 @@ class _TextButtonWidget extends StatelessWidget {
                       decoration: portfolioTextButton.hasUnderline
                           ? TextDecoration.underline
                           : TextDecoration.none,
-                      color: portfolioTextButton.color ?? PortfolioColors.black,
+                      color: portfolioTextButton.color ?? AppColors.black,
                       overflow: TextOverflow.clip),
               overflow: TextOverflow.clip,
               maxLines: 2,

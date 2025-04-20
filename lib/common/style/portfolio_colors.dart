@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-abstract class PortfolioColors {
+abstract class AppColors {
   // Primary/main is used for 60% of the design. This neutral color gives room for the secondary and accent colors to stand out.
   static const Color primary = Color.fromARGB(255, 228, 255, 241);
   // The secondary is used for 30% of the design. This is a middle ground that compliments the primary and accent colors.

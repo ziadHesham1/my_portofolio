@@ -10,18 +10,18 @@ class _ElevatedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // active Color is the color that is not white
-    final Color color = portfolioElevatedButton.color ?? PortfolioColors.accent;
+    final Color color = portfolioElevatedButton.color ?? AppColors.accent;
     //switch colors for the button
     final Color buttonColor = portfolioElevatedButton.isLightMode
-        ? PortfolioColors.primary // Background color in light mode
+        ? AppColors.primary // Background color in light mode
         : color; // Background color in dark mode
 
-    const Color textColor = PortfolioColors.black;
+    const Color textColor = AppColors.black;
     // : PortfolioColors.primaryColor; // Text color
 
     final Color borderColor = portfolioElevatedButton.isLightMode
         ? textColor
-        : PortfolioColors.transparent; // Border color
+        : AppColors.transparent; // Border color
 
     return ElevatedButton(
       onPressed: portfolioElevatedButton.disabled
@@ -69,7 +69,7 @@ class _ElevatedButtonWidget extends StatelessWidget {
             side: BorderSide(
               color: portfolioElevatedButton.hasBorder
                   ? borderColor
-                  : PortfolioColors.transparent,
+                  : AppColors.transparent,
             ),
           ),
     );

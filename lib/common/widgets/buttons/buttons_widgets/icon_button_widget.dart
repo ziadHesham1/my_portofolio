@@ -9,8 +9,8 @@ class _IconButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Color buttonColor = portfolioIconButton.isLightMode
-        ? PortfolioColors.white // Background color in light mode
-        : PortfolioColors.secondary; // Background color in dark mode
+        ? AppColors.white // Background color in light mode
+        : AppColors.secondary; // Background color in dark mode
 
     // final Color textColor = portfolioIconButton.isLightMode
     //     ? PortfolioColors.secondaryColor
@@ -24,7 +24,7 @@ class _IconButtonWidget extends StatelessWidget {
     if (portfolioIconButton.hasBorder) {
       shape2 = CircleBorder(
         side: BorderSide(
-          color: PortfolioColors.grey.withOpacity(0.5),
+          color: AppColors.grey.withOpacity(0.5),
         ),
       );
     } else if (portfolioIconButton.isContainer) {

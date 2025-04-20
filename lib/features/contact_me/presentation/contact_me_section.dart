@@ -15,7 +15,7 @@ class ContactMeSection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20),
       constraints: const BoxConstraints(maxWidth: 350, maxHeight: 400),
       decoration: BoxDecoration(
-        border: Border.all(color: PortfolioColors.secondary, width: 2),
+        border: Border.all(color: AppColors.secondary, width: 2),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -27,7 +27,7 @@ class ContactMeSection extends StatelessWidget {
             style: const TextStyle(
               fontSize: PortfolioTextTheme.fontSize14,
               fontWeight: FontWeight.bold,
-              color: PortfolioColors.accent,
+              color: AppColors.accent,
             ),
           ),
           Text(

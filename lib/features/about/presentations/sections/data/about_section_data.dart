@@ -1,15 +1,12 @@
+import 'package:easy_localization/easy_localization.dart';
+
 class AboutSectionData {
-  static const String aboutSubtitle = 'Who I am';
-  static const String aboutDescription =
-      "As a Flutter developer, I’m dedicated to building high-performance, cross-platform mobile applications."
-      " My journey in software development has equipped me with strong problem-solving skills and a keen eye for detail."
-      " I enjoy creating user-centric apps that are both functional and visually appealing."
-      " Always eager to learn, I stay updated with the latest trends in technology. "
-      " Let’s collaborate and turn your ideas into reality!";
+  static final String aboutSubtitle = 'who_i_am'.tr();
+  static final String aboutDescription = "flutter_developer_description".tr();
 
-  static const String techStackSubtitle = 'What I\'m good at 💻';
+  static final String techStackSubtitle = 'what_im_good_at'.tr();
 
-  static const String specialtySubtitle = 'Flutter Developer';
+  static final String specialtySubtitle = 'flutter_developer'.tr();
 
-  static const String educationSubtitle = '🎓 AIET, Computer Engineering';
+  static final String educationSubtitle = 'education_aiet'.tr();
 }

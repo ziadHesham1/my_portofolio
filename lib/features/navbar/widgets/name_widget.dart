@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/navigation/sections_navigator.dart';
+import 'package:ziad_dev/common/navigation/sections_navigator.dart';
 
 import '../../../common/style/portfolio_colors.dart';
 import '../../../common/style/portfolio_text_theme.dart';

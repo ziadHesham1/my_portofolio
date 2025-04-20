@@ -1,4 +1,4 @@
-name: my_portfolio
+name: ziad_dev
 description: "A new Flutter project."
 
 publish_to: 'none'
@@ -10,18 +10,18 @@ environment:
   sdk: '>=3.3.4 <4.0.0'
 
 dependencies:
-  bloc: ^8.1.4
+  flutter_bloc: ^9.1.0
   cached_network_image: ^3.3.1
   carousel_slider: ^5.0.0
   collection: ^1.18.0
   cupertino_icons: ^1.0.6
   dio: ^5.4.3+1
+  easy_localization: ^3.0.7+1
   equatable: ^2.0.5
   firebase_core: ^2.30.1
   firebase_storage: ^11.7.7
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.1.5
   flutter_bootstrap: ^2.0.0
   flutter_bootstrap5: ^1.1.1+1
   flutter_launcher_icons: ^0.13.1
@@ -33,6 +33,7 @@ dependencies:
   font_awesome_flutter: ^10.7.0
   get_it: ^7.7.0
   intl: ^0.19.0
+  path_provider: ^2.1.5
   pretty_dio_logger: ^1.4.0
   rxdart: ^0.28.0
   shimmer: ^3.0.0
@@ -64,3 +65,4 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/translations/

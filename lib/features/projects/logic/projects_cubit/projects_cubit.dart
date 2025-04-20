@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:my_portfolio/common/features/loading/data/repo/loading_repo.dart';
+import 'package:ziad_dev/common/features/loading/data/repo/loading_repo.dart';
 
 import '../../data/models/projects_model.dart';
 import '../../data/repo/projects_repository.dart';

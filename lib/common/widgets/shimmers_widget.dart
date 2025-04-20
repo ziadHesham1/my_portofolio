@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/style/portfolio_colors.dart';
+import 'package:ziad_dev/common/style/portfolio_colors.dart';
 import 'package:shimmer/shimmer.dart';
 
 class PortfolioShimmerWidget extends StatelessWidget {

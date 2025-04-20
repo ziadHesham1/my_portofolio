@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/portfolio_constants.dart';
-import 'package:my_portfolio/common/portfolio_network_assets.dart';
-import 'package:my_portfolio/common/widgets/image_widgets/portfolio_image_widget.dart';
-import 'package:my_portfolio/common/widgets/portfolio_loading_widget.dart';
-import 'package:my_portfolio/common/widgets/shimmer_widgets.dart';
-import 'package:my_portfolio/common/widgets/shimmers_widget.dart';
+import 'package:ziad_dev/common/portfolio_constants.dart';
+import 'package:ziad_dev/common/portfolio_network_assets.dart';
+import 'package:ziad_dev/common/widgets/image_widgets/portfolio_image_widget.dart';
+import 'package:ziad_dev/common/widgets/portfolio_loading_widget.dart';
+import 'package:ziad_dev/common/widgets/shimmer_widgets.dart';
+import 'package:ziad_dev/common/widgets/shimmers_widget.dart';
 
 class HomeImageWidget extends StatelessWidget {
   const HomeImageWidget({

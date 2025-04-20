@@ -1,15 +1,16 @@
 import 'package:collection/collection.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfolio/common/style/portfolio_colors.dart';
+import 'package:ziad_dev/common/style/portfolio_colors.dart';
 
 import '../../../common/portfolio_constants.dart';
 import '../../../common/style/portfolio_text_theme.dart';
 import '../logic/projects_cubit/projects_cubit.dart';
 import 'widgets/desktop_project_widget.dart';
 import 'widgets/mobile_project_widget.dart';
-import 'package:my_portfolio/features/projects/data/models/project_model.dart';
+import 'package:ziad_dev/features/projects/data/models/project_model.dart';
 
 class ProjectsSection extends StatefulWidget {
   const ProjectsSection({super.key});
@@ -28,16 +29,16 @@ class _ProjectsSectionState extends State<ProjectsSection> {
           constraints: const BoxConstraints(maxWidth: 1300),
           child: Column(
             children: [
-              const Text(
-                'Projects',
-                style: TextStyle(
+              Text(
+                'projects_title'.tr(),
+                style: const TextStyle(
                   fontSize: PortfolioTextTheme.fontSize40,
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              const Text(
-                'Take a look at some of my work 📍',
-                style: TextStyle(
+              Text(
+                'projects_subtitle'.tr(),
+                style: const TextStyle(
                   fontSize: PortfolioTextTheme.fontSize18,
                 ),
               ),
@@ -49,9 +50,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 padding: const EdgeInsets.symmetric(vertical: 40.0),
                 child: Column(
                   children: [
-                    const Text(
-                      'Work Experience',
-                      style: TextStyle(
+                    Text(
+                      'work_experience_title'.tr(),
+                      style: const TextStyle(
                         fontSize: PortfolioTextTheme.fontSize28,
                         fontWeight: FontWeight.w700,
                       ),
@@ -61,9 +62,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                       // refactor this code to be one widget
                       return projectWidget(project, i);
                     }),
-                    const Text(
-                      'Freelance Projects',
-                      style: TextStyle(
+                    Text(
+                      'freelance_projects_title'.tr(),
+                      style: const TextStyle(
                         fontSize: PortfolioTextTheme.fontSize28,
                         fontWeight: FontWeight.w600,
                       ),
@@ -73,9 +74,9 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                       // refactor this code to be one widget
                       return projectWidget(project, i);
                     }),
-                    const Text(
-                      'Side Projects',
-                      style: TextStyle(
+                    Text(
+                      'side_projects_title'.tr(),
+                      style: const TextStyle(
                         fontSize: PortfolioTextTheme.fontSize28,
                         fontWeight: FontWeight.w700,
                       ),

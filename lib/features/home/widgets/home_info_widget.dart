@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,7 +42,7 @@ class HomeInfoWidget extends StatelessWidget {
               children: [
                 _actionButton(
                     flex: 7,
-                    text: 'Contact Me',
+                    text: 'contact_me'.tr(),
                     onPressed: () {
                       SectionsNavigator.navigateTo(
                           SectionsNavigator.contactNavigatorKey);
@@ -53,7 +54,7 @@ class HomeInfoWidget extends StatelessWidget {
                     SectionsNavigator.navigateTo(
                         SectionsNavigator.projectsNavigatorKey);
                   },
-                  text: 'View my work',
+                  text: 'view_my_work'.tr(),
                 ),
                 SizedBox(width: 6.w),
                 BlocBuilder<ContactInfoCubit, ContactInfoState>(

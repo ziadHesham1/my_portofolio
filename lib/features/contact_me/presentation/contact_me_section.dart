@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../../../common/style/portfolio_colors.dart';
 import '../../../common/style/portfolio_text_theme.dart';
@@ -17,27 +18,26 @@ class ContactMeSection extends StatelessWidget {
         border: Border.all(color: PortfolioColors.secondary, width: 2),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: const Column(
-        // mainAxisSize: MainAxisSize.min,
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'CONTACT ME',
-            style: TextStyle(
+            'contact_me_title'.tr(),
+            style: const TextStyle(
               fontSize: PortfolioTextTheme.fontSize14,
               fontWeight: FontWeight.bold,
               color: PortfolioColors.accent,
             ),
           ),
           Text(
-            'Let\'s talk!',
-            style: TextStyle(
+            'lets_talk'.tr(),
+            style: const TextStyle(
               fontSize: PortfolioTextTheme.fontSize18,
             ),
           ),
-          ContactInfoWidget(),
-          SocialIconsWidget(),
+          const ContactInfoWidget(),
+          const SocialIconsWidget(),
         ],
       ),
     );

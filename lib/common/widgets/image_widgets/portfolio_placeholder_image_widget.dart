@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/portfolio_assets.dart';
+import 'package:ziad_dev/common/portfolio_assets.dart';
 
 class PortfolioPlaceholderImageWidget extends StatelessWidget {
   const PortfolioPlaceholderImageWidget({

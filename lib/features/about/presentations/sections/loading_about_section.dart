@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/widgets/shimmer_widgets.dart';
+import 'package:ziad_dev/common/widgets/shimmer_widgets.dart';
 
 import '../../../../common/style/portfolio_colors.dart';
 import '../../../../common/style/portfolio_text_theme.dart';

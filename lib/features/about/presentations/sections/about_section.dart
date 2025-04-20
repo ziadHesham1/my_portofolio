@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,16 +18,16 @@ class AboutSection extends StatelessWidget {
     var children = [
       aboutItemWidget(
         maxWidth: 490,
-        title: 'ABOUT ME 🚀',
+        title: 'about_me'.tr(),
         subTitle: AboutSectionData.aboutSubtitle,
         child: PortfolioLoadingWidget(
           loadingChild: ShimmerWidgets.shimmerText(
             lines: 5,
             width: double.infinity,
           ),
-          child: const Text(
-            AboutSectionData.aboutDescription,
-            style: TextStyle(
+          child: Text(
+            AboutSectionData.aboutDescription.tr(),
+            style: const TextStyle(
               fontSize: PortfolioTextTheme.fontSize16,
             ),
           ),
@@ -35,7 +36,7 @@ class AboutSection extends StatelessWidget {
       const SizedBox(height: 60),
       aboutItemWidget(
         maxWidth: 500,
-        title: 'TECH STACK',
+        title: 'tech_stack'.tr(),
         subTitle: AboutSectionData.techStackSubtitle,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 20.0),
@@ -56,12 +57,12 @@ class AboutSection extends StatelessWidget {
                   minRowWidth: 480,
                   childrenBuilder: (isRow) => [
                     aboutItemWidget(
-                      title: 'SPECIALTY',
+                      title: 'specialty'.tr(),
                       subTitle: AboutSectionData.specialtySubtitle,
                     ),
                     const SizedBox(width: 14),
                     aboutItemWidget(
-                      title: 'EDUCATION',
+                      title: 'education'.tr(),
                       subTitle: AboutSectionData.educationSubtitle,
                     ),
                   ],

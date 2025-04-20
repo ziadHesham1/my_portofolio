@@ -6,10 +6,9 @@ import '../madpoly.dart';
 // implement or extend custom navi goto(target,targetId)
 
 /// Global Context of App
-BuildContext? get currentContext =>
-    PortfolioNavigator.navigatorState.currentContext;
+BuildContext? get currentContext => AppNavigator.navigatorState.currentContext;
 
-abstract class PortfolioNavigator {
+abstract class AppNavigator {
   static final GlobalKey<NavigatorState> navigatorState =
       GlobalKey<NavigatorState>();
   static final RouteObserver<PageRoute> routeObserver =

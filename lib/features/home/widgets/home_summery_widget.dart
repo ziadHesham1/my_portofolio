@@ -1,8 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/style/portfolio_colors.dart';
-import 'package:my_portfolio/common/style/portfolio_text_theme.dart';
-import 'package:my_portfolio/common/widgets/portfolio_loading_widget.dart';
-import 'package:my_portfolio/common/widgets/shimmer_widgets.dart';
+import 'package:ziad_dev/common/style/portfolio_colors.dart';
+import 'package:ziad_dev/common/style/portfolio_text_theme.dart';
+import 'package:ziad_dev/common/widgets/portfolio_loading_widget.dart';
+import 'package:ziad_dev/common/widgets/shimmer_widgets.dart';
 
 class HomeSummeryWidget extends StatelessWidget {
   const HomeSummeryWidget({
@@ -25,27 +26,27 @@ class HomeSummeryWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: RichText(
-        text: const TextSpan(
+        text: TextSpan(
           children: [
             TextSpan(
-              text: 'A ',
-              style: TextStyle(
+              text: 'a_text'.tr(), // "A "
+              style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize16,
                 color: PortfolioColors.black,
               ),
             ),
             TextSpan(
-              text: 'Flutter developer ',
-              style: TextStyle(
+              text: 'flutter_developer'.tr(), // "Flutter developer"
+              style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize16,
                 fontWeight: FontWeight.bold,
                 color: PortfolioColors.accent,
               ),
             ),
             TextSpan(
-              text:
-                  'passionate about molding ideas into breathtaking digital experience',
-              style: TextStyle(
+              text: 'passionate_about_molding_ideas'
+                  .tr(), // "passionate about molding ideas"
+              style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize16,
                 // fontWeight: FontWeight.bold,
                 color: PortfolioColors.black,

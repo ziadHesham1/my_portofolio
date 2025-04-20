@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 import '../generated/l10n.dart';
-import 'navigation/portfolio_navigator.dart';
+import 'navigation/app_navigator.dart';
 
 abstract class PortfolioConstants {
   // Get the text theme from the current theme currentContext!.

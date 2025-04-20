@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/navigation/sections_navigator.dart';
-import 'package:my_portfolio/common/style/portfolio_colors.dart';
+import 'package:ziad_dev/common/navigation/sections_navigator.dart';
+import 'package:ziad_dev/common/style/portfolio_colors.dart';
 
 import '../../../common/widgets/buttons/portfolio_button_export.dart';
 

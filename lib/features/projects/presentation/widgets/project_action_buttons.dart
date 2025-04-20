@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -22,31 +23,31 @@ class ProjectActionButtons extends StatelessWidget {
     var list = addSpacingBetween(space: 25, direction: Axis.horizontal, [
       if (project.actionLinks.appStore.isNotEmptyOrNull)
         _button(
-          title: 'App Store',
+          title: 'app_store'.tr(),
           url: project.actionLinks.appStore!,
           icon: FontAwesomeIcons.apple,
         ),
       if (project.actionLinks.googlePlay.isNotEmptyOrNull)
         _button(
-          title: 'Google Play',
+          title: 'google_play'.tr(),
           url: project.actionLinks.googlePlay!,
           icon: FontAwesomeIcons.googlePlay,
         ),
       if (project.actionLinks.website.isNotEmptyOrNull)
         _button(
-          title: 'Website',
+          title: 'website'.tr(),
           url: project.actionLinks.website!,
           icon: FontAwesomeIcons.globe,
         ),
       if (project.actionLinks.github.isNotEmptyOrNull)
         _button(
-          title: 'View on Github',
+          title: 'view_on_github'.tr(),
           url: project.actionLinks.github!,
           icon: FontAwesomeIcons.github,
         ),
       if (project.actionLinks.demoVideo.isNotEmptyOrNull)
         _button(
-          title: 'Live Preview',
+          title: 'live_preview'.tr(),
           url: project.actionLinks.demoVideo!,
           icon: FontAwesomeIcons.arrowUpRightFromSquare,
         ),

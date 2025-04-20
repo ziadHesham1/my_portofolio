@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class SectionsNavigator {
   // home,about projects contact
@@ -11,26 +12,27 @@ class SectionsNavigator {
           ({String label, GlobalKey<NavigatorState> navKey, IconData iconData})>
       actionLabels = [
     (
-      label: 'Home',
+      label: 'home'.tr(),
       navKey: SectionsNavigator.homeNavigatorKey,
       iconData: Icons.home_outlined
     ),
     (
-      label: 'About',
+      label: 'about'.tr(),
       navKey: SectionsNavigator.aboutNavigatorKey,
       iconData: Icons.info_outline_rounded
     ),
     (
-      label: 'Projects',
+      label: 'projects'.tr(),
       navKey: SectionsNavigator.projectsNavigatorKey,
       iconData: Icons.work_outlined
     ),
     (
-      label: 'Contact',
+      label: 'contact'.tr(),
       navKey: SectionsNavigator.contactNavigatorKey,
       iconData: Icons.contact_page
     )
   ];
+
   static navigateTo(GlobalKey<NavigatorState> key) {
     Scrollable.ensureVisible(
       key.currentContext!,

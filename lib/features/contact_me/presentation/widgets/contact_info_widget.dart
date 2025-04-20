@@ -3,9 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
-import 'package:my_portfolio/features/contact_me/logic/contact_info_cubit/contact_info_cubit.dart';
+import 'package:ziad_dev/features/contact_me/logic/contact_info_cubit/contact_info_cubit.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:html' as html;
+import 'package:easy_localization/easy_localization.dart'; // إضافة الاستيراد
 
 import '../../../../common/style/portfolio_text_theme.dart';
 
@@ -57,13 +58,13 @@ class ContactInfoWidget extends StatelessWidget {
           children: [
             infoListTile(
               leading: const Icon(Icons.email),
-              title: 'E-mail',
+              title: 'email_title'.tr(), // استخدام الترجمة
               subtitle: state.contactInfo.email,
               onTap: () => _composeEmail(state.contactInfo.email),
             ),
             infoListTile(
               leading: const Icon(Icons.phone),
-              title: 'Phone Number',
+              title: 'phone_number_title'.tr(), // استخدام الترجمة
               subtitle: state.contactInfo.phoneNumber,
               onTap: () {
                 _copyToClipboard(state.contactInfo.phoneNumber);
@@ -72,8 +73,8 @@ class ContactInfoWidget extends StatelessWidget {
             ),
             infoListTile(
               leading: const Icon(Icons.description),
-              title: 'My Resume',
-              subtitle: 'View here',
+              title: 'my_resume_title'.tr(), // استخدام الترجمة
+              subtitle: 'View here'.tr(), // استخدام الترجمة
               onTap: () => launchUrl(Uri.parse(state.contactInfo.resumeLink)),
             ),
           ],

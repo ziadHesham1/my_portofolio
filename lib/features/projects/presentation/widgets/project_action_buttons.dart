@@ -5,92 +5,105 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../common/extensions/string_extension.dart';
 import '../../../../common/network/url_helper.dart';
 import '../../../../common/style/portfolio_colors.dart';
-import '../../../../common/widget_children_helpers.dart';
-import '../../../../common/widgets/buttons/portfolio_button_export.dart';
+import '../../../../common/style/portfolio_text_theme.dart';
 import '../../../../common/widgets/portfolio_loading_widget.dart';
-import '../../../../common/widgets/responsive_row.dart';
 import '../../data/models/project_model.dart';
 
 class ProjectActionButtons extends StatelessWidget {
   final ProjectModel project;
-  const ProjectActionButtons({
-    super.key,
-    required this.project,
-  });
+
+  const ProjectActionButtons({super.key, required this.project});
 
   @override
   Widget build(BuildContext context) {
-    var list = addSpacingBetween(space: 25, direction: Axis.horizontal, [
+    final buttons = [
       if (project.actionLinks.appStore.isNotEmptyOrNull)
-        _button(
-          title: 'app_store'.tr(),
+        _LinkButton(
+          label: 'app_store'.tr(),
           url: project.actionLinks.appStore!,
           icon: FontAwesomeIcons.apple,
         ),
       if (project.actionLinks.googlePlay.isNotEmptyOrNull)
-        _button(
-          title: 'google_play'.tr(),
+        _LinkButton(
+          label: 'google_play'.tr(),
           url: project.actionLinks.googlePlay!,
           icon: FontAwesomeIcons.googlePlay,
         ),
       if (project.actionLinks.website.isNotEmptyOrNull)
-        _button(
-          title: 'website'.tr(),
+        _LinkButton(
+          label: 'website'.tr(),
           url: project.actionLinks.website!,
           icon: FontAwesomeIcons.globe,
         ),
       if (project.actionLinks.github.isNotEmptyOrNull)
-        _button(
-          title: 'view_on_github'.tr(),
+        _LinkButton(
+          label: 'view_on_github'.tr(),
           url: project.actionLinks.github!,
           icon: FontAwesomeIcons.github,
         ),
       if (project.actionLinks.demoVideo.isNotEmptyOrNull)
-        _button(
-          title: 'live_preview'.tr(),
+        _LinkButton(
+          label: 'live_preview'.tr(),
           url: project.actionLinks.demoVideo!,
           icon: FontAwesomeIcons.arrowUpRightFromSquare,
         ),
-    ]);
-    // return Row(
-    //   mainAxisAlignment: MainAxisAlignment.center,
-    //   children: list,
-    // );
+    ];
 
     return PortfolioLoadingWidget(
-        loadingChild: const SizedBox.shrink(),
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 450),
-          child: ResponsiveRow(
-            minRowWidth: 400,
-            rowMainAxisAlignment: MainAxisAlignment.center,
-            columnMainAxisAlignment: MainAxisAlignment.center,
-            childrenBuilder: (isRow) {
-              return list;
-            },
-          ),
-        ));
+      loadingChild: const SizedBox.shrink(),
+      child: Wrap(
+        spacing: 24,
+        runSpacing: 12,
+        children: buttons,
+      ),
+    );
   }
+}
 
-  PortfolioButton _button({
-    required String title,
-    required String url,
-    // String? icon,
-    IconData? icon,
-    // Widget? widget,
-  }) {
-    return PortfolioButton(
-      button: PortfolioTextButton(
-        buttonLabel: title,
-        onPressed: () {
-          UrlHelper.launchURL(url);
-        },
-        widget: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: FaIcon(
-            icon,
-            color: AppColors.black,
-            size: 20,
+class _LinkButton extends StatefulWidget {
+  final String label;
+  final String url;
+  final IconData icon;
+
+  const _LinkButton({
+    required this.label,
+    required this.url,
+    required this.icon,
+  });
+
+  @override
+  State<_LinkButton> createState() => _LinkButtonState();
+}
+
+class _LinkButtonState extends State<_LinkButton> {
+  bool _hovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => _hovered = true),
+      onExit: (_) => setState(() => _hovered = false),
+      child: GestureDetector(
+        onTap: () => UrlHelper.launchURL(widget.url),
+        child: AnimatedDefaultTextStyle(
+          duration: const Duration(milliseconds: 150),
+          style: TextStyle(
+            fontSize: PortfolioTextTheme.fontSize16,
+            fontWeight: FontWeight.w500,
+            color: _hovered ? AppColors.accent : AppColors.black,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              FaIcon(
+                widget.icon,
+                size: 16,
+                color: _hovered ? AppColors.accent : AppColors.black,
+              ),
+              const SizedBox(width: 8),
+              Text(widget.label),
+            ],
           ),
         ),
       ),

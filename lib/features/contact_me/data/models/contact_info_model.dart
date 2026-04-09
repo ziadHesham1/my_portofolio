@@ -2,6 +2,7 @@
 import 'package:equatable/equatable.dart';
 
 class ContactInfoModel extends Equatable {
+  final String name;
   final String email;
   final String githubLink;
   final String linkedinLink;
@@ -11,6 +12,7 @@ class ContactInfoModel extends Equatable {
   final String whatsappLink;
 
   const ContactInfoModel({
+    required this.name,
     required this.email,
     required this.githubLink,
     required this.linkedinLink,
@@ -22,10 +24,11 @@ class ContactInfoModel extends Equatable {
 
   factory ContactInfoModel.fromJson(Map<String, dynamic> json) {
     return ContactInfoModel(
+      name: json['name'] ?? '',
       email: json['email'] ?? '',
       githubLink: json['github_link'] ?? '',
       linkedinLink: json['linkedin_link'] ?? '',
-      phoneNumber: json['phone_number'].toString(), // converting int to String
+      phoneNumber: json['phone_number'].toString(),
       resumeLink: json['resume_link'] ?? '',
       telegramLink: json['telegram_link'] ?? '',
       whatsappLink: json['whatsapp_link'] ?? '',
@@ -33,6 +36,7 @@ class ContactInfoModel extends Equatable {
   }
 
   factory ContactInfoModel.empty() => const ContactInfoModel(
+        name: '',
         email: '',
         githubLink: '',
         linkedinLink: '',
@@ -43,15 +47,14 @@ class ContactInfoModel extends Equatable {
       );
 
   @override
-  List<Object> get props {
-    return [
-      email,
-      githubLink,
-      linkedinLink,
-      phoneNumber,
-      resumeLink,
-      telegramLink,
-      whatsappLink,
-    ];
-  }
+  List<Object> get props => [
+        name,
+        email,
+        githubLink,
+        linkedinLink,
+        phoneNumber,
+        resumeLink,
+        telegramLink,
+        whatsappLink,
+      ];
 }

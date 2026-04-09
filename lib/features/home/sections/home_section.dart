@@ -16,11 +16,14 @@ class HomeSection extends StatelessWidget {
       child: ResponsiveRow(
         minRowWidth: 900,
         rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
-        childrenBuilder: (isRow) => [
-          if (!isRow) const SizedBox(height: 80),
-          const HomeInfoWidget(),
-          const HomeImageWidget(),
-        ],
+        childrenBuilder: (isRow) {
+          var list = [
+            if (!isRow) const SizedBox(height: 80),
+            const HomeInfoWidget(),
+            const HomeImageWidget(),
+          ];
+          return !isRow ? list.reversed.toList() : list;
+        },
       ),
     );
   }

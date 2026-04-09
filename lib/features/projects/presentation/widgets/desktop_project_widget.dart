@@ -7,10 +7,13 @@ import 'project_info_widget.dart';
 
 class DesktopProjectWidget extends StatelessWidget {
   final ProjectModel project;
+  final String categoryLabel;
   final bool isReversed;
+
   const DesktopProjectWidget({
     super.key,
     required this.project,
+    required this.categoryLabel,
     required this.isReversed,
   });
 
@@ -21,8 +24,9 @@ class DesktopProjectWidget extends StatelessWidget {
       Expanded(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProjectInfoWidget(project: project),
+            ProjectInfoWidget(project: project, categoryLabel: categoryLabel),
             ProjectActionButtons(project: project),
           ],
         ),

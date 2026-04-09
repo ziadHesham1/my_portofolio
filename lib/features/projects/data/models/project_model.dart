@@ -11,6 +11,7 @@ class ProjectModel extends Equatable {
   final String thumbnail;
   final ProjectActionLinks actionLinks;
   final ProjectType projectType;
+  final List<String> techStack;
 
   const ProjectModel({
     required this.id,
@@ -20,11 +21,12 @@ class ProjectModel extends Equatable {
     required this.subTitle,
     required this.title,
     this.projectType = ProjectType.mobile,
+    this.techStack = const [],
   });
 
   @override
   List<Object?> get props =>
-      [id, actionLinks, images, subTitle, title, projectType];
+      [id, actionLinks, images, subTitle, title, projectType, techStack];
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) {
     return ProjectModel(
@@ -35,11 +37,12 @@ class ProjectModel extends Equatable {
       images: List<String>.from(json['images'] ?? []),
       actionLinks: ProjectActionLinks.fromJson(
         json['action_links'] ?? {},
-      ), // Convert to Map<String, dynamic>
+      ),
       projectType: json['project_type'] != null
           ? ProjectType.values.firstWhere(
               (e) => e.toString() == 'ProjectType.${json['project_type']}')
           : ProjectType.mobile,
+      techStack: List<String>.from(json['tech_stack'] ?? []),
     );
   }
 
@@ -51,8 +54,8 @@ class ProjectModel extends Equatable {
       'thumbnail': thumbnail,
       'images': images,
       'action_links': actionLinks.toJson(),
-      'project_type':
-          projectType.toString().split('.').last, // Convert enum to string
+      'project_type': projectType.toString().split('.').last,
+      'tech_stack': techStack,
     };
   }
 
@@ -64,6 +67,7 @@ class ProjectModel extends Equatable {
     String? subTitle,
     String? title,
     ProjectType? projectType,
+    List<String>? techStack,
   }) {
     return ProjectModel(
       id: id ?? this.id,
@@ -73,6 +77,7 @@ class ProjectModel extends Equatable {
       subTitle: subTitle ?? this.subTitle,
       title: title ?? this.title,
       projectType: projectType ?? this.projectType,
+      techStack: techStack ?? this.techStack,
     );
   }
 
@@ -84,6 +89,7 @@ class ProjectModel extends Equatable {
       images: const [],
       subTitle: '',
       title: '',
+      techStack: const [],
     );
   }
 }

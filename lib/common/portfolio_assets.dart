@@ -16,5 +16,5 @@ abstract class PortfolioAssets {
   static final String vscode_icon = addIcon('vscode.png');
 
 // empty_image
-  static final String empty_image = addImage('placeholder_image.png');
+  static final String empty_image = addImage('placeholder_image.svg');
 }

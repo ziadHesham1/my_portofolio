@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               locale: context.locale,
               supportedLocales: AppLanguage.supportedLocales,
               localizationsDelegates: context.localizationDelegates,
-              title: 'Ziad Dev',
+              title: 'Ziad.dev',
               theme: ThemeData(
                 colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
                 useMaterial3: true,

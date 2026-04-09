@@ -173,7 +173,7 @@ const Map<String, dynamic> data = {
               "https://apps.apple.com/us/app/pocket-ai-money-manager/id6751238801",
           "playstore":
               "https://play.google.com/store/apps/details?id=com.startix.pocket",
-          "website": "https://pocket-ai.app"
+          "external_reference": "https://pocket-ai.app"
         },
         "id": "b8c4f9c2-7c6e-4b18-9a2e-1d2f0f5c6a11",
         "images": [

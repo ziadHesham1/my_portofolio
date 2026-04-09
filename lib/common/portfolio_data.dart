@@ -97,8 +97,8 @@ const Map<String, dynamic> data = {
         ],
         "project_type": "mobile",
         "sub_title":
-            "Contributed to the development of the Enabler App, a platform built to support and streamline business enablement services.",
-        "tech_stack": ["Flutter", "REST API"],
+            "A B2B marketplace for industrial consumables and spare parts. Buyers can search, filter, favorite, and checkout with order tracking, while sellers can list and manage their own spare parts — all within a clean, role-aware mobile experience.",
+        "tech_stack": ["Flutter", "Dart", "BLoC/Cubit", "REST API", "Firebase"],
         "thumbnail":
             "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/enabler/thumbnail.png",
         "title": "Enabler App"

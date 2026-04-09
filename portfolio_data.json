@@ -97,10 +97,13 @@
           "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/enabler/3.png"
         ],
         "project_type": "mobile",
-        "sub_title": "Contributed to the development of the Enabler App, a platform built to support and streamline business enablement services.",
+        "sub_title": "A B2B marketplace for industrial consumables and spare parts. Buyers can search, filter, favorite, and checkout with order tracking, while sellers can list and manage their own spare parts — all within a clean, role-aware mobile experience.",
         "tech_stack": [
           "Flutter",
-          "REST API"
+          "Dart",
+          "BLoC/Cubit",
+          "REST API",
+          "Firebase"
         ],
         "thumbnail": "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/enabler/thumbnail.png",
         "title": "Enabler App"
@@ -182,7 +185,7 @@
         "action_links": {
           "appstore": "https://apps.apple.com/us/app/pocket-ai-money-manager/id6751238801",
           "playstore": "https://play.google.com/store/apps/details?id=com.startix.pocket",
-          "website": "https://pocket-ai.app"
+          "external_reference": "https://pocket-ai.app"
         },
         "id": "b8c4f9c2-7c6e-4b18-9a2e-1d2f0f5c6a11",
         "images": [

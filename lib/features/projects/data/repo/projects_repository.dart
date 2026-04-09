@@ -1,5 +1,10 @@
-import 'package:flutter/widgets.dart';
+import 'dart:convert';
 
+import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
+import 'package:ziad_dev/common/portfolio_data.dart';
+
+import '../../../../common/portfolio_constants.dart';
 import '../models/projects_model.dart';
 import '../network/projects_network.dart';
 
@@ -8,7 +13,19 @@ class ProjectsRepository {
 
   const ProjectsRepository(ProjectsNetwork projectsNetwork)
       : _projectsNetwork = projectsNetwork;
+
   Future<ProjectsModel> getProjects() async {
+    if (!PortfolioConstants.isProduction) {
+      try {
+        final jsonStr = await rootBundle.loadString('portfolio_data.json');
+        // final json = jsonDecode(jsonStr) as Map<String, dynamic>;
+        return ProjectsModel.fromJson(data['projects']);
+      } catch (e) {
+        debugPrint('Failed to load local projects data: $e');
+        return ProjectsModel.empty();
+      }
+    }
+
     Map<String, dynamic> response = await _projectsNetwork.getProjects();
     ProjectsModel projectsList = ProjectsModel.empty();
 

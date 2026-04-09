@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../common/extensions/string_extension.dart';
+import '../../../../common/network/url_helper.dart';
 import '../../../../common/style/portfolio_colors.dart';
 import '../../../../common/style/portfolio_text_theme.dart';
 import '../../../../common/widgets/portfolio_loading_widget.dart';
@@ -32,6 +34,63 @@ class _TechChip extends StatelessWidget {
   }
 }
 
+class _HoverableTitle extends StatefulWidget {
+  final String title;
+  final String? url;
+  const _HoverableTitle({required this.title, this.url});
+
+  @override
+  State<_HoverableTitle> createState() => _HoverableTitleState();
+}
+
+class _HoverableTitleState extends State<_HoverableTitle> {
+  bool _hovered = false;
+  bool get _clickable => widget.url.isNotEmptyOrNull;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: _clickable ? SystemMouseCursors.click : MouseCursor.defer,
+      onEnter: (_) {
+        if (_clickable) setState(() => _hovered = true);
+      },
+      onExit: (_) => setState(() => _hovered = false),
+      child: GestureDetector(
+        onTap: _clickable ? () => UrlHelper.launchURL(widget.url!) : null,
+        child: AnimatedDefaultTextStyle(
+          duration: const Duration(milliseconds: 150),
+          style: TextStyle(
+            fontSize: PortfolioTextTheme.fontSize28,
+            fontWeight: FontWeight.w800,
+            color: _hovered ? AppColors.accent : AppColors.black,
+            decoration:
+                _hovered ? TextDecoration.underline : TextDecoration.none,
+            decorationColor: AppColors.accent,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(widget.title),
+              if (_clickable) ...[
+                const SizedBox(width: 8),
+                AnimatedOpacity(
+                  duration: const Duration(milliseconds: 150),
+                  opacity: _hovered ? 1.0 : 0.0,
+                  child: const Icon(
+                    Icons.arrow_outward_rounded,
+                    size: 20,
+                    color: AppColors.accent,
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class ProjectInfoWidget extends StatelessWidget {
   final ProjectModel project;
   final String categoryLabel;
@@ -57,26 +116,23 @@ class ProjectInfoWidget extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
             decoration: BoxDecoration(
-              color: AppColors.secondary.withOpacity(0.45),
-              borderRadius: BorderRadius.circular(20),
+              color: const Color(0xFFbbf7d0),
+              borderRadius: BorderRadius.circular(99),
             ),
             child: Text(
               categoryLabel.toUpperCase(),
               style: const TextStyle(
-                fontSize: PortfolioTextTheme.fontSize14,
-                fontWeight: FontWeight.w700,
+                fontSize: PortfolioTextTheme.fontSize12,
+                fontWeight: FontWeight.w600,
                 color: Color(0xFF166434),
                 letterSpacing: 0.8,
               ),
             ),
           ),
           SizedBox(height: 12.h),
-          Text(
-            project.title,
-            style: const TextStyle(
-              fontSize: PortfolioTextTheme.fontSize28,
-              fontWeight: FontWeight.w800,
-            ),
+          _HoverableTitle(
+            title: project.title,
+            url: project.actionLinks.externalReference,
           ),
           SizedBox(height: 12.h),
           Text(

@@ -51,7 +51,7 @@ class _ProjectsSectionState extends State<ProjectsSection>
 
     switch (_selected) {
       case _ProjectCategory.all:
-        return [
+        final all = [
           ...p.workProjects.map(
               (e) => (project: e, categoryLabel: lbl(_ProjectCategory.work))),
           ...p.freelanceProjects.map((e) =>
@@ -59,6 +59,8 @@ class _ProjectsSectionState extends State<ProjectsSection>
           ...p.sideProjects.map(
               (e) => (project: e, categoryLabel: lbl(_ProjectCategory.side))),
         ];
+        all.sort((a, b) => a.project.overallOrder.compareTo(b.project.overallOrder));
+        return all;
       case _ProjectCategory.work:
         return p.workProjects
             .map((e) => (project: e, categoryLabel: lbl(_selected)))

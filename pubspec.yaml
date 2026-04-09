@@ -62,3 +62,4 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/translations/
+    - portfolio_data.json

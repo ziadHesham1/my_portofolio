@@ -6,6 +6,7 @@ class ProjectActionLinks extends Equatable {
   final String? appStore;
   final String? googlePlay;
   final String? website;
+  final String? externalReference;
 
   const ProjectActionLinks({
     this.demoVideo,
@@ -13,10 +14,12 @@ class ProjectActionLinks extends Equatable {
     this.appStore,
     this.googlePlay,
     this.website,
+    this.externalReference,
   });
 
   @override
-  List<Object?> get props => [demoVideo, github];
+  List<Object?> get props =>
+      [demoVideo, github, appStore, googlePlay, website, externalReference];
 
   factory ProjectActionLinks.fromJson(Map<String, dynamic> json) {
     return ProjectActionLinks(
@@ -25,6 +28,7 @@ class ProjectActionLinks extends Equatable {
       appStore: json['appstore'] ?? '',
       googlePlay: json['playstore'] ?? '',
       website: json['website'] ?? '',
+      externalReference: json['external_reference'] ?? '',
     );
   }
 
@@ -32,16 +36,28 @@ class ProjectActionLinks extends Equatable {
     return {
       'demo_video': demoVideo,
       'github': github,
+      'appstore': appStore,
+      'playstore': googlePlay,
+      'website': website,
+      'external_reference': externalReference,
     };
   }
 
   ProjectActionLinks copyWith({
     String? demoVideo,
     String? github,
+    String? appStore,
+    String? googlePlay,
+    String? website,
+    String? externalReference,
   }) {
     return ProjectActionLinks(
       demoVideo: demoVideo ?? this.demoVideo,
       github: github ?? this.github,
+      appStore: appStore ?? this.appStore,
+      googlePlay: googlePlay ?? this.googlePlay,
+      website: website ?? this.website,
+      externalReference: externalReference ?? this.externalReference,
     );
   }
 
@@ -49,6 +65,10 @@ class ProjectActionLinks extends Equatable {
     return const ProjectActionLinks(
       demoVideo: '',
       github: '',
+      appStore: '',
+      googlePlay: '',
+      website: '',
+      externalReference: '',
     );
   }
 }

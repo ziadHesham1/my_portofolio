@@ -6,6 +6,10 @@ import '../generated/l10n.dart';
 import 'navigation/app_navigator.dart';
 
 abstract class PortfolioConstants {
+  /// Set to true to fetch data from Firebase.
+  /// Set to false to use local data from portfolio_local_data.dart.
+  static const bool isProduction = true;
+
   // Get the text theme from the current theme currentContext!.
   static final TextTheme text_theme = Theme.of(currentContext!).textTheme;
 

@@ -55,11 +55,11 @@ class HomeImageWidget extends StatelessWidget {
                 clipper: _BreakoutCircleClipper(imageSize),
                 child: SizedBox(
                   width: imageSize,
-                  height: imageSize * 1.3,
+                  height: imageSize * 1.4,
                   child: Align(
                     alignment: Alignment.bottomCenter,
-                    child: Image.asset(
-                      'assets/images/my_image.png',
+                    child: Image.network(
+                      'https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/my_image.png',
                       width: imageSize,
                       fit: BoxFit.fitWidth,
                     ),

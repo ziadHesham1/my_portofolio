@@ -22,7 +22,7 @@ class HomeNameWidget extends StatelessWidget {
               ),
             ),
             Text(
-              name.isNotEmpty ? name : 'ziad_adam'.tr(),
+              '${name.isNotEmpty ? name : 'my_name'.tr()} 👋',
               style: const TextStyle(
                 fontSize: PortfolioTextTheme.fontSize40,
                 fontWeight: FontWeight.w700,

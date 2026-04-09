@@ -12,6 +12,7 @@ class ProjectModel extends Equatable {
   final ProjectActionLinks actionLinks;
   final ProjectType projectType;
   final List<String> techStack;
+  final int overallOrder;
 
   const ProjectModel({
     required this.id,
@@ -22,11 +23,12 @@ class ProjectModel extends Equatable {
     required this.title,
     this.projectType = ProjectType.mobile,
     this.techStack = const [],
+    this.overallOrder = 0,
   });
 
   @override
   List<Object?> get props =>
-      [id, actionLinks, images, subTitle, title, projectType, techStack];
+      [id, actionLinks, images, subTitle, title, projectType, techStack, overallOrder];
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) {
     return ProjectModel(
@@ -43,6 +45,7 @@ class ProjectModel extends Equatable {
               (e) => e.toString() == 'ProjectType.${json['project_type']}')
           : ProjectType.mobile,
       techStack: List<String>.from(json['tech_stack'] ?? []),
+      overallOrder: json['overall_order'] ?? 0,
     );
   }
 
@@ -56,6 +59,7 @@ class ProjectModel extends Equatable {
       'action_links': actionLinks.toJson(),
       'project_type': projectType.toString().split('.').last,
       'tech_stack': techStack,
+      'overall_order': overallOrder,
     };
   }
 
@@ -68,6 +72,7 @@ class ProjectModel extends Equatable {
     String? title,
     ProjectType? projectType,
     List<String>? techStack,
+    int? overallOrder,
   }) {
     return ProjectModel(
       id: id ?? this.id,
@@ -78,6 +83,7 @@ class ProjectModel extends Equatable {
       title: title ?? this.title,
       projectType: projectType ?? this.projectType,
       techStack: techStack ?? this.techStack,
+      overallOrder: overallOrder ?? this.overallOrder,
     );
   }
 
@@ -90,6 +96,7 @@ class ProjectModel extends Equatable {
       subTitle: '',
       title: '',
       techStack: const [],
+      overallOrder: 0,
     );
   }
 }

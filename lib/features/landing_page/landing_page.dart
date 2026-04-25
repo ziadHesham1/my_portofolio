@@ -1,3 +1,4 @@
+import 'package:device_frame/device_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ziad_dev/common/navigation/sections_navigator.dart';
@@ -27,6 +28,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
+
     return Scaffold(
       backgroundColor: AppColors.primary,
       appBar: (PortfolioConstants.isDesktop())

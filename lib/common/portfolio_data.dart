@@ -24,6 +24,12 @@ const Map<String, dynamic> data = {
               "https://play.google.com/store/apps/details?id=com.lockers.client",
           "external_reference": "https://lockers.sa/"
         },
+        "id": "16c6b7e2-d06f-47da-bc40-1e0a9a01309c",
+        "images": [
+          "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/1.png",
+          "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/8.png",
+          "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/5.png"
+        ],
         "all_images": [
           "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/1.png",
           "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/2.png",
@@ -35,27 +41,26 @@ const Map<String, dynamic> data = {
           "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/8.png",
           "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/9.png"
         ],
-        "description":
-            "Lockers Client App helps users to easily schedule and manage delivery requests. It offers a smooth user experience with live tracking, secure payment, and feedback options.",
-        "features": [
-          "Schedule pickup and delivery",
-          "Real-time order tracking",
-          "In-app notifications",
-          "Support for individual and business accounts"
-        ],
-        "id": "16c6b7e2-d06f-47da-bc40-1e0a9a01309c",
-        "images": [
-          "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/1.png",
-          "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/8.png",
-          "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/5.png"
-        ],
         "project_type": "mobile",
+        "title": "Lockers Client App",
         "sub_title":
-            "A service platform where individual and B2B clients can request moving and delivery services. I contributed to implementing new features, improving the user experience, and fixing bugs in both the Android and iOS versions.",
-        "tech_stack": ["Flutter", "Firebase", "REST API", "Provider"],
+            "B2C logistics & storage platform for moving, packing, and furniture services — contributed as a core Flutter developer for 1 year across Android and iOS.",
+        "tech_stack": [
+          "Flutter",
+          "Dart",
+          "BLoC/Cubit",
+          "Clean Architecture",
+          "Dio",
+          "REST API",
+          "Firebase",
+          "Google Maps",
+          "Easy Localization",
+          "GetIt"
+        ],
+        "description":
+            "Lockers is a production B2C platform serving users in Saudi Arabia who need moving, packing, storage, and furniture services. The app also includes a secondhand furniture marketplace with buying and selling flows.\n\nI joined as a Flutter developer and contributed for 1 year across the full app — building new features, improving existing flows, and fixing bugs on both Android and iOS.\n\nApp scope:\n\n— Service booking: multi-step order creation with Google Maps location picking, date/time scheduling, item description with photo upload, and service selection.\n\n— Furniture marketplace: browse, list, edit, and sell secondhand furniture with multi-image upload, cart, and checkout.\n\n— Payments: UrPay (Saudi gateway) and Visa/card payments across order and furniture checkout flows.\n\n— Order management: pending requests with offers, in-progress order tracking, and shipment status updates.\n\n— Real-time chat: two-tab conversation system (orders vs. furniture) with live messaging.\n\n— Invoices: paginated invoice history with PDF export and printing.\n\n— Push notifications: FCM with local notification display and a paginated notification center.\n\n— Forced update flow: server-driven version check that triggers in-app update (Android) or upgrade prompt (iOS) before the user can proceed.\n\nArchitecture: Clean Architecture per-feature (data / logic / presentation), BLoC/Cubit state management, GetIt for DI, HydratedBloc for persistent auth and settings, global EventsHandlingCubit as an app-wide error and auth event bus, and a shared internal monorepo package (lockers_mono) used across the client and B2B apps.",
         "thumbnail":
-            "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/thumbnail.png",
-        "title": "Lockers Client App"
+            "https://wakkvxgirxraoxygmsmn.supabase.co/storage/v1/object/public/portfolio/lockers_client/thumbnail.png"
       },
       {
         "overall_order": 4,
@@ -173,7 +178,7 @@ const Map<String, dynamic> data = {
               "https://apps.apple.com/us/app/pocket-ai-money-manager/id6751238801",
           "playstore":
               "https://play.google.com/store/apps/details?id=com.startix.pocket",
-          "website": "https://pocket-ai.app"
+          "external_reference": "https://pocket-ai.app"
         },
         "id": "b8c4f9c2-7c6e-4b18-9a2e-1d2f0f5c6a11",
         "images": [
